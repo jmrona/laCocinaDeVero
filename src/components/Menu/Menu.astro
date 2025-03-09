@@ -1,0 +1,93 @@
+<div class="hidden md:flex gap-5">
+  <a href="/">Menu</a>
+  <a href="/about">Sobre nosotros</a>
+  <a href="/contact">Contacta</a>
+</div>
+
+<div
+  id="mobile-menu"
+  class="md:hidden flex flex-col gap-1 items-center justify-end cursor-pointer py-3 px-1"
+  data-open="false"
+>
+  <span class="w-6 h-[2px] bg-black rounded-2xl pointer-events-none"></span>
+  <span class="w-6 h-[2px] bg-black rounded-2xl pointer-events-none"></span>
+  <span class="w-6 h-[2px] bg-black rounded-2xl pointer-events-none"></span>
+</div>
+
+<div
+  id="sidebar"
+  class="fixed top-[83px] left-0 w-full h-[calc(100dvh-83px)] bg-white/90 backdrop-blur-2xl z-50 hidden md:hidden"
+>
+  <nav
+    class="flex flex-col gap-5 items-center justify-center h-full text-lg font-[700] select-none"
+  >
+    <a href="/">Menu</a>
+    <a href="/about">Sobre nosotros</a>
+    <a href="/contact">Contacta</a>
+  </nav>
+</div>
+
+<style>
+  #mobile-menu {
+    &[data-open="false"] {
+      span:nth-child(1) {
+        transform: translateY(0) rotate(0);
+        transition: all 0.2s linear;
+      }
+      span:nth-child(2) {
+        opacity: 1;
+        transition: all 0.2s linear;
+      }
+      span:nth-child(3) {
+        transform: translateY(0) rotate(0);
+        transition: all 0.2s linear;
+      }
+    }
+
+    &[data-open="true"] {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        transition: all 0.2s linear;
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        transition: all 0.2s linear;
+      }
+      span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+        transition: all 0.2s linear;
+      }
+    }
+  }
+
+  #mobile-menu[data-open="true"] + #sidebar {
+    transform: translateX(0);
+    transition: all 0.1s linear;
+
+    @starting-style {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const mobileMenu = document.querySelector("#mobile-menu") as HTMLInputElement;
+  const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
+  const sidebarCloseBtn = document.querySelector(
+    "#sidebar-close-btn",
+  ) as HTMLDivElement;
+
+  mobileMenu?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    sidebar.classList.toggle("hidden");
+    mobileMenu.dataset.open = sidebar.classList.contains("hidden")
+      ? "false"
+      : "true";
+  });
+
+  sidebarCloseBtn?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    sidebar.classList.toggle("hidden");
+  });
+</script>

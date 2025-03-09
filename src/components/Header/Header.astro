@@ -1,0 +1,20 @@
+---
+import Logo from "../Logo/Logo.astro";
+import Menu from "../Menu/Menu.astro";
+---
+
+<nav
+  class="sticky top-0 border-b-[1px] bg-white/50 backdrop-blur-lg border-neutral-300 max-h-[93px]"
+>
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <div class="flex gap-2 items-center">
+      <Logo width={50} />
+      <h1
+        class="text-md md:text-lg font-accent font-bold inline-block leading-none"
+      >
+        La cocina <br /> de Vero
+      </h1>
+    </div>
+    <Menu />
+  </div>
+</nav>

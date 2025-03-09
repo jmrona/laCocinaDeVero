@@ -1,0 +1,18 @@
+---
+const { width = 50 } = Astro.props as { width: number };
+---
+
+<style>
+  .logo {
+    background-image: url("src/assets/images/fork-knife.svg");
+    background-size: 50px;
+    background-position: 50% 10px;
+    background-repeat: no-repeat;
+  }
+</style>
+
+<div
+  class={`aspect-square bg-secondary rounded-2xl logo`}
+  style={`width: ${width}px`}
+>
+</div>

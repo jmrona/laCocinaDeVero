@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import '@fontsource-variable/inter';
+@import './reset.css' layer(base);
+
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+
+
+@theme {
+
+  --font-display: "Inter", "sans-serif";
+  --color-primary: #FF5733;
+  --color-secondary: #FFC300;
+  --color-neutral: #706C61;
+  --color-accent: #F8F8F8;
+}
+
+body {
+  font-family: var(--font-display);
+}

@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+
+import boqueronesImage from "@/assets/images/boquerones.jpg";
+import camperoImage from "@/assets/images/campero.jpg";
+import pestinosImage from "@/assets/images/pestinos.jpg";
+import polloAlCurryImage from "@/assets/images/pollo-al-curry.jpg";
+import potajeImage from "@/assets/images/potaje.webp";
+import rosquillasImage from "@/assets/images/rosquillas.jpg";
+---
+
+<section
+  class="h-full min-h-[calc(100dvh-93px)] max-w-6xl gap-6 mx-auto grid grid-col-1 md:grid-cols-2 grid-rows-[auto_1fr] md:grid-rows-1 p-4"
+>
+  <div class="place-content-center h-fit py-10">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tighter">
+      Comida deliciosa <br />
+      <span class="text-primary">Para llevar </span>
+    </h1>
+    <p class="space-y-2 max-w-[75ch] text-neutral-500 md:text-xl">
+      Platos frescos y caseros preparados diariamente. Evite las esperas y
+      disfrute de comida con calidad de restaurante en casa.
+    </p>
+  </div>
+
+  <div class="place-content-start md:place-content-center">
+    <div
+      class="aspect-square md:aspect-auto md:h-[500px] w-full grid grid-cols-3 grid-rows-5 gap-4"
+    >
+      <div class="row-span-2">
+        <Image
+          src={camperoImage}
+          alt="Plato de boquerones fritos"
+          class={"w-full h-full object-cover rounded-md"}
+        />
+      </div>
+      <div class="row-span-3 col-start-1 row-start-3">
+        <Image
+          src={polloAlCurryImage}
+          alt="Plato de boquerones fritos"
+          class={"w-full h-full object-cover rounded-md"}
+        />
+      </div>
+      <div class="col-span-2 row-span-3 col-start-2 row-start-1">
+        <Image
+          src={potajeImage}
+          alt="Plato de boquerones fritos"
+          class={"w-full h-full object-cover rounded-md"}
+        />
+      </div>
+      <div class="row-span-2 col-start-2 row-start-4">
+        <Image
+          src={rosquillasImage}
+          alt="Plato de boquerones fritos"
+          class={"w-full h-full object-cover rounded-md"}
+        />
+      </div>
+      <div class="row-span-2 col-start-3 row-start-4">
+        <Image
+          src={pestinosImage}
+          alt="Plato de boquerones fritos"
+          class={"w-full h-full object-cover rounded-md"}
+        />
+      </div>
+    </div>
+  </div>
+</section>
