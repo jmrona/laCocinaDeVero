@@ -1,0 +1,55 @@
+---
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import Dishes from "@/db/dishes.json";
+import {Wheat, Egg, Fish, Milk, Shell, Nut} from "@lucide/astro"
+
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+const maxDishes = 6;
+const dishes = Dishes.slice(0, maxDishes);
+
+
+
+const ALLERGENS: Record<string, any> = {
+    "gluten": Wheat,
+    "egg": Egg,
+    "fish": Fish,
+    "milk": Milk,
+    "mollusc": Shell,
+    "nuts": Nut,
+} as const;
+---
+
+<section
+  class=""
+>
+    <div class="max-w-6xl gap-2 mx-auto flex flex-col items-center px-4 py-30">
+        <h2 class="text-2xl font-semibold text-center text-balance max-w-[60ch]">{t("ourDishes.title").split(" ").slice(0, -1).join(" ")} <span class="text-primary">{t("ourDishes.title").split(" ").slice(-1)}</span></h2>
+        <h3 class="text-pretty text-gray-600 text-center">{t("ourDishes.description")}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8">
+            {dishes.map((dish) => {
+                return (
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                        <img src={dish.image} alt={dish.name[lang]} class="w-full h-full aspect-video object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mt-2">{dish.name[lang]}</h3>
+                            <p class="text-pretty text-gray-600 text-sm">{dish.ingredients[lang].join(", ")}</p>
+                            <div class="flex mt-3 items-center justify-between">
+                                <p class="text-2xl font-semibold text-primary mr-2">{dish.price}€</p>
+                                <div class="flex items-center">
+                                    <span class="pe-2 text-[12px]">{t("ourDishes.allergens")}:</span>
+                                    {dish.allergens.map((allergen) => {
+                                        const Icon = ALLERGENS[allergen];
+                                        return Icon ? <Icon size={20} class="text-gray-600 mr-2" /> : null;
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
+        <button class="bg-primary text-white rounded-full px-6 py-2 mt-8 text-center cursor-pointer hover:bg-primary-dark" id="ourdishes-loadmore">{t("ourDishes.loadMore")}</button>
+    </div>
+</section>

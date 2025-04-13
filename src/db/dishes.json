@@ -1,3 +1,182 @@
-{
-  
-}
+[
+  {
+    "name": {
+      "es": "Espeto de sardinas",
+      "en": "Grilled sardine skewer",
+      "de": "Sardinen-Spieß"
+    },
+    "ingredients": {
+      "es": ["sardinas", "sal", "leña de olivo"],
+      "en": ["sardines", "salt", "olive wood"],
+      "de": ["Sardinen", "Salz", "Olivenholz"]
+    },
+    "allergens": ["fish"],
+    "price": 8.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Porra antequerana",
+      "en": "Cold tomato soup (Porra)",
+      "de": "Kalte Tomatensuppe (Porra)"
+    },
+    "ingredients": {
+      "es": ["tomate", "pan", "aceite de oliva", "ajo", "jamón", "huevo cocido"],
+      "en": ["tomato", "bread", "olive oil", "garlic", "ham", "boiled egg"],
+      "de": ["Tomate", "Brot", "Olivenöl", "Knoblauch", "Schinken", "gekochtes Ei"]
+    },
+    "allergens": ["gluten", "egg"],
+    "price": 6.0,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Ajoblanco",
+      "en": "Cold garlic almond soup",
+      "de": "Kalte Knoblauch-Mandel-Suppe"
+    },
+    "ingredients": {
+      "es": ["almendras", "ajo", "pan", "aceite de oliva", "vinagre", "agua"],
+      "en": ["almonds", "garlic", "bread", "olive oil", "vinegar", "water"],
+      "de": ["Mandeln", "Knoblauch", "Brot", "Olivenöl", "Essig", "Wasser"]
+    },
+    "allergens": ["nuts", "gluten"],
+    "price": 5.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Boquerones en vinagre",
+      "en": "Anchovies in vinegar",
+      "de": "Sardellen in Essig"
+    },
+    "ingredients": {
+      "es": ["boquerones", "vinagre", "ajo", "perejil", "aceite de oliva"],
+      "en": ["anchovies", "vinegar", "garlic", "parsley", "olive oil"],
+      "de": ["Sardellen", "Essig", "Knoblauch", "Petersilie", "Olivenöl"]
+    },
+    "allergens": ["fish"],
+    "price": 7.0,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Ensalada malagueña",
+      "en": "Málaga-style potato salad",
+      "de": "Kartoffelsalat nach Málaga-Art"
+    },
+    "ingredients": {
+      "es": ["patatas", "bacalao", "naranja", "aceitunas", "cebolla", "aceite de oliva"],
+      "en": ["potatoes", "cod", "orange", "olives", "onion", "olive oil"],
+      "de": ["Kartoffeln", "Kabeljau", "Orange", "Oliven", "Zwiebel", "Olivenöl"]
+    },
+    "allergens": ["fish"],
+    "price": 6.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Gazpachuelo",
+      "en": "Fish and mayonnaise soup",
+      "de": "Fischsuppe mit Mayonnaise"
+    },
+    "ingredients": {
+      "es": ["pescado blanco", "patata", "huevo", "mayonesa", "agua", "sal"],
+      "en": ["white fish", "potato", "egg", "mayonnaise", "water", "salt"],
+      "de": ["Weißfisch", "Kartoffel", "Ei", "Mayonnaise", "Wasser", "Salz"]
+    },
+    "allergens": ["egg", "fish"],
+    "price": 7.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Campero malagueño",
+      "en": "Málaga-style sandwich",
+      "de": "Málaga-Sandwich"
+    },
+    "ingredients": {
+      "es": ["pan redondo", "pollo", "lechuga", "tomate", "mayonesa", "queso"],
+      "en": ["round bread", "chicken", "lettuce", "tomato", "mayonnaise", "cheese"],
+      "de": ["Rundes Brot", "Hähnchen", "Salat", "Tomate", "Mayonnaise", "Käse"]
+    },
+    "allergens": ["gluten", "egg", "milk"],
+    "price": 6.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Churros con chocolate",
+      "en": "Churros with chocolate",
+      "de": "Churros mit Schokolade"
+    },
+    "ingredients": {
+      "es": ["harina", "agua", "sal", "aceite", "chocolate"],
+      "en": ["flour", "water", "salt", "oil", "chocolate"],
+      "de": ["Mehl", "Wasser", "Salz", "Öl", "Schokolade"]
+    },
+    "allergens": ["gluten"],
+    "price": 4.0,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Fritura malagueña",
+      "en": "Málaga-style fried fish",
+      "de": "Frittierter Fisch nach Málaga-Art"
+    },
+    "ingredients": {
+      "es": ["boquerones", "calamares", "rosada", "harina", "limón", "sal"],
+      "en": ["anchovies", "squid", "pink hake", "flour", "lemon", "salt"],
+      "de": ["Sardellen", "Tintenfisch", "Seehecht", "Mehl", "Zitrone", "Salz"]
+    },
+    "allergens": ["fish", "gluten", "mollusc"],
+    "price": 10.0,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Salmorejo",
+      "en": "Cold tomato cream",
+      "de": "Kalte Tomatencreme"
+    },
+    "ingredients": {
+      "es": ["tomate", "pan", "aceite de oliva", "ajo", "huevo cocido", "jamón"],
+      "en": ["tomato", "bread", "olive oil", "garlic", "boiled egg", "ham"],
+      "de": ["Tomate", "Brot", "Olivenöl", "Knoblauch", "gekochtes Ei", "Schinken"]
+    },
+    "allergens": ["gluten", "egg"],
+    "price": 5.0,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Tarta Malagueña",
+      "en": "Málaga cake",
+      "de": "Málaga-Kuchen"
+    },
+    "ingredients": {
+      "es": ["harina", "almendras", "huevo", "vino dulce", "azúcar", "canela"],
+      "en": ["flour", "almonds", "egg", "sweet wine", "sugar", "cinnamon"],
+      "de": ["Mehl", "Mandeln", "Ei", "Süßwein", "Zucker", "Zimt"]
+    },
+    "allergens": ["gluten", "egg", "nuts"],
+    "price": 4.5,
+    "image": "https://picsum.photos/500/500"
+  },
+  {
+    "name": {
+      "es": "Berza malagueña",
+      "en": "Málaga-style stew",
+      "de": "Eintopf nach Málaga-Art"
+    },
+    "ingredients": {
+      "es": ["garbanzos", "judías verdes", "patatas", "morcilla", "chorizo", "tocino"],
+      "en": ["chickpeas", "green beans", "potatoes", "blood sausage", "chorizo", "bacon"],
+      "de": ["Kichererbsen", "grüne Bohnen", "Kartoffeln", "Blutwurst", "Chorizo", "Speck"]
+    },
+    "allergens": [],
+    "price": 8.0,
+    "image": "https://picsum.photos/500/500"
+  }
+]
