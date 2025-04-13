@@ -13,6 +13,7 @@
     "@fontsource-variable/inter": "^5.2.5",
     "@lucide/astro": "^0.488.0",
     "@tailwindcss/vite": "^4.0.12",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.4.2",
     "tailwind": "^4.0.0",
     "tailwindcss": "^4.0.12"
