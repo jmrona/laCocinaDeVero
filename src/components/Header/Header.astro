@@ -1,6 +1,8 @@
 ---
 import Logo from "../Logo/Logo.astro";
 import Menu from "../Menu/Menu.astro";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
 ---
 
 <nav
@@ -8,9 +10,11 @@ import Menu from "../Menu/Menu.astro";
 >
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
     <div class="flex gap-2 items-center">
-      <Logo width={50} />
+      <a href={`/${lang}/`} class="href">
+        <Logo width={50} />
+      </a>
       <h1
-        class="text-md md:text-lg font-accent font-bold inline-block leading-none"
+        class="font-accent leading-5 tracking-widest text-[22px] font-bold inline-block"
       >
         La cocina <br /> de Vero
       </h1>

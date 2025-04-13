@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero/Hero.astro";
+
+export async function getStaticPaths() {
+	return [
+		{ params: { locale: "en" } },
+		{ params: { locale: "es" } },
+		{ params: { locale: "de" } },
+	];
+}
+---
+
+<Layout title="La cocina de Vero">
+	<Hero />
+</Layout>

@@ -1,16 +1,28 @@
 ---
 import Header from "@/components/Header/Header.astro";
 import "@/styles/global.css";
+
+const { title } = Astro.props;
+const lang = Astro.currentLocale;
+console.log("lang", lang); 
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
+
+    <script type="javascript">
+      const $html = document.querySelector("html");
+      const lang = localStorage.getItem("lang");
+      if (lang) {
+        $html.lang = lang;
+      }
+    </script>
   </head>
   <body>
     <Header />

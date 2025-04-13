@@ -1,0 +1,22 @@
+---
+const langSelected = Astro.currentLocale;
+const { id = "language" } = Astro.props;
+---
+
+<select name="language" id={id} class="font-emoji" value={langSelected}>
+  <option value="es" selected={langSelected === "es"}>Español</option>
+  <option value="en" selected={langSelected === "en"}>English</option>
+  <option value="de" selected={langSelected === "de"}>Deutsch </option>
+</select>
+
+<script define:vars={{ langSelected, id }}>
+  const $select = document.querySelector(`#${id}`);
+
+  $select?.addEventListener("change", (e) => {
+    localStorage.setItem("lang", langSelected);
+
+    const url = new URL(window.location.href);
+    const [_, language, ...rest] = url.pathname.split("/");
+    window.location.href = `/${e.target.value}/${rest.join("/")}`;
+  });
+</script>

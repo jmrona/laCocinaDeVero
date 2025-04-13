@@ -1,8 +1,17 @@
-<div class="hidden md:flex gap-5">
-  <a href="/">Menu</a>
-  <a href="/about">Sobre nosotros</a>
-  <a href="/contact">Contacta</a>
-</div>
+---
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import LanguageToggle from "../LanguageToggle/LanguageToggle.astro";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+---
+
+<nav class="hidden md:flex gap-5">
+  <a href={`/${lang}/menu`}>{t("nav.menu")}</a>
+  <a href={`/${lang}/about`}>{t("nav.about")}</a>
+  <a href={`/${lang}/contact`}>{t("nav.contact")}</a>
+  <LanguageToggle />
+</nav>
 
 <div
   id="mobile-menu"
@@ -21,13 +30,18 @@
   <nav
     class="flex flex-col gap-5 items-center justify-center h-full text-lg font-[700] select-none"
   >
-    <a href="/">Menu</a>
-    <a href="/about">Sobre nosotros</a>
-    <a href="/contact">Contacta</a>
+    <a href={`/${lang}/menu`}>{t("nav.menu")}</a>
+    <a href={`/${lang}/about`}>{t("nav.about")}</a>
+    <a href={`/${lang}/contact`}>{t("nav.contact")}</a>
+    <LanguageToggle id="lang-toogle-mobile" />
   </nav>
 </div>
 
 <style>
+  select.font-emoji {
+    font-family: var(--font-emoji);
+  }
+
   #mobile-menu {
     &[data-open="false"] {
       span:nth-child(1) {
