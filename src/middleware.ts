@@ -3,8 +3,7 @@ import { defineMiddleware } from "astro:middleware";
 
 
 export const onRequest = defineMiddleware((context, next) => {
-    const { request } = context;
-    const { pathname } = new URL(request.url);
+    const {pathname} = new URL(context.url);
     
     if (pathname === '/') {
         return context.redirect('/es');
