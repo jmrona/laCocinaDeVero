@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from "@/lib/i18n/useTranslations";
+import {Carrot, CookingPot, Truck} from "@lucide/astro"
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
@@ -14,19 +15,19 @@ const t = useTranslations(lang);
         <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.description")}</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-8">
             <div class="flex-1/3 md:flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
-                <i class='bx bx-lemon text-3xl mb-0.5' aria-hidden="true"></i>
+                <Carrot size={35} class="mb-3 text-secondary" />
                 <h4 class="text-xl font-semibold text-center mb-2">{t("whyChooseUs.freshIngredients")}</h4>
                 <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.freshIngredients.description")}</p>
             </div>
             <div class="flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
-                <i class='bx bx-lemon text-3xl mb-0.5' aria-hidden="true"></i>
-                <h4 class="text-xl font-semibold text-center mb-2">{t("whyChooseUs.freshIngredients")}</h4>
-                <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.freshIngredients.description")}</p>
+                <CookingPot size={35} class="mb-3 text-secondary" />
+                <h4 class="text-xl font-semibold text-center mb-2">{t("whyChooseUs.dailyPrepared")}</h4>
+                <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.dailyPrepared.description")}</p>
             </div>
             <div class="flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
-                <i class='bx bx-lemon text-3xl mb-0.5' aria-hidden="true"></i>
-                <h4 class="text-xl font-semibold text-center mb-2">{t("whyChooseUs.freshIngredients")}</h4>
-                <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.freshIngredients.description")}</p>
+                <Truck size={35} class="mb-3 text-secondary" />
+                <h4 class="text-xl font-semibold text-center mb-2">{t("whyChooseUs.readyToTakeAway")}</h4>
+                <p class="text-pretty text-gray-600 text-center">{t("whyChooseUs.readyToTakeAway.description")}</p>
             </div>
         </div>
     </div>
