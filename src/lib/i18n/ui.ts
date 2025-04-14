@@ -31,6 +31,16 @@ export const ui = {
     'ourDishes.description': 'Explore our most loved dishes, prepared with care and ready to take away.',
     'ourDishes.allergens': 'Allergens',
     'ourDishes.loadMore': 'Load more',
+
+    // How it works
+    'howItWorks.title': 'How it works',
+    'howItWorks.description': 'Getting your favorite food is as easy as 1-2-3',
+    'howItWorks.chooseYourMeal': 'Choose your meal',
+    'howItWorks.chooseYourMeal.description': 'Check our menu and choose what you want to eat.', 
+    'howItWorks.placeYourOrder': 'Place your order',
+    'howItWorks.placeYourOrder.description': 'Call us, tell us your order and we will prepare it for you.',
+    'howItWorks.enjoyYourMeal': 'Enjoy your meal',    
+    'howItWorks.enjoyYourMeal.description': 'When you arrive, we will give you your freshly prepared meal.',
   },
   es: {
     // Nav
@@ -56,8 +66,18 @@ export const ui = {
     // Our dishes
     'ourDishes.title': 'Nuestros platos más populares',
     'ourDishes.description': 'Explora nuestras platos favoritos, preparados con cuidado y listos para llevar.',
-    'ourDishes.allergens': 'Alergenos',
+    'ourDishes.allergens': 'Alérgenos',
     'ourDishes.loadMore': 'Ver más',
+
+    // How it works
+    'howItWorks.title': 'Cómo funciona',
+    'howItWorks.description': 'Hacer un pedido de tu comida favorita es super fácil',
+    'howItWorks.chooseYourMeal': 'Elige que te apetece comer',
+    'howItWorks.chooseYourMeal.description': 'Mira nuestro menú y elige que te apetece comer.', 
+    'howItWorks.placeYourOrder': 'Haz tu pedido',
+    'howItWorks.placeYourOrder.description': 'Llamanos, dinos tu pedido y te lo prepararemos.',
+    'howItWorks.enjoyYourMeal': 'Disfruta tu comida',
+    'howItWorks.enjoyYourMeal.description': 'Cuando llegues, te daremos tu pedido recién hecho y listo para comer.',
   },
   de: {
     // Nav
@@ -85,5 +105,15 @@ export const ui = {
     'ourDishes.description': 'Entdecke unsere beliebtesten Gerichte, zubereitet mit Sorgfalt und bereit zum Mitnehmen.',
     'ourDishes.allergens': 'Allergene',
     'ourDishes.loadMore': 'Mehr laden',
+
+    // How it works
+    'howItWorks.title': 'Wie funktioniert das?',
+    'howItWorks.description': 'Einen Lieblingsgericht zu bestellen ist so einfach wie 1-2-3',
+    'howItWorks.chooseYourMeal': 'Wähle dein Gericht',
+    'howItWorks.chooseYourMeal.description': 'Überprüfe unser Menü und wähle das Gericht aus, das du magst.', 
+    'howItWorks.placeYourOrder': 'Platziere deine Bestellung',
+    'howItWorks.placeYourOrder.description': 'Rufe uns an, sage uns deine Bestellung und wir bereiten dir dein Gericht vor.',
+    'howItWorks.enjoyYourMeal': 'Genieße dein Gericht',
+    'howItWorks.enjoyYourMeal.description': 'Wenn du ankommst, wirst du dein frisch gekochtes Gericht zur Verfügung stellen.',
   },
 } as const;
