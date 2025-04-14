@@ -11,6 +11,8 @@ export async function getStaticPaths() {
 		{ params: { locale: "de" } },
 	];
 }
+
+export const prerender = true;
 ---
 
 <Layout title="La cocina de Vero">
