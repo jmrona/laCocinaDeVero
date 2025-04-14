@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from "@/lib/i18n/useTranslations";
-import {MapPin, Phone} from "@lucide/astro"
+import {MapPin, Phone, Facebook, Instagram} from "@lucide/astro"
 import Logo from "../Logo/Logo.astro";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
@@ -38,6 +38,10 @@ const t = useTranslations(lang);
             <h3 class="text-pretty text-sm font-semibold">{t("footer.hours")}</h3>
             <p class="text-pretty text-sm text-gray-600 text-start flex gap-5">{t("footer.weekdays")} <span>10:00 AM - 8:00 PM</span></p>
             <p class="text-pretty text-sm text-gray-600 text-start flex gap-5">{t("footer.weekends")} <span>10:00 AM - 8:00 PM</span></p>
+            <div class="flex justify-start gap-1">
+                <a href="#" aria-label="facebook link" class="flex items-center justify-center w-[40px] aspect-square rounded-full bg-primary"><Facebook size={20} class="text-white" aria-hidden="true" /></a>
+                <a href="#" aria-label="facebook link" class="flex items-center justify-center w-[40px] aspect-square rounded-full bg-primary"><Instagram size={20} class="text-white" aria-hidden="true" /></a>
+            </div>
         </div>
     </div>
     <hr class="border-gray-300 border-1 mt-8 w-full mx-auto" />
