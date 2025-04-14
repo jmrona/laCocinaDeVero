@@ -15,8 +15,6 @@ export default defineConfig({
     locales: ["es", "en", "de"],
     defaultLocale: "es"
   },
-
-  adapter: vercel({
-    edgeMiddleware: true
-  }),
+  output: "server",
+  adapter: vercel(),
 });
