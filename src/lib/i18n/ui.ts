@@ -41,6 +41,16 @@ export const ui = {
     'howItWorks.placeYourOrder.description': 'Call us, tell us your order and we will prepare it for you.',
     'howItWorks.enjoyYourMeal': 'Enjoy your meal',    
     'howItWorks.enjoyYourMeal.description': 'When you arrive, we will give you your freshly prepared meal.',
+
+    // Testimonials
+    'testimonials.title': 'What our customers say',
+    'testimonials.description': 'Don\'t just take our word for it - hear from our satisfied customers.',
+    'testimonials.first.author': 'Luis R.',
+    'testimonials.first.description': 'After work, I usually go to the store to buy food. It\'s always fresh, well-prepared and ready in a few minutes. I\'m 10!',
+    'testimonials.second.author': 'Ana G.',
+    'testimonials.second.description': 'La cocina de Vero is one of the best in Torrox. The quality of the ingredients is excellent and the service is very good!',
+    'testimonials.third.author': 'Juan P.',
+    'testimonials.third.description': 'It\'s like eating at home but without having to cook. Ideal for the days when I\'m sick and want something tasty and healthy.',
   },
   es: {
     // Nav
@@ -78,6 +88,16 @@ export const ui = {
     'howItWorks.placeYourOrder.description': 'Llamanos, dinos tu pedido y te lo prepararemos.',
     'howItWorks.enjoyYourMeal': 'Disfruta tu comida',
     'howItWorks.enjoyYourMeal.description': 'Cuando llegues, te daremos tu pedido recién hecho y listo para comer.',
+
+    // Testimonials
+    'testimonials.title': 'Que dicen nuestros clientes',
+    'testimonials.description': 'No lo decimos solo nosotros, nuestros clientes también lo confirman.',
+    'testimonials.first.author': 'Luis R.',
+    'testimonials.first.description': 'Paso a recoger comida casi todos los días después del trabajo. Siempre está fresca, bien presentada y lista en pocos minutos. ¡Un 10!',
+    'testimonials.second.author': 'Ana G.',
+    'testimonials.second.description': 'La cocina de Vero es una de las mejores de Torrox. La calidad de los ingredientes es excelente el trato es muy bueno!',
+    'testimonials.third.author': 'Juan P.',
+    'testimonials.third.description': 'Es como comer en casa pero sin tener que cocinar. Ideal para los días que voy con prisa y quiero algo rico y saludable.',
   },
   de: {
     // Nav
@@ -115,5 +135,15 @@ export const ui = {
     'howItWorks.placeYourOrder.description': 'Rufe uns an, sage uns deine Bestellung und wir bereiten dir dein Gericht vor.',
     'howItWorks.enjoyYourMeal': 'Genieße dein Gericht',
     'howItWorks.enjoyYourMeal.description': 'Wenn du ankommst, wirst du dein frisch gekochtes Gericht zur Verfügung stellen.',
+
+    // Testimonials
+    'testimonials.title': 'Was unsere Kunden sagen',
+    'testimonials.description': 'Lass uns nicht nur unsere Worte sagen, sondern höre von unseren zufriedenen Kunden.',
+    'testimonials.first.author': 'Luis R.',
+    'testimonials.first.description': 'Nach Arbeit gehe ich gerne zum Laden, um Lebensmittel zu kaufen. Es ist immer frisch, gut gekocht und in wenigen Minuten bereit. Ich bin 10!',
+    'testimonials.second.author': 'Ana G.',
+    'testimonials.second.description': 'La cocina de Vero ist einer der besten in Torrox. Die Qualität der Zutaten ist exzellent und der Service ist sehr gut!',
+    'testimonials.third.author': 'Juan P.',
+    'testimonials.third.description': 'Es ist wie zu Hause zu essen, aber ohne dass man kocht. Ideal für die Tage, wenn ich krank bin und etwas leckeres und gesundes habe.',
   },
 } as const;

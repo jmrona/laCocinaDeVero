@@ -1,0 +1,31 @@
+---
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import {Quote} from "@lucide/astro"
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+
+---
+<section>
+    <div class="max-w-6xl gap-2 mx-auto flex flex-col items-center px-4 py-30">
+        <h3 class="text-2xl font-semibold text-center text-balance max-w-[60ch]">{t("testimonials.title").split(" ").slice(0, -2).join(" ")} <span class="text-primary">{t("testimonials.title").split(" ").slice(-2)[0]}</span> {t("testimonials.title").split(" ").slice(-1)}</h3>
+        <p class="text-pretty text-gray-600 text-center">{t("testimonials.description")}</p>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8 mt-8">
+            <div class="relative isolate flex-1/3 md:flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
+                <Quote size={85} class="mb-3 text-gray-200/50 absolute -z-10 top-3 left-3" />
+                <p class="text-lg text-start italic font-light mb-2">{t("testimonials.first.description")}</p>
+                <p class="font-semibold text-gray-600 text-center mt-4 mb-0">{t("testimonials.first.author")}</p>
+            </div>
+            <div class="relative isolate flex-1/3 md:flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
+                <Quote size={85} class="mb-3 text-gray-200/50 absolute -z-10 top-3 left-3" />
+                <p class="text-lg text-start italic font-light mb-2">{t("testimonials.second.description")}</p>
+                <p class="font-semibold text-gray-600 text-center mt-4 mb-0">{t("testimonials.second.author")}</p>
+            </div>
+            <div class="relative isolate flex-1/3 md:flex-1/3 bg-white px-4 py-8 shadow flex flex-col items-center">
+                <Quote size={85} class="mb-3 text-gray-200/50 absolute -z-10 top-3 left-3" />
+                <p class="text-lg text-start italic font-light mb-2">{t("testimonials.third.description")}</p>
+                <p class="font-semibold text-gray-600 text-center mt-4 mb-0">{t("testimonials.third.author")}</p>
+            </div>
+        </div>
+    </div>
+</section>
