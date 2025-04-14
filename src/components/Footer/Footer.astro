@@ -1,0 +1,45 @@
+---
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import {MapPin, Phone} from "@lucide/astro"
+import Logo from "../Logo/Logo.astro";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+
+---
+
+<footer class="max-w-6xl mx-auto px-4 pt-20">
+    <div class="gap-8 lg:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[250px_100px_1fr_1fr]">
+        <div class="flex flex-col gap-3 md:gap-2 items-center md:items-start gap-2">
+            <div class="flex gap-2 items-center">
+                <a href={`/${lang}/`} class="href">
+                  <Logo width={50} />
+                </a>
+                <h1
+                  class="font-accent leading-5 tracking-widest text-[22px] font-bold inline-block"
+                >
+                  La cocina <br /> de Vero
+                </h1>
+            </div>
+            <p class="md:text-pretty text-sm text-gray-600 md:text-start max-w-[50ch] text-balance text-center">{t("footer.description")}</p>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-pretty text-sm font-semibold">{t("footer.menu")}</h3>
+            <a href={`/${lang}/menu`} class="text-pretty text-sm text-gray-600">{t("nav.menu")}</a>
+            <a href={`/${lang}/about`} class="text-pretty text-sm text-gray-600">{t("nav.about")}</a>
+            <a href={`/${lang}/contact`} class="text-pretty text-sm text-gray-600">{t("nav.contact")}</a>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-pretty text-sm font-semibold">{t("footer.contact")}</h3>
+            <span class="flex gap-2 text-sm text-gray-600"><MapPin size="20" class="text-primary"/> 123 Main Street, Anytown, USA</span>
+            <a href="tel:+1-555-555-5555" class="text-pretty text-sm text-gray-600 flex gap-2"><Phone size="20" class="text-primary"/> +1 555 555 5555</a>
+        </div>
+        <div class="flex flex-col gap-2">
+            <h3 class="text-pretty text-sm font-semibold">{t("footer.hours")}</h3>
+            <p class="text-pretty text-sm text-gray-600 text-start flex gap-5">{t("footer.weekdays")} <span>10:00 AM - 8:00 PM</span></p>
+            <p class="text-pretty text-sm text-gray-600 text-start flex gap-5">{t("footer.weekends")} <span>10:00 AM - 8:00 PM</span></p>
+        </div>
+    </div>
+    <hr class="border-gray-300 border-1 mt-8 w-full mx-auto" />
+    <p class="text-sm text-gray-600 text-center py-8">{new Date().getFullYear()} - La cocina de Vero. </p>
+</footer>

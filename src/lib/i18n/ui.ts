@@ -51,6 +51,16 @@ export const ui = {
     'testimonials.second.description': 'La cocina de Vero is one of the best in Torrox. The quality of the ingredients is excellent and the service is very good!',
     'testimonials.third.author': 'Juan P.',
     'testimonials.third.description': 'It\'s like eating at home but without having to cook. Ideal for the days when I\'m sick and want something tasty and healthy.',
+
+    // Call to action
+
+    // Footer
+    'footer.description': 'Fresh, homemade dishes prepared daily at Torrox, Málaga.',
+    'footer.menu': 'Quick links',
+    'footer.contact': 'Contact',
+    'footer.hours': 'Hours',
+    'footer.weekdays': 'Monday to Friday',
+    'footer.weekends': 'Saturday and Sunday',
   },
   es: {
     // Nav
@@ -98,6 +108,16 @@ export const ui = {
     'testimonials.second.description': 'La cocina de Vero es una de las mejores de Torrox. La calidad de los ingredientes es excelente el trato es muy bueno!',
     'testimonials.third.author': 'Juan P.',
     'testimonials.third.description': 'Es como comer en casa pero sin tener que cocinar. Ideal para los días que voy con prisa y quiero algo rico y saludable.',
+
+    // Call to action
+
+    // Footer
+    'footer.description': 'Platos frescos y caseros preparados diariamente en Torrox, Málaga.',
+    'footer.menu': 'Enlaces',
+    'footer.contact': 'Contacto',
+    'footer.hours': 'Horario',
+    'footer.weekdays': 'Lunes a viernes',
+    'footer.weekends': 'Sábados y domingos',
   },
   de: {
     // Nav
@@ -145,5 +165,15 @@ export const ui = {
     'testimonials.second.description': 'La cocina de Vero ist einer der besten in Torrox. Die Qualität der Zutaten ist exzellent und der Service ist sehr gut!',
     'testimonials.third.author': 'Juan P.',
     'testimonials.third.description': 'Es ist wie zu Hause zu essen, aber ohne dass man kocht. Ideal für die Tage, wenn ich krank bin und etwas leckeres und gesundes habe.',
+
+    // Call to action
+
+    // Footer
+    'footer.description': 'Frische, hausgemachte Gerichte, täglich zubereitet in Torrox, Málaga.',
+    'footer.menu': 'Links',
+    'footer.contact': 'Kontakt',
+    'footer.hours': 'Zeitplan',
+    'footer.weekdays': 'Montag bis Freitag',
+    'footer.weekends': 'Samstag und Sonntag',
   },
 } as const;

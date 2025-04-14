@@ -5,6 +5,8 @@ import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs.astro";
 import OurDishes from "@/components/OurDishes/OurDishes.astro";
 import HowItWorks from "@/components/HowItWorks/HowItWorks.astro";
 import Testimonials from "@/components/Testimonials/Testimonials.astro";
+import CallToAction from "@/components/CallToAction/CallToAction.astro";
+import Footer from "@/components/Footer/Footer.astro";
 
 export async function getStaticPaths() {
 	return [
@@ -22,6 +24,6 @@ export async function getStaticPaths() {
 	<OurDishes />
 	<HowItWorks />
 	<Testimonials />
-	<!-- <CallToAction />
-	<Footer /> -->
+	<CallToAction />
+	<Footer />
 </Layout>
