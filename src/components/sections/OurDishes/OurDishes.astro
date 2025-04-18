@@ -1,24 +1,13 @@
 ---
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import Dishes from "@/db/dishes.json";
-import {Wheat, Egg, Fish, Milk, Shell, Nut} from "@lucide/astro"
+import {ALLERGENS} from "@/constants/allergens";
 
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 const maxDishes = 6;
 const dishes = Dishes.slice(0, maxDishes);
-
-
-
-const ALLERGENS: Record<string, any> = {
-    "gluten": Wheat,
-    "egg": Egg,
-    "fish": Fish,
-    "milk": Milk,
-    "mollusc": Shell,
-    "nuts": Nut,
-} as const;
 ---
 
 <section
