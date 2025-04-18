@@ -30,7 +30,7 @@ export const ui = {
     'ourDishes.title': 'Our popular dishes',
     'ourDishes.description': 'Explore our most loved dishes, prepared with care and ready to take away.',
     'ourDishes.allergens': 'Allergens',
-    'ourDishes.loadMore': 'Load more',
+    'ourDishes.loadMore': 'See more',
 
     // How it works
     'howItWorks.title': 'How it works',
@@ -144,7 +144,7 @@ export const ui = {
     'ourDishes.title': 'Unsere beliebten Gerichte',
     'ourDishes.description': 'Entdecke unsere beliebtesten Gerichte, zubereitet mit Sorgfalt und bereit zum Mitnehmen.',
     'ourDishes.allergens': 'Allergene',
-    'ourDishes.loadMore': 'Mehr laden',
+    'ourDishes.loadMore': 'Mehr sehen',
 
     // How it works
     'howItWorks.title': 'Wie funktioniert das?',
