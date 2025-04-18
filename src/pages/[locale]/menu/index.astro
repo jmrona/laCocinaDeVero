@@ -1,5 +1,6 @@
 ---
 import Container from '@/components/Global/Container.astro';
+import MenuList from '@/components/Menu/MenuList';
 import Layout from '@/layouts/Layout.astro';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 
@@ -9,6 +10,6 @@ const t = useTranslations(lang);
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container className="">
-       
+       <MenuList client:load/>
     </Container>
 </Layout>

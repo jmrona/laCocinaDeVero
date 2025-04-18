@@ -1,0 +1,22 @@
+.categoriesWrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 1rem;
+    scrollbar-width: none;
+    scrollbar-color: var(--color-primary) transparent;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+
+    .category[data-selected=true] {
+        background-color: color-mix(in oklab, var(--color-primary), var(--color-white) 55%);
+        outline: 2px solid color-mix(in oklab, var(--color-primary), var(--color-white) 30%);
+        outline-offset: -2px;
+    }
+
+    &:has(.category[data-selected=true]) ~ .category[data-selected=false] {
+        opacity: 0.5;
+        filter: grayscale(1)
+    }
+}

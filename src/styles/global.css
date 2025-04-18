@@ -5,7 +5,7 @@
 
 @theme {
   --font-display: "Inter", "sans-serif";
-  --font-accent: "accent-font", "Great Sejagad", "sans-serif";
+  --font-accent: "SourGummy", "sans-serif";
   --font-emoji: 'Segoe UI Emoji', 'Apple Color Emoji', 'Segoe UI Symbol', sans-serif;
   --color-primary: #FF5733;
   --color-secondary: #FFC300;
@@ -22,6 +22,36 @@ body {
     }
   }
     
+}
+
+@utility h1 {
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+  @apply font-semibold;
+  line-height: 1.2;
+}
+
+@utility h2 {
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  @apply font-semibold;
+  line-height: 1.2;
+}
+
+@utility h3 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  @apply font-semibold;
+  line-height: 1.2;
+}
+
+@utility h4 {
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+  @apply font-semibold;
+  line-height: 1.2;
+}
+
+@utility h5 {
+  font-size: clamp(1.125rem, 1vw + 1rem, 1.5rem);
+  @apply font-semibold;
+  line-height: 1.2;
 }
 
 @utility badge {
