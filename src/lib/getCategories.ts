@@ -27,7 +27,6 @@ export const getCategories = async (lan: LangType) => {
     }
     , []);
 
-    console.log('categories: ', categories);
     return categories;
 }
 
