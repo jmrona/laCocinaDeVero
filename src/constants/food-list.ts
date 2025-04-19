@@ -18,7 +18,7 @@ export const FOOD_LIST = [
       cal: 180,
       picture: "",
       ingredientes: ["tomate", "pepino", "pimiento", "cebolla", "ajo", "aceite de oliva", "vinagre", "sal"],
-      allergens: [],
+      allergens: ["sulphur"],
       category: [1],
     },
     {
@@ -40,7 +40,15 @@ export const FOOD_LIST = [
       cal: 200,
       picture: "",
       ingredientes: ["patata", "cebolla", "perejil", "vinagre", "aceite de oliva"],
-      allergens: [],
+      allergens: [
+        "soy",
+        "crustacean",
+        "celery",
+        "mustard",
+        "sesame",
+        "mollusk",
+        "lupine",
+      ],
       category: [1],
     },
     {
