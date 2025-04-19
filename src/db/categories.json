@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "es": "Lunes",
+            "en": "Monday",
+            "de": "Montag"
+        }
+    }, 
+    {
+        "id": 2,
+        "name": {
+            "es": "Martes",
+            "en": "Tuesday",
+            "de": "Dienstag"
+        }
+    },
+    {
+        "id": 3,
+        "name": {
+            "es": "Miércoles",
+            "en": "Wednesday",
+            "de": "Mittwoch"
+        }
+    },
+    {
+        "id": 4,
+        "name": {
+            "es": "Jueves",
+            "en": "Thursday",
+            "de": "Donnerstag"
+        }
+    },
+    {
+        "id": 5,
+        "name": {
+            "es": "Viernes",
+            "en": "Friday",
+            "de": "Freitag"
+        }
+    },
+    {
+        "id": 6,
+        "name": {
+            "es": "Sábado",
+            "en": "Saturday",
+            "de": "Samstag"
+        }
+    },
+    {
+        "id": 7,
+        "name": {
+            "es": "Domingo",
+            "en": "Sunday",
+            "de": "Sonntag"
+        }
+    }, 
+    {
+        "id": 8,
+        "name": {
+            "es": "Carnes",
+            "en": "Meats",
+            "de": "Fleisch"
+        }
+    },
+    {
+        "id": 9,
+        "name": {
+            "es": "Pescados",
+            "en": "Fish",
+            "de": "Fisch"
+        }
+    },
+    {
+        "id": 10,
+        "name": {
+            "es": "Tortillas",
+            "en": "Omelets",
+            "de": "Omeletts"
+        }
+    },
+    {
+        "id": 11,
+        "name": {
+            "es": "Pastas",
+            "en": "Pasta",
+            "de": "Teigwaren"
+        }
+    },
+    {
+        "id": 12,
+        "name": {
+            "es": "Postres",
+            "en": "Desserts",
+            "de": "Nachspeisen"
+        }
+    },
+    {
+        "id": 13,
+        "name": {
+            "es": "Extra",
+            "en": "Extras",
+            "de": "Extras"
+        }
+    },
+    {
+        "id": 14,
+        "name": {
+            "es": "Bebidas",
+            "en": "Drinks",
+            "de": "Getränke"
+        }
+    }
+]
