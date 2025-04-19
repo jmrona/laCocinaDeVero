@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 
 import {ArrowRight} from 'lucide-react'
-import { FOOD_CATEGORIES } from '@/constants/food-categories'
 import { FOOD_LIST } from '@/constants/food-list'
 import FoodCategories from './FoodCategories/FoodCategories'
 import { useTranslations } from '@/lib/i18n/useTranslations'
