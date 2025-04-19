@@ -5,11 +5,12 @@ import vercel from "@astrojs/vercel";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import svgr from "vite-plugin-svgr";
+import minify from 'astro-minify-html-swc'
 
 
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss(), svgr()],
+    plugins: [tailwindcss(), svgr(), minify()],
   },
 
   i18n: {
