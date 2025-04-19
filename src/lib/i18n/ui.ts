@@ -5,74 +5,17 @@ export const languages = {
 } as const;
 
 export const ui = {
-  en: {
-    // Nav
-    'nav.menu': 'Menu',
-    'nav.about': 'About us',
-    'nav.contact': 'Contact',
-    
-    // Hero
-    'hero.title': 'Delicious food, to take away',
-    'hero.subtitle': 'Fresh, homemade dishes prepared daily. Avoid the wait and enjoy restaurant-quality food at home.',
-    
-    // Why choose us
-    'whyChooseUs.title': 'Why choose us?',
-    'whyChooseUs.subtitle': 'Meals fresh daily using locally sourced ingredients.',
-    'whyChooseUs.description': 'We are committed to quality and cook every dish daily with locally sourced products.',
-    'whyChooseUs.freshIngredients': 'Fresh ingredients',
-    'whyChooseUs.freshIngredients.description': 'We use only the freshest, locally sourced ingredients in all our dishes.',
-    'whyChooseUs.dailyPrepared': 'Daily prepared',
-    'whyChooseUs.dailyPrepared.description': 'Our dishes are prepared daily to ensure flavor and freshness every time.',
-    'whyChooseUs.readyToTakeAway': 'Ready to take away',
-    'whyChooseUs.readyToTakeAway.description': 'Designed to make you enjoy a home-cooked meal without hassle, directly for take-away.',
-    
-    // Our dishes
-    'ourDishes.title': 'Our popular dishes',
-    'ourDishes.description': 'Explore our most loved dishes, prepared with care and ready to take away.',
-    'ourDishes.allergens': 'Allergens',
-    'ourDishes.loadMore': 'See more',
-
-    // How it works
-    'howItWorks.title': 'How it works',
-    'howItWorks.description': 'Getting your favorite food is as easy as 1-2-3',
-    'howItWorks.chooseYourMeal': 'Choose your meal',
-    'howItWorks.chooseYourMeal.description': 'Check our menu and choose what you want to eat.', 
-    'howItWorks.placeYourOrder': 'Place your order',
-    'howItWorks.placeYourOrder.description': 'Call us, tell us your order and we will prepare it for you.',
-    'howItWorks.enjoyYourMeal': 'Enjoy your meal',    
-    'howItWorks.enjoyYourMeal.description': 'When you arrive, we will give you your freshly prepared meal.',
-
-    // Testimonials
-    'testimonials.title': 'What our customers say',
-    'testimonials.description': 'Don\'t just take our word for it - hear from our satisfied customers.',
-    'testimonials.first.author': 'Luis R.',
-    'testimonials.first.description': 'After work, I usually go to the store to buy food. It\'s always fresh, well-prepared and ready in a few minutes. I\'m 10!',
-    'testimonials.second.author': 'Ana G.',
-    'testimonials.second.description': 'La cocina de Vero is one of the best in Torrox. The quality of the ingredients is excellent and the service is very good!',
-    'testimonials.third.author': 'Juan P.',
-    'testimonials.third.description': 'It\'s like eating at home but without having to cook. Ideal for the days when I\'m sick and want something tasty and healthy.',
-
-    // Call to action
-
-    // Footer
-    'footer.description': 'Fresh, homemade dishes prepared daily at Torrox, Málaga.',
-    'footer.menu': 'Quick links',
-    'footer.contact': 'Contact',
-    'footer.hours': 'Hours',
-    'footer.weekdays': 'Monday to Friday',
-    'footer.weekends': 'Saturday and Sunday',
-  },
   es: {
     // Nav
     'nav.menu': 'Menú',
     'nav.about': 'Sobre nosotros',
     'nav.contact': 'Contacto',
     
-    // Hero
+    // Home - Hero
     'hero.title': 'Comida deliciosa, para llevar',
     'hero.subtitle': 'Platos frescos y caseros preparados diariamente. Evite las esperas y disfrute de comida con calidad de restaurante en casa.',
     
-    // Why choose us
+    // Home - Why choose us
     'whyChooseUs.title': '¿Por qué elegirnos?',
     'whyChooseUs.subtitle': 'Platos frescos preparados diariamente.',
     'whyChooseUs.description': 'Comprometidos con la calidad, preparamos cada plato con productos de temporada ',
@@ -83,13 +26,13 @@ export const ui = {
     'whyChooseUs.readyToTakeAway': 'Platos listos para llevar',
     'whyChooseUs.readyToTakeAway.description': 'Pensados para que disfrutes una comida casera sin complicaciones, directamente para llevar.',
 
-    // Our dishes
+    // Home - Our dishes
     'ourDishes.title': 'Nuestros platos más populares',
     'ourDishes.description': 'Explora nuestras platos favoritos, preparados con cuidado y listos para llevar.',
     'ourDishes.allergens': 'Alérgenos',
     'ourDishes.loadMore': 'Ver más',
 
-    // How it works
+    // Home - How it works
     'howItWorks.title': 'Cómo funciona',
     'howItWorks.description': 'Hacer un pedido de tu comida favorita es super fácil',
     'howItWorks.chooseYourMeal': 'Elige que te apetece comer',
@@ -99,7 +42,7 @@ export const ui = {
     'howItWorks.enjoyYourMeal': 'Disfruta tu comida',
     'howItWorks.enjoyYourMeal.description': 'Cuando llegues, te daremos tu pedido recién hecho y listo para comer.',
 
-    // Testimonials
+    // Home - Testimonials
     'testimonials.title': 'Que dicen nuestros clientes',
     'testimonials.description': 'No lo decimos solo nosotros, nuestros clientes también lo confirman.',
     'testimonials.first.author': 'Luis R.',
@@ -109,7 +52,7 @@ export const ui = {
     'testimonials.third.author': 'Juan P.',
     'testimonials.third.description': 'Es como comer en casa pero sin tener que cocinar. Ideal para los días que voy con prisa y quiero algo rico y saludable.',
 
-    // Call to action
+    // Home - Call to action
 
     // Footer
     'footer.description': 'Platos frescos y caseros preparados diariamente en Torrox, Málaga.',
@@ -118,6 +61,73 @@ export const ui = {
     'footer.hours': 'Horario',
     'footer.weekdays': 'Lunes a viernes',
     'footer.weekends': 'Sábados y domingos',
+
+    // Menu
+    'menu.specialMenu': 'Menú del día',
+    'menu.categories': 'Categorías',
+    'menu.allergens': 'Alérgenos',
+  },
+  en: {
+    // Nav
+    'nav.menu': 'Menu',
+    'nav.about': 'About us',
+    'nav.contact': 'Contact',
+    
+    // Hero
+    'hero.title': 'Delicious food, to take away',
+    'hero.subtitle': 'Fresh, homemade dishes prepared daily. Avoid the wait and enjoy restaurant-quality food at home.',
+    
+    // Home - Why choose us
+    'whyChooseUs.title': 'Why choose us?',
+    'whyChooseUs.subtitle': 'Meals fresh daily using locally sourced ingredients.',
+    'whyChooseUs.description': 'We are committed to quality and cook every dish daily with locally sourced products.',
+    'whyChooseUs.freshIngredients': 'Fresh ingredients',
+    'whyChooseUs.freshIngredients.description': 'We use only the freshest, locally sourced ingredients in all our dishes.',
+    'whyChooseUs.dailyPrepared': 'Daily prepared',
+    'whyChooseUs.dailyPrepared.description': 'Our dishes are prepared daily to ensure flavor and freshness every time.',
+    'whyChooseUs.readyToTakeAway': 'Ready to take away',
+    'whyChooseUs.readyToTakeAway.description': 'Designed to make you enjoy a home-cooked meal without hassle, directly for take-away.',
+    
+    // Home - Our dishes
+    'ourDishes.title': 'Our popular dishes',
+    'ourDishes.description': 'Explore our most loved dishes, prepared with care and ready to take away.',
+    'ourDishes.allergens': 'Allergens',
+    'ourDishes.loadMore': 'See more',
+
+    // Home - How it works
+    'howItWorks.title': 'How it works',
+    'howItWorks.description': 'Getting your favorite food is as easy as 1-2-3',
+    'howItWorks.chooseYourMeal': 'Choose your meal',
+    'howItWorks.chooseYourMeal.description': 'Check our menu and choose what you want to eat.', 
+    'howItWorks.placeYourOrder': 'Place your order',
+    'howItWorks.placeYourOrder.description': 'Call us, tell us your order and we will prepare it for you.',
+    'howItWorks.enjoyYourMeal': 'Enjoy your meal',    
+    'howItWorks.enjoyYourMeal.description': 'When you arrive, we will give you your freshly prepared meal.',
+
+    // Home - Testimonials
+    'testimonials.title': 'What our customers say',
+    'testimonials.description': 'Don\'t just take our word for it - hear from our satisfied customers.',
+    'testimonials.first.author': 'Luis R.',
+    'testimonials.first.description': 'After work, I usually go to the store to buy food. It\'s always fresh, well-prepared and ready in a few minutes. I\'m 10!',
+    'testimonials.second.author': 'Ana G.',
+    'testimonials.second.description': 'La cocina de Vero is one of the best in Torrox. The quality of the ingredients is excellent and the service is very good!',
+    'testimonials.third.author': 'Juan P.',
+    'testimonials.third.description': 'It\'s like eating at home but without having to cook. Ideal for the days when I\'m sick and want something tasty and healthy.',
+
+    // Home - Call to action
+
+    // Footer
+    'footer.description': 'Fresh, homemade dishes prepared daily at Torrox, Málaga.',
+    'footer.menu': 'Quick links',
+    'footer.contact': 'Contact',
+    'footer.hours': 'Hours',
+    'footer.weekdays': 'Monday to Friday',
+    'footer.weekends': 'Saturday and Sunday',
+
+    // Menu
+    'menu.specialMenu': 'Today\'s menu',
+    'menu.categories': 'Categories',
+    'menu.allergens': 'Allergens',
   },
   de: {
     // Nav
@@ -129,7 +139,7 @@ export const ui = {
     'hero.title': 'Leckeres Essen, zum Mitnehmen',
     'hero.subtitle': 'Frische, hausgemachte Gerichte, täglich zubereitet.',
     
-    // Why choose us
+    // Home - Why choose us
     'whyChooseUs.title': 'Warum uns wählen?',
     'whyChooseUs.subtitle': 'Wir bereiten alle unsere Gerichte täglich frisch mit lokal bezogenen Zutaten zu.',
     'whyChooseUs.description': 'Wir sind auf die Qualität angewiesen und kochen alle Gerichte täglich mit lokalen Produkten.',
@@ -140,13 +150,13 @@ export const ui = {
     'whyChooseUs.readyToTakeAway': 'Bereit zum Mitnehmen',
     'whyChooseUs.readyToTakeAway.description': 'Entworfen, um Sie zum Mitnehmen zu ermöglichen, ohne die Warte und die Beschwerden, die Sie beim Essen in Ihrer Wohnung erleben können.',
     
-    // Our dishes
+    // Home - Our dishes
     'ourDishes.title': 'Unsere beliebten Gerichte',
     'ourDishes.description': 'Entdecke unsere beliebtesten Gerichte, zubereitet mit Sorgfalt und bereit zum Mitnehmen.',
     'ourDishes.allergens': 'Allergene',
     'ourDishes.loadMore': 'Mehr sehen',
 
-    // How it works
+    // Home - How it works
     'howItWorks.title': 'Wie funktioniert das?',
     'howItWorks.description': 'Einen Lieblingsgericht zu bestellen ist so einfach wie 1-2-3',
     'howItWorks.chooseYourMeal': 'Wähle dein Gericht',
@@ -156,7 +166,7 @@ export const ui = {
     'howItWorks.enjoyYourMeal': 'Genieße dein Gericht',
     'howItWorks.enjoyYourMeal.description': 'Wenn du ankommst, wirst du dein frisch gekochtes Gericht zur Verfügung stellen.',
 
-    // Testimonials
+    // Home - Testimonials
     'testimonials.title': 'Was unsere Kunden sagen',
     'testimonials.description': 'Lass uns nicht nur unsere Worte sagen, sondern höre von unseren zufriedenen Kunden.',
     'testimonials.first.author': 'Luis R.',
@@ -166,7 +176,7 @@ export const ui = {
     'testimonials.third.author': 'Juan P.',
     'testimonials.third.description': 'Es ist wie zu Hause zu essen, aber ohne dass man kocht. Ideal für die Tage, wenn ich krank bin und etwas leckeres und gesundes habe.',
 
-    // Call to action
+    // Home - Call to action
 
     // Footer
     'footer.description': 'Frische, hausgemachte Gerichte, täglich zubereitet in Torrox, Málaga.',
@@ -175,5 +185,10 @@ export const ui = {
     'footer.hours': 'Zeitplan',
     'footer.weekdays': 'Montag bis Freitag',
     'footer.weekends': 'Samstag und Sonntag',
+
+    // Menu
+    'menu.specialMenu': 'Tagesmenü',
+    'menu.categories': 'Kategorien',
+    'menu.allergens': 'Allergene',
   },
 } as const;
