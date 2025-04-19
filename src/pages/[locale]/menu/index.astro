@@ -10,6 +10,6 @@ const t = useTranslations(lang);
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container className="">
-       <MenuList client:load/>
+       <MenuList client:load lang={lang}/>
     </Container>
 </Layout>
