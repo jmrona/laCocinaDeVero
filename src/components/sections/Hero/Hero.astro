@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
-import boqueronesImage from "@/assets/images/boquerones.jpg";
-import camperoImage from "@/assets/images/campero.jpg";
-import pestinosImage from "@/assets/images/pestinos.jpg";
-import polloAlCurryImage from "@/assets/images/pollo-al-curry.jpg";
-import potajeImage from "@/assets/images/potaje.webp";
-import rosquillasImage from "@/assets/images/rosquillas.jpg";
+import LogoImg from "@/assets/images/logo.webp";
 import { useTranslations } from "@/lib/i18n/useTranslations";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
@@ -14,7 +8,7 @@ const t = useTranslations(lang);
 ---
 
 <section
-  class="h-full min-h-[calc(100dvh-93px)] max-w-6xl gap-6 mx-auto grid grid-col-1 md:grid-cols-2 grid-rows-[auto_1fr] md:grid-rows-1 p-4"
+  class="h-full min-h-[calc(100dvh-93px)] max-w-6xl gap-6 mx-auto grid grid-col-1 md:grid-cols-2 grid-rows-[auto_1fr] md:grid-rows-1 p-4 overflow-x-hidden"
 >
   <div class="place-content-start md:place-content-center py-10">
     <h1 class="text-4xl md:text-6xl font-bold tracking-tighter">
@@ -28,6 +22,9 @@ const t = useTranslations(lang);
   </div>
 
   <div class="place-content-start md:place-content-center">
+    <Image src={LogoImg} alt={"Logo de la cocina de Vero"} class={"scale-[1.2]"}/>
+  </div>
+  <!-- <div class="place-content-start md:place-content-center">
     <div
       class="aspect-square md:aspect-auto md:h-[500px] w-full grid grid-cols-3 grid-rows-5 gap-4"
     >
@@ -67,5 +64,5 @@ const t = useTranslations(lang);
         />
       </div>
     </div>
-  </div>
+  </div> -->
 </section>

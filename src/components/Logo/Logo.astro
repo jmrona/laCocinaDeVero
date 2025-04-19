@@ -1,18 +1,8 @@
 ---
-const { width = 50 } = Astro.props as { width: number };
+const { width = 70, ...rest} = Astro.props as { width: number };
+import LogoImg from "@/assets/images/logo.webp"
+import { Image } from "astro:assets";
 ---
 
-<style>
-  .logo {
-    background-image: url("img/fork-knife.svg");
-    background-size: 50px;
-    background-position: 50% 10px;
-    background-repeat: no-repeat;
-  }
-</style>
+<Image src={LogoImg} alt="Logo de la cocina de Vero" width={width} class={"h-full"} {...rest}/>
 
-<div
-  class={`aspect-square bg-secondary rounded-2xl logo`}
-  style={`width: ${width}px`}
->
-</div>

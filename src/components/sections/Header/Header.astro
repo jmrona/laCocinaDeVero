@@ -9,16 +9,14 @@ const lang = Astro.currentLocale as "es" | "en" | "de";
   class="sticky top-0 border-b-[1px] bg-white/65 backdrop-blur-lg border-neutral-300 max-h-[93px] z-50"
 >
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-    <div class="flex gap-2 items-center">
-      <a href={`/${lang}/`} class="href">
-        <Logo width={50} />
-      </a>
+    <a href={`/${lang}/`} class="flex gap-2 items-center">
+      <Logo width={60} />
       <h1
-        class="font-accent leading-5 tracking-widest !text-[22px] font-bold inline-block"
+        class="font-accent leading-5 !text-[22px] font-bold inline-block"
       >
         La cocina <br /> de Vero
       </h1>
-    </div>
+    </a>
     <Menu />
   </div>
 </nav>
