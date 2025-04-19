@@ -7,9 +7,9 @@
   --font-display: "Inter", "sans-serif";
   --font-accent: "SourGummy", "sans-serif";
   --font-emoji: 'Segoe UI Emoji', 'Apple Color Emoji', 'Segoe UI Symbol', sans-serif;
-  --color-primary: #FF5733;
-  --color-secondary: #FFC300;
-  --color-neutral: #706C61;
+  --color-primary: #DC7218;
+  --color-secondary: #492919;
+  --color-neutral: #EDD3A4;
   --color-accent: #F8F8F8;
 }
 
@@ -55,5 +55,5 @@ body {
 }
 
 @utility badge {
-  @apply text-sm font-bold tracking-tighter bg-primary px-4 py-1 rounded text-white;
+  @apply text-sm font-semibold bg-secondary px-4 py-1 rounded text-white;
 }
