@@ -4,9 +4,9 @@ const { id = "language" } = Astro.props;
 ---
 
 <select name="language" id={id} class="font-emoji" value={langSelected}>
-  <option value="es" selected={langSelected === "es"}>Español</option>
-  <option value="en" selected={langSelected === "en"}>English</option>
-  <option value="de" selected={langSelected === "de"}>Deutsch </option>
+  <option value="es" selected={langSelected === "es"}>ES</option>
+  <option value="en" selected={langSelected === "en"}>EN</option>
+  <option value="de" selected={langSelected === "de"}>DE </option>
 </select>
 
 <script define:vars={{ langSelected, id }}>
