@@ -1,182 +1,370 @@
 [
   {
+    "id": 1,
     "name": {
-      "es": "Espeto de sardinas",
-      "en": "Grilled sardine skewer",
-      "de": "Sardinen-Spieß"
+      "es": "Puchero",
+      "en": "Puchero",
+      "de": "Puchero"
+    },
+    "description": {
+      "es": "Puchero de carne de ternera, pollo y cerdo con garbanzos y verduras.",
+      "en": "Puchero with beef, chicken, and pork with chickpeas and vegetables.",
+      "de": "Puchero mit Rindfleisch, Hähnchen und Schweinefleisch mit Kichererbsen und Gemüse."
     },
     "ingredients": {
-      "es": ["sardinas", "sal", "leña de olivo"],
-      "en": ["sardines", "salt", "olive wood"],
-      "de": ["Sardinen", "Salz", "Olivenholz"]
-    },
-    "allergens": ["fish"],
-    "price": 8.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Porra antequerana",
-      "en": "Cold tomato soup (Porra)",
-      "de": "Kalte Tomatensuppe (Porra)"
-    },
-    "ingredients": {
-      "es": ["tomate", "pan", "aceite de oliva", "ajo", "jamón", "huevo cocido"],
-      "en": ["tomato", "bread", "olive oil", "garlic", "ham", "boiled egg"],
-      "de": ["Tomate", "Brot", "Olivenöl", "Knoblauch", "Schinken", "gekochtes Ei"]
-    },
-    "allergens": ["gluten", "egg"],
-    "price": 6.0,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Ajoblanco",
-      "en": "Cold garlic almond soup",
-      "de": "Kalte Knoblauch-Mandel-Suppe"
-    },
-    "ingredients": {
-      "es": ["almendras", "ajo", "pan", "aceite de oliva", "vinagre", "agua"],
-      "en": ["almonds", "garlic", "bread", "olive oil", "vinegar", "water"],
-      "de": ["Mandeln", "Knoblauch", "Brot", "Olivenöl", "Essig", "Wasser"]
-    },
-    "allergens": ["nuts", "gluten"],
-    "price": 5.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Boquerones en vinagre",
-      "en": "Anchovies in vinegar",
-      "de": "Sardellen in Essig"
-    },
-    "ingredients": {
-      "es": ["boquerones", "vinagre", "ajo", "perejil", "aceite de oliva"],
-      "en": ["anchovies", "vinegar", "garlic", "parsley", "olive oil"],
-      "de": ["Sardellen", "Essig", "Knoblauch", "Petersilie", "Olivenöl"]
-    },
-    "allergens": ["fish"],
-    "price": 7.0,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Ensalada malagueña",
-      "en": "Málaga-style potato salad",
-      "de": "Kartoffelsalat nach Málaga-Art"
-    },
-    "ingredients": {
-      "es": ["patatas", "bacalao", "naranja", "aceitunas", "cebolla", "aceite de oliva"],
-      "en": ["potatoes", "cod", "orange", "olives", "onion", "olive oil"],
-      "de": ["Kartoffeln", "Kabeljau", "Orange", "Oliven", "Zwiebel", "Olivenöl"]
-    },
-    "allergens": ["fish"],
-    "price": 6.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Gazpachuelo",
-      "en": "Fish and mayonnaise soup",
-      "de": "Fischsuppe mit Mayonnaise"
-    },
-    "ingredients": {
-      "es": ["pescado blanco", "patata", "huevo", "mayonesa", "agua", "sal"],
-      "en": ["white fish", "potato", "egg", "mayonnaise", "water", "salt"],
-      "de": ["Weißfisch", "Kartoffel", "Ei", "Mayonnaise", "Wasser", "Salz"]
-    },
-    "allergens": ["egg", "fish"],
-    "price": 7.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Campero malagueño",
-      "en": "Málaga-style sandwich",
-      "de": "Málaga-Sandwich"
-    },
-    "ingredients": {
-      "es": ["pan redondo", "pollo", "lechuga", "tomate", "mayonesa", "queso"],
-      "en": ["round bread", "chicken", "lettuce", "tomato", "mayonnaise", "cheese"],
-      "de": ["Rundes Brot", "Hähnchen", "Salat", "Tomate", "Mayonnaise", "Käse"]
-    },
-    "allergens": ["gluten", "egg", "milk"],
-    "price": 6.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Churros con chocolate",
-      "en": "Churros with chocolate",
-      "de": "Churros mit Schokolade"
-    },
-    "ingredients": {
-      "es": ["harina", "agua", "sal", "aceite", "chocolate"],
-      "en": ["flour", "water", "salt", "oil", "chocolate"],
-      "de": ["Mehl", "Wasser", "Salz", "Öl", "Schokolade"]
-    },
-    "allergens": ["gluten"],
-    "price": 4.0,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Fritura malagueña",
-      "en": "Málaga-style fried fish",
-      "de": "Frittierter Fisch nach Málaga-Art"
-    },
-    "ingredients": {
-      "es": ["boquerones", "calamares", "rosada", "harina", "limón", "sal"],
-      "en": ["anchovies", "squid", "pink hake", "flour", "lemon", "salt"],
-      "de": ["Sardellen", "Tintenfisch", "Seehecht", "Mehl", "Zitrone", "Salz"]
-    },
-    "allergens": ["fish", "gluten", "mollusc"],
-    "price": 10.0,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Salmorejo",
-      "en": "Cold tomato cream",
-      "de": "Kalte Tomatencreme"
-    },
-    "ingredients": {
-      "es": ["tomate", "pan", "aceite de oliva", "ajo", "huevo cocido", "jamón"],
-      "en": ["tomato", "bread", "olive oil", "garlic", "boiled egg", "ham"],
-      "de": ["Tomate", "Brot", "Olivenöl", "Knoblauch", "gekochtes Ei", "Schinken"]
-    },
-    "allergens": ["gluten", "egg"],
-    "price": 5.0,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Tarta Malagueña",
-      "en": "Málaga cake",
-      "de": "Málaga-Kuchen"
-    },
-    "ingredients": {
-      "es": ["harina", "almendras", "huevo", "vino dulce", "azúcar", "canela"],
-      "en": ["flour", "almonds", "egg", "sweet wine", "sugar", "cinnamon"],
-      "de": ["Mehl", "Mandeln", "Ei", "Süßwein", "Zucker", "Zimt"]
-    },
-    "allergens": ["gluten", "egg", "nuts"],
-    "price": 4.5,
-    "image": "https://picsum.photos/500/500"
-  },
-  {
-    "name": {
-      "es": "Berza malagueña",
-      "en": "Málaga-style stew",
-      "de": "Eintopf nach Málaga-Art"
-    },
-    "ingredients": {
-      "es": ["garbanzos", "judías verdes", "patatas", "morcilla", "chorizo", "tocino"],
-      "en": ["chickpeas", "green beans", "potatoes", "blood sausage", "chorizo", "bacon"],
-      "de": ["Kichererbsen", "grüne Bohnen", "Kartoffeln", "Blutwurst", "Chorizo", "Speck"]
+      "es": ["carne de ternera", "pollo", "cerdo", "garbanzos", "verduras"],
+      "en": ["beef", "chicken", "pork", "chickpeas", "vegetables"],
+      "de": ["Rindfleisch", "Hähnchen", "Schweinefleisch", "Kichererbsen", "Gemüse"]
     },
     "allergens": [],
-    "price": 8.0,
-    "image": "https://picsum.photos/500/500"
+    "price": 4,
+    "category": [1],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  }, 
+  {
+    "id": 2,
+    "name": {
+      "es": "Alubias pintas",
+      "en": "Pinto beans",
+      "de": "Pinto-Bohnen"
+    },
+    "description": {
+      "es": "Alubias pintas con chorizo y verduras.",
+      "en": "Pinto beans with chorizo and vegetables.",
+      "de": "Pinto-Bohnen mit Chorizo und Gemüse."
+    },
+    "ingredients": {
+      "es": ["alubias pintas", "chorizo", "verduras"],
+      "en": ["pinto beans", "chorizo", "vegetables"],
+      "de": ["Pinto-Bohnen", "Chorizo", "Gemüse"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [1],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  }, 
+  {
+    "id": 3,
+    "name": {
+      "es": "Crema de verduras variadas",
+      "en": "Cream of assorted vegetables",
+      "de": "Gemüsesuppe"
+    },
+    "description": {
+      "es": "Crema de verduras variadas con un toque de aceite de oliva virgen extra.",
+      "en": "Cream of assorted vegetables with a touch of extra virgin olive oil.",
+      "de": "Gemüsesuppe mit einem Hauch von nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["calabaza", "zanahoria", "puerro", "aceite de oliva virgen extra"],
+      "en": ["pumpkin", "carrot", "leek", "extra virgin olive oil"],
+      "de": ["Kürbis", "Karotte", "Lauch", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [1, 3, 5],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 4,
+    "name": {
+      "es": "Lentejas",
+      "en": "Lentils",
+      "de": "Linsen"
+    },
+    "description": {
+      "es": "Lentejas con chorizo, verduras, pimentón, comino y un toque de laurel.",
+      "en": "Lentils with chorizo, vegetables, paprika, cumin, and a touch of bay leaf.",
+      "de": "Linsen mit Chorizo, Gemüse, Paprika, Kreuzkümmel und einem Hauch von Lorbeer."
+    },
+    "ingredients": {
+      "es": ["lentejas", "chorizo", "verduras", "pimentón", "comino", "laurel"],
+      "en": ["lentils", "chorizo", "vegetables", "paprika", "cumin", "bay leaf"],
+      "de": ["Linsen", "Chorizo", "Gemüse", "Paprika", "Kreuzkümmel", "Lorbeer"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [2],
+    "calories": 350,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 5,
+    "name": {
+      "es": "Gazpachuelo",
+      "en": "Gazpachuelo",
+      "de": "Gazpachuelo"
+    },
+    "description": {
+      "es": "Gazpachuelo con pescado y mayonesa.",
+      "en": "Gazpachuelo with fish and mayonnaise.",
+      "de": "Gazpachuelo mit Fisch und Mayonnaise."
+    },
+    "ingredients": {
+      "es": ["pescado", "mayonesa", "agua", "pan", "aceite de oliva virgen extra", "pepino", "tomate"],
+      "en": ["fish", "mayonnaise", "water", "bread", "extra virgin olive oil", "cucumber", "tomato"],
+      "de": ["Fisch", "Mayonnaise", "Wasser", "Brot", "natives Olivenöl extra", "Gurke", "Tomate"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [2],
+    "calories": 400,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 6,
+    "name": {
+      "es": "Crema de calabacín",
+      "en": "Cream of zucchini",
+      "de": "Zucchini-Cremesuppe"
+    },
+    "description": {
+      "es": "Crema de calabacín con un toque de aceite de oliva virgen extra.",
+      "en": "Cream of zucchini with a touch of extra virgin olive oil.",
+      "de": "Zucchini-Cremesuppe mit einem Hauch von nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["calabacín", "cebolla", "aceite de oliva virgen extra"],
+      "en": ["zucchini", "onion", "extra virgin olive oil"],
+      "de": ["Zucchini", "zwiebel", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [2, 4],
+    "calories": 250,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 7,
+    "name": {
+      "es": "Sopa picadillo",
+      "en": "Picadillo soup",
+      "de": "Picadillo-Suppe"
+    },
+    "description": {
+      "es": "Sopa picadillo con carne de ternera, pollo y cerdo.",
+      "en": "Picadillo soup with beef, chicken, and pork.",
+      "de": "Picadillo-Suppe mit Rindfleisch, Hähnchen und Schweinefleisch."
+    },
+    "ingredients": {
+      "es": ["carne de ternera", "pollo", "cerdo", "verduras"],
+      "en": ["beef", "chicken", "pork", "vegetables"],
+      "de": ["Rindfleisch", "Hähnchen", "Schweinefleisch", "Gemüse"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [3],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 8,
+    "name": {
+      "es": "Coles",
+      "en": "Cabbage",
+      "de": "Kohl"
+    },
+    "description": {
+      "es": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "de": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    "ingredients": {
+      "es": ["col", "aceite de oliva virgen extra", "sal"],
+      "en": ["cabbage", "extra virgin olive oil", "salt"],
+      "de": ["Kohl", "natives Olivenöl extra", "Salz"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [3],
+    "calories": 200,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 9,
+    "name": {
+      "es": "Potaje de habichuelas",
+      "en": "Bean stew",
+      "de": "Bohneneintopf"
+    },
+    "description": {
+      "es": "Potaje de habichuelas con chorizo y verduras.",
+      "en": "Bean stew with chorizo and vegetables.",
+      "de": "Bohneneintopf mit Chorizo und Gemüse."
+    },
+    "ingredients": {
+      "es": ["habichuelas", "chorizo", "verduras"],
+      "en": ["beans", "chorizo", "vegetables"],
+      "de": ["Bohnen", "Chorizo", "Gemüse"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [4],
+    "calories": 350,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 10,
+    "name": {
+      "es": "Potaje de garbanzos y acelgas",
+      "en": "Chickpea and chard stew",
+      "de": "Kichererbsen- und Mangold-Eintopf"
+    },
+    "description": {
+      "es": "Potaje de garbanzos y acelgas con un toque de pimentón.",
+      "en": "Chickpea and chard stew with a touch of paprika.",
+      "de": "Kichererbsen- und Mangold-Eintopf mit einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["garbanzos", "acelgas", "pimentón"],
+      "en": ["chickpeas", "chard", "paprika"],
+      "de": ["Kichererbsen", "Mangold", "Paprika"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [4],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 11,
+    "name": {
+      "es": "Estofado de ternera",
+      "en": "Beef stew",
+      "de": "Rindfleisch-Eintopf"
+    },
+    "description": {
+      "es": "Estofado de ternera con patatas y zanahorias.",
+      "en": "Beef stew with potatoes and carrots.",
+      "de": "Rindfleisch-Eintopf mit Kartoffeln und Karotten."
+    },
+    "ingredients": {
+      "es": ["carne de ternera", "patatas", "zanahorias"],
+      "en": ["beef", "potatoes", "carrots"],
+      "de": ["Rindfleisch", "Kartoffeln", "Karotten"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [5],
+    "calories": 400,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 12,
+    "name": {
+      "es": "Cazuela de fideos",
+      "en": "Noodle casserole",
+      "de": "Cazuela de fideos"
+    },
+    "description": {
+      "es": "Cazuela de fideos con carne de ternera y verduras.",
+      "en": "Noodle casserole with beef and vegetables.",
+      "de": "Cazuela de fideos mit Rindfleisch und Gemüse."
+    },
+    "ingredients": {
+      "es": ["fideos", "carne de ternera", "verduras"],
+      "en": ["noodles", "beef", "vegetables"],
+      "de": ["Nudeln", "Rindfleisch", "Gemüse"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [5],
+    "calories": 350,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 13,
+    "name": {
+      "es": "Callos",
+      "en": "Tripe",
+      "de": "Kutteln"
+    },
+    "description": {
+      "es": "Callos con garbanzos y chorizo.",
+      "en": "Tripe with chickpeas and chorizo.",
+      "de": "Kutteln mit Kichererbsen und Chorizo."
+    },
+    "ingredients": {
+      "es": ["callos", "garbanzos", "chorizo"],
+      "en": ["tripe", "chickpeas", "chorizo"],
+      "de": ["Kutteln", "Kichererbsen", "Chorizo"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [6, 7],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 14,
+    "name": {
+      "es": "Paella",
+      "en": "Paella",
+      "de": "Paella"
+    },
+    "description": {
+      "es": "Paella de marisco con gambas, mejillones y calamares.",
+      "en": "Seafood paella with shrimp, mussels, and squid.",
+      "de": "Meeresfrüchte-Paella mit Garnelen, Muscheln und Tintenfisch."
+    },
+    "ingredients": {
+      "es": ["arroz", "marisco", "gambas", "mejillones", "calamares"],
+      "en": ["rice", "seafood", "shrimp", "mussels", "squid"],
+      "de": ["Reis", "Meeresfrüchte", "Garnelen", "Muscheln", "Tintenfisch"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [6, 7],
+    "calories": 600,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 15,
+    "name": {
+      "es": "Papas fritas",
+      "en": "French fries",
+      "de": "Pommes frites"
+    },
+    "description": {
+      "es": "Papas fritas con un toque de sal y aceite de oliva virgen extra.",
+      "en": "French fries with a touch of salt and extra virgin olive oil.",
+      "de": "Pommes frites mit einem Hauch von Salz und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["papas", "sal", "aceite de oliva virgen extra"],
+      "en": ["potatoes", "salt", "extra virgin olive oil"],
+      "de": ["Kartoffeln", "Salz", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [6, 7],
+    "calories": 400,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 16,
+    "name": {
+      "es": "1/2 Papas fritas",
+      "en": "1/2 French fries",
+      "de": "1/2 Pommes frites"
+    },
+    "description": {
+      "es": "Papas fritas con un toque de sal y aceite de oliva virgen extra.",
+      "en": "French fries with a touch of salt and extra virgin olive oil.",
+      "de": "Pommes frites mit einem Hauch von Salz und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["papas", "sal", "aceite de oliva virgen extra"],
+      "en": ["potatoes", "salt", "extra virgin olive oil"],
+      "de": ["Kartoffeln", "Salz", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 2.5,
+    "category": [6, 7],
+    "calories": 200,
+    "image": "/img/placeholder-image.jpg"
   }
 ]
