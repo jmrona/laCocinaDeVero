@@ -1,7 +1,10 @@
 ---
+import AllergensCard from '@/components/AllergensCard/AllergensCard.astro';
 import Container from '@/components/Global/Container.astro';
 import MenuList from '@/components/Menu/MenuList';
+import Footer from '@/components/sections/Footer/Footer.astro';
 import Layout from '@/layouts/Layout.astro';
+import { getAllergens } from '@/lib/getAllergens';
 import { getCategories } from '@/lib/getCategories';
 import { getDishes } from '@/lib/getDishes';
 import { useTranslations } from '@/lib/i18n/useTranslations';
@@ -11,10 +14,13 @@ const t = useTranslations(lang);
 
 const categories = await getCategories(lang);
 const dishes = await getDishes(lang);
+const allergens = await getAllergens(lang);
 ---
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container className="">
-       <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
+       <MenuList client:only lang={lang} dishes={dishes} categories={categories} allergens={allergens}/>
+       <AllergensCard allergens={allergens}/>
+       <Footer />
     </Container>
 </Layout>
