@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "en": "Gluten",
+            "es": "Gluten",
+            "de": "Gluten"
+        }
+    }, {
+        "id": 2,
+        "name": {
+            "en": "Crustaceans",
+            "es": "Crustáceos",
+            "de": "Krustentiere"
+        }
+    }, {
+        "id": 3,
+        "name": {
+            "en": "Eggs",
+            "es": "Huevos",
+            "de": "Eier"
+        }
+    }, {
+        "id": 4,
+        "name": {
+            "en": "Fish",
+            "es": "Pescado",
+            "de": "Fisch"
+        }
+    }, {
+        "id": 5,
+        "name": {
+            "en": "Peanuts",
+            "es": "Cacahuetes",
+            "de": "Erdnüsse"
+        }
+    }, {
+        "id": 6,
+        "name": {
+            "en": "Soybeans",
+            "es": "Soja",
+            "de": "Sojabohnen"
+        }
+    }, {
+        "id": 7,
+        "name": {
+            "en": "Milk",
+            "es": "Leche",
+            "de": "Milch"
+        }
+    }, {
+        "id": 8,
+        "name": {
+            "en": "Nuts",
+            "es": "Frutos secos",
+            "de": "Nüsse"
+        }
+    }, {
+        "id": 9,
+        "name": {
+            "en": "Celery",
+            "es": "Apio",
+            "de": "Sellerie"
+        }
+    }, {
+        "id": 10,
+        "name": {
+            "en": "Mustard",
+            "es": "Mostaza",
+            "de": "Senf"
+        }
+    }, {
+        "id": 11,
+        "name": {
+            "en": "Sesame seeds",
+            "es": "Semillas de sésamo",
+            "de": "Sesamsamen"
+        }
+    }, {
+        "id": 12,
+        "name": {
+            "en": "Sulphur dioxide and sulphites",
+            "es": "Dióxido de azufre y sulfitos",
+            "de": "Schwefeldioxid und Sulfite"
+        }
+    }, {
+        "id": 13,
+        "name": {
+            "en": "Lupin",
+            "es": "Altramuces",
+            "de": "Lupine"
+        }
+    }, {
+        "id": 14,
+        "name": {
+            "en": "Molluscs",
+            "es": "Moluscos",
+            "de": "Weichtiere"
+        }
+    }
+]
