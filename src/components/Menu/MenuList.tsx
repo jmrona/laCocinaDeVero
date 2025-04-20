@@ -14,6 +14,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
   const categoryId = queryParams.get('category')
   const categoryIdNumber = parseInt(categoryId || "0")
   const [selectedCategory, setSelectedCategory] = React.useState<number>(queryParams.has("category") ? categoryIdNumber : firstCategory?.id || 0)
+
   const t = useTranslations(lang);
 
   useEffect(() => {
@@ -113,6 +114,10 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
     })
   }, [])
 
+  const dishesByCategory = useMemo(() => {
+    return dishes.filter(food => food.category.some(cat => cat === selectedCategory))
+  }, [selectedCategory])
+
   return (
     <>
       {menuOfTheDay.length > 0 && (
@@ -144,7 +149,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
         handleSelectCategory={handleSelectCategory} />
 
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4'>
-        {dishes.filter(food => food.category.some(cat => cat === categoryIdNumber)).map((food, index) => {
+        {dishesByCategory.map((food, index) => {
           return (
             <Card key={index} food={food} lang={lang}/>
           )
