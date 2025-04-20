@@ -455,7 +455,7 @@
     },
     "allergens": [],
     "price": 0.5,
-    "category": [13],
+    "category": [15],
     "calories": 100,
     "image": "/img/placeholder-image.jpg"
   },
@@ -917,6 +917,259 @@
     "price": 5,
     "category": [10],
     "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 41,
+    "name": {
+      "es": "Ensaladilla rusa",
+      "en": "Russian salad",
+      "de": "Russischer Salat"
+    },
+    "description": {
+      "es": "Ensaladilla rusa con mayonesa y verduras.",
+      "en": "Russian salad with mayonnaise and vegetables.",
+      "de": "Russischer Salat mit Mayonnaise und Gemüse."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [13],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 42,
+    "name": {
+      "es": "Ensalada mixta",
+      "en": "Mixed salad",
+      "de": "Gemischter Salat"
+    },
+    "description": {
+      "es": "Ensalada mixta con lechuga, tomate y cebolla.",
+      "en": "Mixed salad with lettuce, tomato, and onion.",
+      "de": "Gemischter Salat mit Kopfsalat, Tomate und Zwiebel."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [13],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 43,
+    "name": {
+      "es": "Ensalada con pollo",
+      "en": "Salad with chicken",
+      "de": "Salat mit Hähnchen"
+    },
+    "description": {
+      "es": "Ensalada con pollo, lechuga, tomate y cebolla.",
+      "en": "Salad with chicken, lettuce, tomato, and onion.",
+      "de": "Salat mit Hähnchen, Kopfsalat, Tomate und Zwiebel."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 4.5,
+    "category": [13],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 44,
+    "name": {
+      "es": "Ensalada tropical",
+      "en": "Tropical salad",
+      "de": "Tropischer Salat"
+    },
+    "description": {
+      "es": "Ensalada tropical con pollo, lechuga, tomate y cebolla.",
+      "en": "Tropical salad with chicken, lettuce, tomato, and onion.",
+      "de": "Tropischer Salat mit Hähnchen, Kopfsalat, Tomate und Zwiebel."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [13],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 45,
+    "name": {
+      "es": "Ensalada de tomate y mozzarella",
+      "en": "Tomato and mozzarella salad",
+      "de": "Tomaten-Mozzarella-Salat"
+    },
+    "description": {
+      "es": "Ensalada de tomate y mozzarella con salsa de albahaca y aceite de oliva virgen extra.",
+      "en": "Tomato and mozzarella salad with basil sauce and extra virgin olive oil.",
+      "de": "Tomaten-Mozzarella-Salat mit Basilikumsauce und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [13],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 46,
+    "name": {
+      "es": "Salmorejo",
+      "en": "Salmorejo",
+      "de": "Salmorejo"
+    },
+    "description": {
+      "es": "Salmorejo con un toque de ajo y aceite de oliva virgen extra.",
+      "en": "Salmorejo with a touch of garlic and extra virgin olive oil.",
+      "de": "Salmorejo mit einem Hauch von Knoblauch und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "huevo", "jamón serrano"],
+      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "egg", "serrano ham"],
+      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Ei", "Serrano-Schinken"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [14],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 47,
+    "name": {
+      "es": "Pipirana",
+      "en": "Pipirana",
+      "de": "Pipirana"
+    },
+    "description": {
+      "es": "Pipirana con bocas de mar.",
+      "en": "Pipirana with seafood.",
+      "de": "Pipirana mit Meeresfrüchten."
+    },
+    "ingredients": {
+      "es": ["pimiento", "cebolla", "pepino", "aceite de oliva virgen extra", "tomate", "bocas de mar"],
+      "en": ["pepper", "onion", "cucumber", "extra virgin olive oil", "tomato", "seafood"],
+      "de": ["Paprika", "Zwiebel", "Gurke", "natives Olivenöl extra", "Tomate", "Meeresfrüchte"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [14],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 48,
+    "name": {
+      "es": "Gazpacho",
+      "en": "Gazpacho",
+      "de": "Gazpacho"
+    },
+    "description": {
+      "es": "Gazpacho andaluz con pan, ajo, pepino y pimiento.",
+      "en": "Andalusian gazpacho with bread.",
+      "de": "Andalusisches Gazpacho mit Brot."
+    },
+    "ingredients": {
+      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "pepino", "pimiento verde"],
+      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "cucumber", "green pepper"],
+      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Gurke", "grüne Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [14],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 49,
+    "name": {
+      "es": "Cus cus con verduras",
+      "en": "Couscous with vegetables",
+      "de": "Couscous mit Gemüse"
+    },
+    "description": {
+      "es": "Cus cus con verduras, berenjena, pimiento y calabacín.",
+      "en": "Couscous with vegetables, eggplant, pepper, and zucchini.",
+      "de": "Couscous mit Gemüse, Aubergine, Paprika und Zucchini."
+    },
+    "ingredients": {
+      "es": ["cus cus", "verduras", "berenjena", "pimiento", "calabacín"],
+      "en": ["couscous", "vegetables", "eggplant", "pepper", "zucchini"],
+      "de": ["Couscous", "Gemüse", "Aubergine", "Paprika", "Zucchini"]
+    },
+    "allergens": [],
+    "price": 3,
+    "category": [14],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 50,
+    "name": {
+      "es": "Pisto con huevo",
+      "en": "Pisto with egg",
+      "de": "Pisto mit Ei"
+    },
+    "description": {
+      "es": "Pisto con huevo.",
+      "en": "Pisto with egg.",
+      "de": "Pisto mit Ei."
+    },
+    "ingredients": {
+      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "huevo", "jamón serrano"],
+      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "egg", "serrano ham"],
+      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Ei", "Serrano-Schinken"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [14],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 51,
+    "name": {
+      "es": "Huevos rellenos",
+      "en": "Stuffed eggs",
+      "de": "Gefüllte Eier"
+    },
+    "description": {
+      "es": "Huevos rellenos con atún y mayonesa.",
+      "en": "Stuffed eggs with tuna and mayonnaise.",
+      "de": "Gefüllte Eier mit Thunfisch und Mayonnaise."
+    },
+    "ingredients": {
+      "es": ["huevo", "atún", "mayonesa", "aceite de oliva virgen extra", "sal"],
+      "en": ["egg", "tuna", "mayonnaise", "extra virgin olive oil", "salt"],
+      "de": ["Ei", "Thunfisch", "Mayonnaise", "natives Olivenöl extra", "Salz"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [14],
+    "calories": 300,
     "image": "/img/placeholder-image.jpg"
   }
 ]

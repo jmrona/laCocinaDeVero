@@ -106,13 +106,21 @@
     {
         "id": 14,
         "name": {
+            "es": "Platos fríos",
+            "en": "Cold dishes",
+            "de": "Kaltes Gericht"
+        }
+    },
+    {
+        "id": 15,
+        "name": {
             "es": "Extra",
             "en": "Extras",
             "de": "Extras"
         }
     },
     {
-        "id": 15,
+        "id": 16,
         "name": {
             "es": "Bebidas",
             "en": "Drinks",
@@ -120,7 +128,7 @@
         }
     },
     {
-        "id": 16,
+        "id": 17,
         "name": {
             "es": "Vegano",
             "en": "Vegan",
@@ -128,7 +136,7 @@
         }
     },
     {
-        "id": 17,
+        "id": 18,
         "name": {
             "es": "Vegetariano",
             "en": "Vegetarian",

@@ -110,6 +110,9 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
       "vegetariano": "🥗",
       "vegetarian": "🥗",
       "vegetarisch": "🥗",
+      "platos fríos": "🥗",
+      "cold dishes": "🥗",
+      "kalte gerichte": "🥗"
     } as const;
 
     return [...categories].slice(7).map(category => {
