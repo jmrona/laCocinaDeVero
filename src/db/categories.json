@@ -98,13 +98,21 @@
     {
         "id": 13,
         "name": {
+            "es": "Ensaladas",
+            "en": "Salads",
+            "de": "Salate"
+        }
+    },
+    {
+        "id": 14,
+        "name": {
             "es": "Extra",
             "en": "Extras",
             "de": "Extras"
         }
     },
     {
-        "id": 14,
+        "id": 15,
         "name": {
             "es": "Bebidas",
             "en": "Drinks",
@@ -112,7 +120,7 @@
         }
     },
     {
-        "id": 15,
+        "id": 16,
         "name": {
             "es": "Vegano",
             "en": "Vegan",
@@ -120,7 +128,7 @@
         }
     },
     {
-        "id": 16,
+        "id": 17,
         "name": {
             "es": "Vegetariano",
             "en": "Vegetarian",
