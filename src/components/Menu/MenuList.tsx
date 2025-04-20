@@ -68,19 +68,6 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
   }, [dishes])
 
   const categoriesToShow = useMemo(() => {
-    // const WEEK_DAYS = {
-    //   "es": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"], 
-    //   "en": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], 
-    //   "de": ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
-    // } as const;
-
-    // const today = new Date()
-    // const dayOfWeek = today.getDay() - 1
-    // const day = WEEK_DAYS[lang][dayOfWeek]
-
-    // const weekDaysCategories = [...categories].slice(0, 7)
-    // const todayCategory = weekDaysCategories.find(category => category.name === day)
-
     const categories_icons = {
       "carnes": "🍖",
       "meats": "🍖",

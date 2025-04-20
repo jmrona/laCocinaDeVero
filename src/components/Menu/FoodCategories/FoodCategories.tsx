@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 import styles from './FoodCategories.module.css'
 
-export default function FoodCategories({className = "", selectedCategory, handleSelectCategory, categories = []}: {className?: string | undefined, selectedCategory: number, handleSelectCategory: (e: React.ChangeEvent<HTMLInputElement>) => void, categories?: {id: number, name: string, icon: string}[]}) {
+export default function FoodCategories({className = "", selectedCategory, handleSelectCategory, categories = []}: {className?: string | undefined, selectedCategory: number, handleSelectCategory: (e: React.ChangeEvent<HTMLInputElement>) => void, categories?: {id: number, name: string, icon: string | React.JSX.Element}[]}) {
 
   return (
     <div className={twMerge(`${styles.categoriesWrapper} flex flex-nowrap md:flex-wrap gap-2`, className)}>
