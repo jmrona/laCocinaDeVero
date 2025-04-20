@@ -5,97 +5,111 @@
             "en": "Gluten",
             "es": "Gluten",
             "de": "Gluten"
-        }
+        },
+        "icon": "gluten"
     }, {
         "id": 2,
         "name": {
             "en": "Crustaceans",
             "es": "Crustáceos",
             "de": "Krustentiere"
-        }
+        },
+        "icon": "crustaceans"
     }, {
         "id": 3,
         "name": {
             "en": "Eggs",
             "es": "Huevos",
             "de": "Eier"
-        }
+        },
+        "icon": "eggs"
     }, {
         "id": 4,
         "name": {
             "en": "Fish",
             "es": "Pescado",
             "de": "Fisch"
-        }
+        },
+        "icon": "fish"
     }, {
         "id": 5,
         "name": {
             "en": "Peanuts",
             "es": "Cacahuetes",
             "de": "Erdnüsse"
-        }
+        },
+        "icon": "peanuts"
     }, {
         "id": 6,
         "name": {
             "en": "Soybeans",
             "es": "Soja",
             "de": "Sojabohnen"
-        }
+        },
+        "icon": "soybeans"
     }, {
         "id": 7,
         "name": {
             "en": "Milk",
             "es": "Leche",
             "de": "Milch"
-        }
+        },
+        "icon": "milk"
     }, {
         "id": 8,
         "name": {
             "en": "Nuts",
             "es": "Frutos secos",
             "de": "Nüsse"
-        }
+        },
+        "icon": "nuts"
     }, {
         "id": 9,
         "name": {
             "en": "Celery",
             "es": "Apio",
             "de": "Sellerie"
-        }
+        },
+        "icon": "celery"
     }, {
         "id": 10,
         "name": {
             "en": "Mustard",
             "es": "Mostaza",
             "de": "Senf"
-        }
+        },
+        "icon": "mustard"
     }, {
         "id": 11,
         "name": {
             "en": "Sesame seeds",
             "es": "Semillas de sésamo",
             "de": "Sesamsamen"
-        }
+        },
+        "icon": "sesame-seeds"
     }, {
         "id": 12,
         "name": {
             "en": "Sulphur dioxide and sulphites",
             "es": "Dióxido de azufre y sulfitos",
             "de": "Schwefeldioxid und Sulfite"
-        }
+        },
+        "icon": "sulphur-dioxide"
     }, {
         "id": 13,
         "name": {
             "en": "Lupin",
             "es": "Altramuces",
             "de": "Lupine"
-        }
+        },
+        "icon": "lupin"
     }, {
         "id": 14,
         "name": {
             "en": "Molluscs",
             "es": "Moluscos",
             "de": "Weichtiere"
-        }
+        },
+        "icon": "molluscs"
     }
 ]

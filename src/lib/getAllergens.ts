@@ -8,10 +8,11 @@ export const getAllergens = async (lang: LangType) => {
   }
 
 
-  const allergens = res.default.map((dish) => {
+  const allergens = res.default.map((allergen) => {
     return ({
-      id: dish.id,
-      name: dish.name[lang] || dish.name['es'] || dish.name['en'] || dish.name['de'],
+      id: allergen.id,
+      name: allergen.name[lang] || allergen.name['es'] || allergen.name['en'] || allergen.name['de'],
+      icon: allergen.icon
     })
   })
 
