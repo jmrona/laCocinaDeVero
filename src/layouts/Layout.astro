@@ -1,6 +1,7 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 import Header from "@/components/sections/Header/Header.astro";
+import LogoImg from "@/assets/images/logo.webp";
 
 import "@/styles/global.css";
 
@@ -27,7 +28,7 @@ const meta = {
     
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preload" href={LogoImg.src} as="image" />
 
     <script type="javascript">
       const $html = document.querySelector("html");
