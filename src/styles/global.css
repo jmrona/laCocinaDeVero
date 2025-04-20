@@ -4,7 +4,7 @@
 @import './typography.css' layer(base);
 
 @theme {
-  --font-display: "Inter", "sans-serif";
+  --font-display: "Inter Variable", "sans-serif";
   --font-accent: "SourGummy", "sans-serif";
   --font-emoji: 'Segoe UI Emoji', 'Apple Color Emoji', 'Segoe UI Symbol', sans-serif;
   --color-primary: #DC7218;
