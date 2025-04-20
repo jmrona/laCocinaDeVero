@@ -1,7 +1,6 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback, useEffect, useMemo } from 'react'
 
 import {ArrowRight} from 'lucide-react'
-import { FOOD_LIST } from '@/constants/food-list'
 import FoodCategories from './FoodCategories/FoodCategories'
 import { useTranslations } from '@/lib/i18n/useTranslations'
 
@@ -11,14 +10,30 @@ import type { DishesType } from '@/lib/getDishes'
 
 export default function MenuList({lang, categories = [], dishes = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: DishesType[]}) { 
   const firstCategory = [...categories].slice(7)?.at(0)
-  const [selectedCategory, setSelectedCategory] = React.useState<number>(firstCategory?.id || 0)
+  const queryParams = new URLSearchParams(window.location.search)
+  const categoryId = queryParams.get('category')
+  const categoryIdNumber = parseInt(categoryId || "0")
+  const [selectedCategory, setSelectedCategory] = React.useState<number>(queryParams.has("category") ? categoryIdNumber : firstCategory?.id || 0)
   const t = useTranslations(lang);
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    const category = url.searchParams.get('category')
+
+    if(!category) {
+      url.searchParams.set('category', selectedCategory.toString())
+      window.history.pushState({}, '', url.toString())
+    }
+  }, [])
 
   const handleSelectCategory = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const categorySelected = categories.find(category => category.id === parseInt(e.target.value))
 
     if (!categorySelected) return
     setSelectedCategory(categorySelected.id)
+    const url = new URL(window.location.href)
+    url.searchParams.set('category', categorySelected.id.toString())
+    window.history.pushState({}, '', url.toString())
   }, [])
 
   const menuOfTheDay = useMemo(() => {
@@ -49,16 +64,6 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
 
     return dishes.filter(dish => dish.category.some(cat => cat === category?.id))
   }, [dishes])
-
-  const foodList = useMemo(() => {
-    let foods = [...FOOD_LIST]
-
-    if (selectedCategory.length > 0) {
-      foods = foods.filter(food => food.category.some(cat => selectedCategory.some(selectedCat => selectedCat === cat)))
-    }
-
-    return foods
-  }, [FOOD_LIST, selectedCategory])
 
   const categoriesToShow = useMemo(() => {
     // const WEEK_DAYS = {
@@ -139,7 +144,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
         handleSelectCategory={handleSelectCategory} />
 
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4'>
-        {foodList.map((food, index) => {
+        {dishes.filter(food => food.category.some(cat => cat === categoryIdNumber)).map((food, index) => {
           return (
             <Card key={index} food={food} lang={lang}/>
           )

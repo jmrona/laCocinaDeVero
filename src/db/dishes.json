@@ -366,5 +366,557 @@
     "category": [6, 7],
     "calories": 200,
     "image": "/img/placeholder-image.jpg"
+  }, 
+  {
+    "id": 17,
+    "name": {
+      "es": "Natillas",
+      "en": "Custard",
+      "de": "Vanillepudding"
+    },
+    "description": {
+      "es": "Natillas con canela y galleta.",
+      "en": "Custard with cinnamon and cookie.",
+      "de": "Vanillepudding mit Zimt und Keks."
+    },
+    "ingredients": {
+      "es": ["leche", "azúcar", "huevo", "canela", "galleta"],
+      "en": ["milk", "sugar", "egg", "cinnamon", "cookie"],
+      "de": ["Milch", "Zucker", "Ei", "Zimt", "Keks"]
+    },
+    "allergens": [],
+    "price": 2,
+    "category": [12],
+    "calories": 200,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 18,
+    "name": {
+      "es": "Arroz con leche",
+      "en": "Rice pudding",
+      "de": "Reispudding"
+    },
+    "description": {
+      "es": "Arroz con leche con canela y limón.",
+      "en": "Rice pudding with cinnamon and lemon.",
+      "de": "Reispudding mit Zimt und Zitrone."
+    },
+    "ingredients": {
+      "es": ["arroz", "leche", "canela", "limón"],
+      "en": ["rice", "milk", "cinnamon", "lemon"],
+      "de": ["Reis", "Milch", "Zimt", "Zitrone"]
+    },
+    "allergens": [],
+    "price": 2,
+    "category": [12],
+    "calories": 250,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 19,
+    "name": {
+      "es": "Mouse variados",
+      "en": "Assorted mousse",
+      "de": "Verschiedene Mousse"
+    },
+    "description": {
+      "es": "Mouse variados de chocolate, vainilla y frutas del bosque",
+      "en": "Assorted mousse of chocolate, vanilla, and berries.",
+      "de": "Verschiedene Mousse aus Schokolade, Vanille und Beeren."
+    },
+    "ingredients": {
+      "es": ["chocolate", "vainilla", "frutas del bosque"],
+      "en": ["chocolate", "vanilla", "berries"],
+      "de": ["Schokolade", "Vanille", "Beeren"]
+    },
+    "allergens": [],
+    "price": 2,
+    "category": [12],
+    "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 20,
+    "name": {
+      "es": "Salsa Alioli",
+      "en": "Alioli sauce",
+      "de": "Alioli-Sauce"
+    },
+    "description": {
+      "es": "Salsa alioli con un toque de ajo y aceite de oliva virgen extra.",
+      "en": "Alioli sauce with a touch of garlic and extra virgin olive oil.",
+      "de": "Alioli-Sauce mit einem Hauch von Knoblauch und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["ajo", "aceite de oliva virgen extra", "huevo"],
+      "en": ["garlic", "extra virgin olive oil", "egg"],
+      "de": ["Knoblauch", "natives Olivenöl extra", "Ei"]
+    },
+    "allergens": [],
+    "price": 0.5,
+    "category": [13],
+    "calories": 100,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 21,
+    "name": {
+      "es": "Macarrones",
+      "en": "Macaroni",
+      "de": "Makkaroni"
+    },
+    "description": {
+      "es": "Macarrones con tomate y queso.",
+      "en": "Macaroni with tomato and cheese.",
+      "de": "Makkaroni mit Tomate und Käse."
+    },
+    "ingredients": {
+      "es": ["macarrones", "tomate", "queso"],
+      "en": ["macaroni", "tomato", "cheese"],
+      "de": ["Makkaroni", "Tomate", "Käse"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [11],
+    "calories": 350,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 22,
+    "name": {
+      "es": "Lasaña",
+      "en": "Lasagna",
+      "de": "Lasagne"
+    },
+    "description": {
+      "es": "Lasaña con carne de ternera y queso.",
+      "en": "Lasagna with beef and cheese.",
+      "de": "Lasagne mit Rindfleisch und Käse."
+    },
+    "ingredients": {
+      "es": ["lasaña", "carne de ternera", "queso"],
+      "en": ["lasagna", "beef", "cheese"],
+      "de": ["Lasagne", "Rindfleisch", "Käse"]
+    },
+    "allergens": [],
+    "price": 5.5,
+    "category": [11],
+    "calories": 400,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 23,
+    "name": {
+      "es": "Canelones",
+      "en": "Cannelloni",
+      "de": "Cannelloni"
+    },
+    "description": {
+      "es": "Canelones con carne de ternera y queso.",
+      "en": "Cannelloni with beef and cheese.",
+      "de": "Cannelloni mit Rindfleisch und Käse."
+    },
+    "ingredients": {
+      "es": ["canelones", "carne de ternera", "queso"],
+      "en": ["cannelloni", "beef", "cheese"],
+      "de": ["Cannelloni", "Rindfleisch", "Käse"]
+    },
+    "allergens": [],
+    "price": 5.5,
+    "category": [11],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 24,
+    "name": {
+      "es": "Pastel de papas con carne",
+      "en": "Potato pie with meat",
+      "de": "Kartoffelkuchen mit Fleisch"
+    },
+    "description": {
+      "es": "Pastel de papas con carne de ternera y queso.",
+      "en": "Potato pie with beef and cheese.",
+      "de": "Kartoffelkuchen mit Rindfleisch und Käse."
+    },
+    "ingredients": {
+      "es": ["pastel de papas", "carne de ternera", "queso"],
+      "en": ["potato pie", "beef", "cheese"],
+      "de": ["Kartoffelkuchen", "Rindfleisch", "Käse"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [11],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 25,
+    "name": {
+      "es": "Papas a lo pobre",
+      "en": "Papas a lo pobre",
+      "de": "Papas a lo pobre"
+    },
+    "description": {
+      "es": "Papas a lo pobre con pimientos y cebolla.",
+      "en": "Papas a lo pobre with peppers and onion.",
+      "de": "Papas a lo pobre mit Paprika und Zwiebel."
+    },
+    "ingredients": {
+      "es": ["papas", "pimientos", "cebolla"],
+      "en": ["potatoes", "peppers", "onion"],
+      "de": ["Kartoffeln", "Paprika", "Zwiebel"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [11],
+    "calories": 400,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 26,
+    "name": {
+      "es": "Tortilla de patatas",
+      "en": "Spanish omelette",
+      "de": "Spanische Tortilla"
+    },
+    "description": {
+      "es": "Tortilla de patatas con cebolla y pimientos.",
+      "en": "Spanish omelette with onion and peppers.",
+      "de": "Spanische Tortilla mit Zwiebel und Paprika."
+    },
+    "ingredients": {
+      "es": ["tortilla", "patatas", "cebolla", "pimientos"],
+      "en": ["omelette", "potatoes", "onion", "peppers"],
+      "de": ["Omelette", "Kartoffeln", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [10],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 27,
+    "name": {
+      "es": "Albóndigas con salsa de almendras",
+      "en": "Meetballs with almond sauce",
+      "de": "Fleischbällchen mit Mandelsoße"
+    },
+    "description": {
+      "es": "Albóndigas con salsa de almendras y un toque de pimentón.",
+      "en": "Meetballs with almond sauce and a touch of paprika.",
+      "de": "Fleischbällchen mit Mandelsoße und einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["albóndigas", "salsa de almendras", "pimentón"],
+      "en": ["meetballs", "almond sauce", "paprika"],
+      "de": ["Fleischbällchen", "Mandelsoße", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 28,
+    "name": {
+      "es": "Pechuga de pollo al ajillo",
+      "en": "Garlic chicken",
+      "de": "Knoblauch-Hähnchen"
+    },
+    "description": {
+      "es": "Pechuga de pollo al ajillo con un toque de pimentón y aceite de oliva virgen extra.",
+      "en": "Garlic chicken with a touch of paprika and extra virgin olive oil.",
+      "de": "Knoblauch-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["pollo", "ajo", "pimentón", "aceite de oliva virgen extra"],
+      "en": ["chicken", "garlic", "paprika", "extra virgin olive oil"],
+      "de": ["Hähnchen", "Knoblauch", "Paprika", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 4.5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 29,
+    "name": {
+      "es": "Pechuga de pollo a la pimienta",
+      "en": "Pepper chicken",
+      "de": "Pfeffer-Hähnchen"
+    },
+    "description": {
+      "es": "Pechuga de pollo a la pimienta con un toque de pimentón y aceite de oliva virgen extra.",
+      "en": "Pepper chicken with a touch of paprika and extra virgin olive oil.",
+      "de": "Pfeffer-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["pollo", "pimienta", "pimentón", "aceite de oliva virgen extra"],
+      "en": ["chicken", "pepper", "paprika", "extra virgin olive oil"],
+      "de": ["Hähnchen", "Pfeffer", "Paprika", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 30,
+    "name": {
+      "es": "Pollo al curry",
+      "en": "Curry chicken",
+      "de": "Curry-Hähnchen"
+    },
+    "description": {
+      "es": "Pollo al curry con un toque de pimentón y aceite de oliva virgen extra.",
+      "en": "Curry chicken with a touch of paprika and extra virgin olive oil.",
+      "de": "Curry-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
+    },
+    "ingredients": {
+      "es": ["pollo", "curry", "pimentón", "aceite de oliva virgen extra"],
+      "en": ["chicken", "curry", "paprika", "extra virgin olive oil"],
+      "de": ["Hähnchen", "Curry", "Paprika", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 31,
+    "name": {
+      "es": "Secreto en salsa con mostaza y miel",
+      "en": "Secret in sauce with mustard and honey",
+      "de": "Geheimnis in Sauce mit Senf und Honig"
+    },
+    "description": {
+      "es": "Carne de secreto en salsa con un toque de mostaza y miel.",
+      "en": "Secret meat in sauce with a touch of mustard and honey.",
+      "de": "Geheimnisfleisch in Sauce mit einem Hauch von Senf und Honig."
+    },
+    "ingredients": {
+      "es": ["carne de secreto", "salsa", "mostaza", "miel"],
+      "en": ["iberian pork", "sauce", "mustard", "honey"],
+      "de": ["Iberisches Schweinefleisch", "Sauce", "Senf", "Honig"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 32,
+    "name": {
+      "es": "Carne con tomate",
+      "en": "Meat with tomato",
+      "de": "Fleisch mit Tomate"
+    },
+    "description": {
+      "es": "Carne de secreto en salsa con un toque de mostaza y miel.",
+      "en": "Secret meat in sauce with a touch of mustard and honey.",
+      "de": "Geheimnisfleisch in Sauce mit einem Hauch von Senf und Honig."
+    },
+    "ingredients": {
+      "es": ["carne de secreto", "salsa", "mostaza", "miel"],
+      "en": ["iberian pork", "sauce", "mustard", "honey"],
+      "de": ["Iberisches Schweinefleisch", "Sauce", "Senf", "Honig"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 33,
+    "name": {
+      "es": "Quesadilla con carne",
+      "en": "Quesadilla with meat",
+      "de": "Quesadilla mit Fleisch"
+    },
+    "description": {
+      "es": "Quesadilla con carne de ternera y queso.",
+      "en": "Quesadilla with beef and cheese.",
+      "de": "Quesadilla mit Rindfleisch und Käse."
+    },
+    "ingredients": {
+      "es": ["quesadilla", "carne de ternera", "queso"],
+      "en": ["quesadilla", "beef", "cheese"],
+      "de": ["Quesadilla", "Rindfleisch", "Käse"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 34,
+    "name": {
+      "es": "Habas con jamón",
+      "en": "Beans with ham",
+      "de": "Bohnen mit Schinken"
+    },
+    "description": {
+      "es": "Habas con jamón y un toque de pimentón.",
+      "en": "Beans with ham and a touch of paprika.",
+      "de": "Bohnen mit Schinken und einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["habas", "jamón", "pimentón"],
+      "en": ["beans", "ham", "paprika"],
+      "de": ["Bohnen", "Schinken", "Paprika"]
+    },
+    "allergens": [],
+    "price": 4,
+    "category": [8],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 35,
+    "name": {
+      "es": "Rosada con verduras",
+      "en": "Rosada with vegetables",
+      "de": "Rosada mit Gemüse"
+    },
+    "description": {
+      "es": "Rosada con verduras y un toque de pimentón.",
+      "en": "Rosada with vegetables and a touch of paprika.",
+      "de": "Rosada mit Gemüse und einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["rosada", "verduras", "pimentón"],
+      "en": ["rosada", "vegetables", "paprika"],
+      "de": ["Rosada", "Gemüse", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5.5,
+    "category": [9],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 36,
+    "name": {
+      "es": "Pescado en salsa de puerro",
+      "en": "Fish in leek sauce",
+      "de": "Fisch in Lauchsoße"
+    },
+    "description": {
+      "es": "Pescado en salsa de puerro con un toque de pimentón.",
+      "en": "Fish in leek sauce with a touch of paprika.",
+      "de": "Fisch in Lauchsoße mit einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["pescado", "salsa de puerro", "pimentón"],
+      "en": ["fish", "leek sauce", "paprika"],
+      "de": ["Fisch", "Lauchsoße", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [9],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 37,
+    "name": {
+      "es": "Jibia en salsa",
+      "en": "Cuttlefish in sauce",
+      "de": "Tintenfisch in Sauce"
+    },
+    "description": {
+      "es": "Jibia en salsa",
+      "en": "Cuttlefish in sauce",
+      "de": "Tintenfisch in Sauce"
+    },
+    "ingredients": {
+      "es": ["jibia", "salsa"],
+      "en": ["cuttlefish", "sauce"],
+      "de": ["Tintenfisch", "Sauce"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [9],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 38,
+    "name": {
+      "es": "Pisto con pulpo",
+      "en": "Pisto with octopus",
+      "de": "Pisto mit Tintenfisch"
+    },
+    "description": {
+      "es": "Pisto con pulpo y salsa de tomate",
+      "en": "Pisto with octopus and tomato sauce",
+      "de": "Pisto mit Tintenfisch und Tomatensoße"
+    },
+    "ingredients": {
+      "es": ["pisto", "pulpo", "salsa de tomate"],
+      "en": ["pisto", "octopus", "tomato sauce"],
+      "de": ["Pisto", "Tintenfisch", "Tomatensoße"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [9],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 39,
+    "name": {
+      "es": "Bacalao con salsa verde",
+      "en": "Cod with green sauce",
+      "de": "Kabeljau mit grüner Soße"
+    },
+    "description": {
+      "es": "Bacalao con salsa verde y un toque de pimentón.",
+      "en": "Cod with green sauce and a touch of paprika.",
+      "de": "Kabeljau mit grüner Soße und einem Hauch von Paprika."
+    },
+    "ingredients": {
+      "es": ["bacalao", "salsa verde", "pimentón"],
+      "en": ["cod", "green sauce", "paprika"],
+      "de": ["Kabeljau", "grüne Soße", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5.5,
+    "category": [9],
+    "calories": 500,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 40,
+    "name": {
+      "es": "Tortilla de verduras",
+      "en": "Vegetable omelette",
+      "de": "Gemüseomelette"
+    },
+    "description": {
+      "es": "Tortilla de verduras con cebolla y pimientos.",
+      "en": "Vegetable omelette with onion and peppers.",
+      "de": "Gemüseomelette mit Zwiebel und Paprika."
+    },
+    "ingredients": {
+      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
+      "en": ["omelette", "vegetables", "onion", "peppers"],
+      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+    },
+    "allergens": [],
+    "price": 5,
+    "category": [10],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
   }
 ]
