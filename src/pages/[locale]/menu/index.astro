@@ -15,6 +15,6 @@ const dishes = await getDishes(lang);
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container className="">
-       <MenuList client:load lang={lang} dishes={dishes} categories={categories}/>
+       <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
     </Container>
 </Layout>
