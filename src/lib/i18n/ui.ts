@@ -67,6 +67,9 @@ export const ui = {
     'menu.categories': 'Categorías',
     'menu.allergens': 'Alérgenos',
     'menu.seeSpecialMenu': 'Ver menu especial',
+
+    // Allergens
+    'allergens.title': 'Información sobre alérgenos',
   },
   en: {
     // Nav
@@ -130,6 +133,9 @@ export const ui = {
     'menu.categories': 'Categories',
     'menu.allergens': 'Allergens',
     'menu.seeSpecialMenu': 'See special menu',
+
+    // Allergens
+    'allergens.title': 'Allergen information',
   },
   de: {
     // Nav
@@ -193,5 +199,8 @@ export const ui = {
     'menu.categories': 'Kategorien',
     'menu.allergens': 'Allergene',
     'menu.seeSpecialMenu': 'Siehe Tagesmenü',
+
+    // Allergens
+    'allergens.title': 'Allergeninformationen',
   },
 } as const;
