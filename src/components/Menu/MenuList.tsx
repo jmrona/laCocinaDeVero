@@ -1,4 +1,9 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import {ArrowRight, Vegan} from 'lucide-react'
 import FoodCategories from './FoodCategories/FoodCategories'
@@ -130,13 +135,17 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
               <span className="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
             </div>
           </div>
-          <div className='flex flex-row gap-4 flex-nowrap overflow-x-auto'>
-            {menuOfTheDay.slice(0, 4).map((food, index) => {
-              return (
-                <Card key={index} food={food} lang={lang}/>
-              )
-            })}
-          </div>
+          <Swiper spaceBetween={10} slidesPerView={"auto"} className="" autoHeight={false}>
+            <div className='flex flex-row gap-4'>
+              {menuOfTheDay.slice(0, 4).map((food, index) => {
+                return (
+                  <SwiperSlide key={index} className="!w-fit">
+                    <Card food={food} lang={lang}/>
+                  </SwiperSlide>
+                )
+              })}
+            </div>
+          </Swiper>
         </>
       )}
 
@@ -147,10 +156,10 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
         categories={categoriesToShow} 
         handleSelectCategory={handleSelectCategory} />
 
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-4 mt-4'>
         {dishesByCategory.map((food, index) => {
           return (
-            <Card key={index} className={"!max-w-none"} food={food} lang={lang}/>
+            <Card key={index} className={"!max-w-none"} food={food} lang={lang} useHorizontal={true}/>
           )
         })}
       </div>
