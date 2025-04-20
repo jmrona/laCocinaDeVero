@@ -110,5 +110,21 @@
             "en": "Drinks",
             "de": "Getränke"
         }
+    },
+    {
+        "id": 15,
+        "name": {
+            "es": "Vegano",
+            "en": "Vegan",
+            "de": "Vegan"
+        }
+    },
+    {
+        "id": 16,
+        "name": {
+            "es": "Vegetariano",
+            "en": "Vegetarian",
+            "de": "Vegetarisch"
+        }
     }
 ]
