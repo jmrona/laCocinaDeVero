@@ -66,6 +66,7 @@ export const ui = {
     'menu.specialMenu': 'Menú del día',
     'menu.categories': 'Categorías',
     'menu.allergens': 'Alérgenos',
+    'menu.seeSpecialMenu': 'Ver menu especial',
   },
   en: {
     // Nav
@@ -128,6 +129,7 @@ export const ui = {
     'menu.specialMenu': 'Today\'s menu',
     'menu.categories': 'Categories',
     'menu.allergens': 'Allergens',
+    'menu.seeSpecialMenu': 'See special menu',
   },
   de: {
     // Nav
@@ -190,5 +192,6 @@ export const ui = {
     'menu.specialMenu': 'Tagesmenü',
     'menu.categories': 'Kategorien',
     'menu.allergens': 'Allergene',
+    'menu.seeSpecialMenu': 'Siehe Tagesmenü',
   },
 } as const;
