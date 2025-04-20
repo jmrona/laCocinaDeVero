@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
 
-import {ArrowRight} from 'lucide-react'
+import {ArrowRight, Vegan} from 'lucide-react'
 import FoodCategories from './FoodCategories/FoodCategories'
 import { useTranslations } from '@/lib/i18n/useTranslations'
 
@@ -24,7 +24,7 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
 
     if(!category) {
       url.searchParams.set('category', selectedCategory.toString())
-      window.history.pushState({}, '', url.toString())
+      window.history.replaceState({}, '', url.toString())
     }
   }, [])
 
@@ -35,7 +35,7 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
     setSelectedCategory(categorySelected.id)
     const url = new URL(window.location.href)
     url.searchParams.set('category', categorySelected.id.toString())
-    window.history.pushState({}, '', url.toString())
+    window.history.replaceState({}, '', url.toString())
   }, [])
 
   const menuOfTheDay = useMemo(() => {
@@ -105,10 +105,10 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
       "ensaladas": "🥗",
       "salads": "🥗",
       "salate": "🥗",
-      "vegano": "🥗",
-      "vegan": "🥗",
-      "vegetariano": "🥗",
-      "vegetarian": "🥗",
+      "vegano": <Vegan/>,
+      "vegan": <Vegan/>,
+      "vegetariano": <Vegan/>,
+      "vegetarian": <Vegan />,
       "vegetarisch": "🥗",
       "platos fríos": "🥗",
       "cold dishes": "🥗",
