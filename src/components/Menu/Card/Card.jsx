@@ -7,7 +7,7 @@ export default function Card({food, className = "", lang = "es"}) {
   const t = useTranslations(lang);
 
   return (
-    <div className={twMerge('flex flex-col min-w-[200px] md:min-w-[250px] max-w-[250px] bg-white rounded-lg shadow-md mb-3', className)}>
+    <div className={twMerge(className, 'flex flex-col min-w-[200px] md:min-w-[200px] max-w-[250px] bg-white rounded-lg shadow-md mb-3')}>
         <img src={food.image ? food.image : "/img/placeholder-image.jpg"} alt={food.name} className='w-full aspect-[1/0.8] object-cover rounded-lg mb-2' />
         <div className='flex flex-col gap-2 p-4 mb-3'>
           <h2 className='text-lg font-semibold text-balance leading-5'>{food.name}</h2>

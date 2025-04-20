@@ -7,8 +7,9 @@ import { useTranslations } from '@/lib/i18n/useTranslations'
 import Card from './Card/Card'
 import type { CategoriesType } from '@/lib/getCategories'
 import type { DishesType } from '@/lib/getDishes'
+import type { AllergensType } from '@/lib/getAllergens'
 
-export default function MenuList({lang, categories = [], dishes = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: DishesType[]}) { 
+export default function MenuList({lang, categories = [], dishes = [], allergens = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: DishesType[], allergens: AllergensType[]}) { 
   const firstCategory = [...categories].slice(7)?.at(0)
   const queryParams = new URLSearchParams(window.location.search)
   const categoryId = queryParams.get('category')
@@ -131,7 +132,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
               <span className="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
             </div>
           </div>
-          <div className='flex flex-row gap-2 flex-nowrap overflow-x-auto'>
+          <div className='flex flex-row gap-4 flex-nowrap overflow-x-auto'>
             {menuOfTheDay.slice(0, 4).map((food, index) => {
               return (
                 <Card key={index} food={food} lang={lang}/>
@@ -148,10 +149,10 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
         categories={categoriesToShow} 
         handleSelectCategory={handleSelectCategory} />
 
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4'>
         {dishesByCategory.map((food, index) => {
           return (
-            <Card key={index} food={food} lang={lang}/>
+            <Card key={index} className={"!max-w-none"} food={food} lang={lang}/>
           )
         })}
       </div>
