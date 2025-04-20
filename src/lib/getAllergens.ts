@@ -22,4 +22,5 @@ export const getAllergens = async (lang: LangType) => {
 export interface AllergensType {
   id: number;
   name: string;
+  icon: string;
 }

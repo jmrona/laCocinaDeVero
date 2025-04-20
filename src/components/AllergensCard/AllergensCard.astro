@@ -1,0 +1,50 @@
+---
+import type { AllergensType } from "@/lib/getAllergens";
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import { Wheat, Egg, Fish, Milk, Shell, Nut, Bean, Shrimp } from '@lucide/astro'
+import Celery from '@/assets/icons/celery.svg?react'
+import Lupin from '@/assets/icons/lupin.svg?react'
+import Mustard from '@/assets/icons/mustard.svg?react'
+import Sesame from '@/assets/icons/sesame.svg?react'
+import Sulphur from '@/assets/icons/sulphur.svg?react'
+
+const { allergens } = Astro.props as {
+    allergens: AllergensType[]
+};
+
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+
+const ALLERGEN_ICONS = {
+    "gluten": Wheat,
+    "eggs": Egg,
+    "fish": Fish,
+    "milk": Milk,
+    "peanuts": Nut,
+    "nuts": Nut,
+    "soy": Bean,
+    "crustaceans": Shrimp,
+    "celery": Celery,
+    "mustard": Mustard,
+    "sesame": Sesame,
+    "sulphur": Sulphur,
+    "mollusk": Shell,
+    "lupin": Lupin,
+} as const;
+---
+
+<section class="bg-neutral/50 py-8 px-5 rounded-xl mt-15 mb-5">
+    <h4 class="text-2xl font-semibold mb-7">{t("allergens.title")}</h4>
+    <ul class="columns-2 md:columns-3 lg:columns-4">
+        {allergens.map((allergen) => {
+            const Icon = ALLERGEN_ICONS[allergen.icon as keyof typeof ALLERGEN_ICONS];
+
+            return (
+                <li class="flex items-center gap-2 mb-4">
+                    <Icon width="20" height="20" /> <span class="text-sm">{allergen.name}</span>
+                </li>
+            )
+        })}
+    </ul>
+</section>

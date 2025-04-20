@@ -46,7 +46,7 @@
             "es": "Soja",
             "de": "Sojabohnen"
         },
-        "icon": "soybeans"
+        "icon": "soy"
     }, {
         "id": 7,
         "name": {
@@ -86,7 +86,7 @@
             "es": "Semillas de sésamo",
             "de": "Sesamsamen"
         },
-        "icon": "sesame-seeds"
+        "icon": "sesame"
     }, {
         "id": 12,
         "name": {
@@ -94,7 +94,7 @@
             "es": "Dióxido de azufre y sulfitos",
             "de": "Schwefeldioxid und Sulfite"
         },
-        "icon": "sulphur-dioxide"
+        "icon": "sulphur"
     }, {
         "id": 13,
         "name": {
@@ -110,6 +110,6 @@
             "es": "Moluscos",
             "de": "Weichtiere"
         },
-        "icon": "molluscs"
+        "icon": "mollusk"
     }
 ]
