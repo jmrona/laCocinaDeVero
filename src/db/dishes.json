@@ -386,7 +386,7 @@
     },
     "allergens": [],
     "price": 2,
-    "category": [12],
+    "category": [12, 18],
     "calories": 200,
     "image": "/img/placeholder-image.jpg"
   },
@@ -409,7 +409,7 @@
     },
     "allergens": [],
     "price": 2,
-    "category": [12],
+    "category": [12, 18],
     "calories": 250,
     "image": "/img/placeholder-image.jpg"
   },
@@ -432,7 +432,7 @@
     },
     "allergens": [],
     "price": 2,
-    "category": [12],
+    "category": [12, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -449,13 +449,13 @@
       "de": "Alioli-Sauce mit einem Hauch von Knoblauch und nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["ajo", "aceite de oliva virgen extra", "huevo"],
-      "en": ["garlic", "extra virgin olive oil", "egg"],
-      "de": ["Knoblauch", "natives Olivenöl extra", "Ei"]
+      "es": ["ajo", "aceite de oliva virgen extra", "leche", "perejil"],
+      "en": ["garlic", "extra virgin olive oil", "milk", "parsley"],
+      "de": ["Knoblauch", "natives Olivenöl extra", "Milch", "Peterlie"]
     },
     "allergens": [],
     "price": 0.5,
-    "category": [15],
+    "category": [15, 17, 18],
     "calories": 100,
     "image": "/img/placeholder-image.jpg"
   },
@@ -478,7 +478,7 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [11],
+    "category": [11, 17, 18],
     "calories": 350,
     "image": "/img/placeholder-image.jpg"
   },
@@ -570,7 +570,7 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [11],
+    "category": [11, 17, 18],
     "calories": 400,
     "image": "/img/placeholder-image.jpg"
   },
@@ -593,7 +593,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [10],
+    "category": [10, 18],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -915,7 +915,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [10],
+    "category": [10, 18],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -961,7 +961,7 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [13],
+    "category": [13, 17, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1007,7 +1007,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [13],
+    "category": [13, 17, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1030,7 +1030,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [13],
+    "category": [13, 17, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1053,7 +1053,7 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [14],
+    "category": [14, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1099,7 +1099,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [14],
+    "category": [14, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1122,7 +1122,7 @@
     },
     "allergens": [],
     "price": 3,
-    "category": [14],
+    "category": [14, 17, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1145,7 +1145,7 @@
     },
     "allergens": [],
     "price": 3.5,
-    "category": [14],
+    "category": [14, 18],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1168,8 +1168,192 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [14],
+    "category": [14, 18],
     "calories": 300,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 52,
+    "name": {
+      "es": "Lata cerveza",
+      "en": "Can of beer",
+      "de": "Dose Bier"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 1.5,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 53,
+    "name": {
+      "es": "Lata de refresco",
+      "en": "Can of soda",
+      "de": "Dose Limonade"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 1.5,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 54,
+    "name": {
+      "es": "Botella de agua grande",
+      "en": "Bottle of water large",
+      "de": "Große Wasserflasche"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 1,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 55,
+    "name": {
+      "es": "Botella de agua pequeña",
+      "en": "Bottle of water small",
+      "de": "Kleine Wasserflasche"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 0.5,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 56,
+    "name": {
+      "es": "Botella de refresco 2l",
+      "en": "Bottle of soda 2l",
+      "de": "Flasche Limonade 2l"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 2.5,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 57,
+    "name": {
+      "es": "Botella de cerveza 1l",
+      "en": "Bottle of beer 1l",
+      "de": "Flasche Bier 1l"
+    },
+    "description": {
+      "es": "",
+      "en": "",
+      "de": ""
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 2.5,
+    "category": [16],
+    "calories": 0,
+    "image": ""
+  },
+  {
+    "id": 58,
+    "name": {
+      "es": "Pollo asado",
+      "en": "Roast chicken",
+      "de": "Brathähnchen"
+    },
+    "description": {
+      "es": "Pollo asado completo o por mitades.",
+      "en": "Whole or half roast chicken.",
+      "de": "Ganzes oder halbes Brathähnchen."
+    },
+    "ingredients": {
+      "es": [],
+      "en": [],
+      "de": []
+    },
+    "allergens": [],
+    "price": 9.5,
+    "category": [15],
+    "calories": 0,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 59,
+    "name": {
+      "es": "Pata asada",
+      "en": "Roast leg",
+      "de": "Brathähnchenbein"
+    },
+    "description": {
+      "es": "Pata asada de cerdo con hierbas provenzales.",
+      "en": "Roasted leg of pork with Provençal herbs.",
+      "de": "Gebratene Schweinekeule mit provenzalischen Kräutern."
+    },
+    "ingredients": {
+      "es": ["pata de cerdo", "hierbas provenzales", "aceite de oliva virgen extra"],
+      "en": ["leg of pork", "Provençal herbs", "extra virgin olive oil"],
+      "de": ["Schweinekeule", "provenzalische Kräuter", "natives Olivenöl extra"]
+    },
+    "allergens": [],
+    "price": 12.5,
+    "category": [15],
+    "calories": 0,
     "image": "/img/placeholder-image.jpg"
   }
 ]
