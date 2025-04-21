@@ -269,7 +269,7 @@
       "en": ["noodles", "potatoes", "prawns", "squid", "mussels", "salt", "black pepper", "bay leaf", "tomato", "peppers", "onion", "garlic", "saffron", "extra virgin olive oil"],
       "de": ["Nudeln", "Kartoffeln", "Garnelen", "Tintenfisch", "Muscheln", "Salz", "Schwarzer Pfeffer", "Lorbeerblatt", "Tomate", "Paprika", "Zwiebel", "Knoblauch", "Safran", "Natives Olivenöl Extra"]
     },
-    "allergens": [2, 14],
+    "allergens": [2, 12, 14],
     "price": 4,
     "category": [5],
     "calories": 350,
@@ -317,7 +317,7 @@
     },
     "allergens": [],
     "price": 5,
-    "category": [6, 7],
+    "category": [6, 7, 12],
     "calories": 600,
     "image": "/img/placeholder-image.jpg"
   },
@@ -844,7 +844,7 @@
       "en": ["cuttlefish", "onion", "carrot", "celery", "white wine"],
       "de": ["Tintenfisch", "Zwiebel", "Karotte", "Sellerie", "Weißwein"]
     },
-    "allergens": [4, 9],
+    "allergens": [4, 9, 12],
     "price": 5,
     "category": [10],
     "calories": 500,
@@ -1005,7 +1005,7 @@
       "en": ["lettuce", "pink sauce", "pineapple", "apple", "prawns", "seafood"],
       "de": ["Lettuce", "rosa Sauce", "Ananas", "Apfel", "Garnelen", "Meeresfrüchte"]
     },
-    "allergens": [2, 3, 4, 14],
+    "allergens": [2, 3, 4, 12, 14],
     "price": 5,
     "category": [14, 18, 19],
     "calories": 300,
