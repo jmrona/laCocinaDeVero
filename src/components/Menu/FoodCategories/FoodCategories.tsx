@@ -18,7 +18,7 @@ export default function FoodCategories({className = "", selectedCategory, handle
         >
           {categories.map((category) => (
             <SwiperSlide key={category.id} className="!w-fit">
-              <label data-selected={selectedCategory === category.id} className={`${styles.category} bg-neutral/70 rounded-xl py-2 px-4 flex flex-row items-center gap-2 w-fit select-none cursor-pointer`}>
+              <label data-selected={selectedCategory === category.id} className={`${styles.category} h-full bg-neutral/70 rounded-xl py-2 px-4 flex flex-row items-center gap-2 w-fit select-none cursor-pointer`}>
                 <span className='text-2xl'>{category.icon}</span>
                 <h3 className='text-xl font-semibold'>
                     {category.name}
