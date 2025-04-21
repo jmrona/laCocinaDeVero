@@ -24,8 +24,26 @@ const ALLERGEN_ICONS = {
     "lupine": Lupin,
 } as const;
 
-export default function AllergenIcon({icon, ...rest}: {icon: keyof typeof ALLERGEN_ICONS} & React.SVGProps<SVGSVGElement>) {
-    const Icon = ALLERGEN_ICONS[icon];
+const ALLERGEN_ID = {
+    1: Wheat,
+    2: Shrimp,
+    3: Egg,
+    4: Fish,
+    5: Nut,
+    6: Bean,
+    7: Milk,
+    8: Nut,
+    9: Celery,
+    10: Mustard,
+    11: Sesame,
+    12: Sulphur,
+    13: Lupin,
+    14: Shell,
+} as const;
+
+export default function AllergenIcon({icon, ...rest}: {icon: keyof typeof ALLERGEN_ID} & React.SVGProps<SVGSVGElement>) {
+    const Icon = ALLERGEN_ID[icon];
+    
     if (!Icon) {
         return null
     }
