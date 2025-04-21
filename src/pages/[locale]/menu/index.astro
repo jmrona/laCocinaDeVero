@@ -3,6 +3,7 @@ import AllergensCard from '@/components/AllergensCard/AllergensCard.astro';
 import Container from '@/components/Global/Container.astro';
 import MenuList from '@/components/Menu/MenuList';
 import Footer from '@/components/sections/Footer/Footer.astro';
+import MenuOfTheDay from '@/components/sections/MenuOfTheDay/MenuOfTheDay.astro';
 import Layout from '@/layouts/Layout.astro';
 import { getAllergens } from '@/lib/getAllergens';
 import { getCategories } from '@/lib/getCategories';
@@ -19,8 +20,9 @@ const allergens = await getAllergens(lang);
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container className="">
-       <MenuList client:only lang={lang} dishes={dishes} categories={categories} allergens={allergens}/>
-       <AllergensCard allergens={allergens}/>
-       <Footer />
+        <MenuOfTheDay server:defer categories={categories} dishes={dishes}/>
+        <MenuList client:only lang={lang} dishes={dishes} categories={categories} allergens={allergens}/>
+        <AllergensCard allergens={allergens}/>
+        <Footer />
     </Container>
 </Layout>

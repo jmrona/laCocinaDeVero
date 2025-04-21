@@ -1,0 +1,149 @@
+---
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { ArrowRight, X } from '@lucide/astro';
+import { useTranslations } from '@/lib/i18n/useTranslations';
+import type { CategoriesType } from '@/lib/getCategories';
+import type { DishesType } from '@/lib/getDishes';
+import Card from '@/components/Menu/Card/Card';
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+
+const { categories, dishes } = Astro.props as {categories: CategoriesType[], dishes: DishesType[]};
+
+const DAY_CATEGORY = {
+  0: ["Domingo", "Sunday", "Sonntag"],
+  1: ["Lunes", "Monday", "Montag"],
+  2: ["Martes", "Tuesday", "Dienstag"],
+  3: ["Miércoles", "Wednesday", "Mittwoch"],
+  4: ["Jueves", "Thursday", "Donnerstag"],
+  5: ["Viernes", "Friday", "Freitag"],
+  6: ["Sábado", "Saturday", "Samstag"],
+} as const;
+
+const WEEK_DAYS = {
+  "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"], 
+  "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",], 
+  "de": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
+} as const;
+
+const today = new Date()
+const dayOfWeek = today.getDay()
+const day = WEEK_DAYS[lang][dayOfWeek]
+
+const categoryId = Object.values(DAY_CATEGORY).findIndex(category => category.some(cat => cat === day))
+
+if( categoryId === -1) return []
+const category = categories.find(category => category.id === categoryId)
+const menuOfTheDay = dishes.filter(dish => dish.category.some(cat => cat === category?.id))
+
+const menuGroupedByCategory = {} as Record<string, DishesType[]>
+categories.slice(0,7).forEach((category) => {
+    const foods = dishes.filter(dish => dish.category.some(cat => cat === Number(category.id)))
+    const key = category.name;
+    
+    return menuGroupedByCategory[key] = foods
+})
+---
+
+<div class="flex items-center justify-between mt-7">
+    <h1 class='text-2xl md:h4 mb-2 !font-bold font-accent'>{t("menu.specialMenu")}</h1>
+    <div>
+      <button id="see-special-menu" class='ml-auto text-primary font-semibold flex items-center gap-2 cursor-pointer peer'>
+        {t("menu.seeSpecialMenu")} <ArrowRight size={18}/>
+      </button>
+      <span class="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
+    </div>
+  </div>
+  <Swiper spaceBetween={10} slidesPerView={"auto"} autoHeight={false}>
+    <div class='flex flex-row gap-4'>
+      {menuOfTheDay.slice(0, 4).map((food, index) => {
+        return (
+          <SwiperSlide className="!w-fit">
+            <Card food={food} lang={lang}/>
+          </SwiperSlide>
+        )
+      })}
+    </div>
+  </Swiper>
+</div>
+
+<dialog id="see-special-menu-dialog" class="max-w-screen md:max-w-[500px] md:my-auto p-5 h-fit w-full mx-auto" aria-labelledby="see-special-menu-title" role="dialog" aria-modal="true">
+    <div class="flex justify-end">
+        <button id="see-special-menu-close" class="text-dark font-semibold flex items-center gap-2 cursor-pointer w-auto">
+            <span class="sr-only">{t("modal.close")}</span> <X class='text-gray-500' size={25}/>
+        </button>
+    </div>
+    <h2 class="text-xl font-semibold text-balance leading-5 border-b-primary border-b-2 pb-2 inline-block mb-4">{t("menu.specialMenu")}</h2>
+    <div class="flex flex-col gap-2">
+        {Object.entries(menuGroupedByCategory).map(([day, foodArray], index) => {
+            return (
+                <div class="flex flex-col gap-2 p-4 h-full">
+                    <h2 class="text-lg font-semibold text-balance leading-3">{day}</h2>
+                    <p class="text-gray-700 text-md">{foodArray.map(food => food.name).join(', ')}</p>
+                </div>
+            )
+        })}
+    </div>
+</dialog>
+
+<style>
+    body:has(dialog#see-special-menu-dialog[open]) {
+        overflow: hidden;
+    }
+
+    dialog#see-special-menu-dialog[open] {
+        animation: dialog-open 0.2s ease-out;
+    }
+
+    @keyframes dialog-open {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+            translate: 0px 100px;
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+            translate: 0px 0px;
+        }
+    }
+</style>
+
+<script>
+    const seeSpecialMenuBtn = document.getElementById("see-special-menu");
+    const seeSpecialMenuDialog = document.getElementById("see-special-menu-dialog") as HTMLDialogElement;
+    const seeSpecialMenuCloseBtn = document.getElementById("see-special-menu-close");
+
+    seeSpecialMenuBtn?.addEventListener("click", () => {
+        if(seeSpecialMenuDialog.open) {
+            seeSpecialMenuDialog.close();
+            return;
+        }
+
+        seeSpecialMenuDialog.showModal()
+    });
+
+    seeSpecialMenuDialog.addEventListener("click", event => {
+        const rect = seeSpecialMenuDialog.getBoundingClientRect();
+
+        const isInDialog =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+
+        if (!isInDialog) {
+            seeSpecialMenuDialog.close();
+        }
+    })
+
+    seeSpecialMenuCloseBtn?.addEventListener("click", () => {
+        seeSpecialMenuDialog.close();
+    });
+</script>

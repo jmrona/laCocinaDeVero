@@ -1,11 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from 'react'
-import {Swiper, SwiperSlide} from 'swiper/react';
+import {Vegan} from 'lucide-react'
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import {ArrowRight, Vegan} from 'lucide-react'
 import FoodCategories from './FoodCategories/FoodCategories'
 import { useTranslations } from '@/lib/i18n/useTranslations'
 
@@ -42,35 +37,6 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
     url.searchParams.set('category', categorySelected.id.toString())
     window.history.replaceState({}, '', url.toString())
   }, [])
-
-  const menuOfTheDay = useMemo(() => {
-    const DAY_CATEGORY = {
-      0: ["Domingo", "Sunday", "Sonntag"],
-      1: ["Lunes", "Monday", "Montag"],
-      2: ["Martes", "Tuesday", "Dienstag"],
-      3: ["Miércoles", "Wednesday", "Mittwoch"],
-      4: ["Jueves", "Thursday", "Donnerstag"],
-      5: ["Viernes", "Friday", "Freitag"],
-      6: ["Sábado", "Saturday", "Samstag"],
-    } as const;
-
-    const WEEK_DAYS = {
-      "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"], 
-      "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",], 
-      "de": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
-    } as const;
-
-    const today = new Date()
-    const dayOfWeek = today.getDay()
-    const day = WEEK_DAYS[lang][dayOfWeek]
-
-    const categoryId = Object.values(DAY_CATEGORY).findIndex(category => category.some(cat => cat === day))
-
-    if( categoryId === -1) return []
-    const category = categories.find(category => category.id === categoryId)
-
-    return dishes.filter(dish => dish.category.some(cat => cat === category?.id))
-  }, [dishes])
 
   const categoriesToShow = useMemo(() => {
     const categories_icons = {
@@ -126,31 +92,6 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
   
   return (
     <>
-      {menuOfTheDay.length > 0 && (
-        <>
-          <div className="flex items-center justify-between mt-7">
-            <h1 className='text-2xl md:h4 mb-2 !font-bold font-accent'>{t("menu.specialMenu")}</h1>
-            <div>
-              <button className='ml-auto text-primary font-semibold flex items-center gap-2 cursor-pointer peer'>
-                {t("menu.seeSpecialMenu")} <ArrowRight size={18}/>
-              </button>
-              <span className="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
-            </div>
-          </div>
-          <Swiper spaceBetween={10} slidesPerView={"auto"} className="" autoHeight={false}>
-            <div className='flex flex-row gap-4'>
-              {menuOfTheDay.slice(0, 4).map((food, index) => {
-                return (
-                  <SwiperSlide key={index} className="!w-fit">
-                    <Card food={food} lang={lang}/>
-                  </SwiperSlide>
-                )
-              })}
-            </div>
-          </Swiper>
-        </>
-      )}
-
       <h1 className='text-2xl md:h4 mt-7 mb-2 !font-bold font-accent'>{t("menu.categories")}</h1>
 
       <FoodCategories 

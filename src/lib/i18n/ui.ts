@@ -68,6 +68,9 @@ export const ui = {
     'menu.allergens': 'Alérgenos',
     'menu.seeSpecialMenu': 'Ver menu especial',
 
+    // Modal
+    'modal.close': 'Cerrar',
+
     // Allergens
     'allergens.title': 'Información sobre alérgenos',
   },
@@ -134,6 +137,9 @@ export const ui = {
     'menu.allergens': 'Allergens',
     'menu.seeSpecialMenu': 'See special menu',
 
+    // Modal
+    'modal.close': 'Close',
+
     // Allergens
     'allergens.title': 'Allergen information',
   },
@@ -199,6 +205,9 @@ export const ui = {
     'menu.categories': 'Kategorien',
     'menu.allergens': 'Allergene',
     'menu.seeSpecialMenu': 'Siehe Tagesmenü',
+
+    // Modal
+    'modal.close': 'Schließen',
 
     // Allergens
     'allergens.title': 'Allergeninformationen',
