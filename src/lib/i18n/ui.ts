@@ -8,7 +8,7 @@ export const ui = {
   es: {
     // Nav
     'nav.menu': 'Menú',
-    'nav.about': 'Sobre nosotros',
+    'nav.about': 'Quiénes somos',
     'nav.contact': 'Contacto',
     
     // Home - Hero
@@ -73,11 +73,18 @@ export const ui = {
 
     // Allergens
     'allergens.title': 'Información sobre alérgenos',
+
+    // About us
+    'about.title': 'Quiénes somos',
+    'about.experience': 'La Cocina de Vero nace del amor por la buena comida casera. Vero, su fundadora, lleva más de 15 años entre fogones, perfeccionando recetas tradicionales y cuidando cada detalle como si cocinara para su familia.',
+    'about.contact': 'Si estás buscando una alternativa rica y práctica para tus comidas del día a día, estás en el sitio correcto. Ven a visitarnos en Torrox costa y descubre nuestra variedad de platos disponibles.',
+    'about.telephone': 'Teléfono',
+    'about.address': 'Dirección',
   },
   en: {
     // Nav
     'nav.menu': 'Menu',
-    'nav.about': 'About us',
+    'nav.about': 'About',
     'nav.contact': 'Contact',
     
     // Hero
@@ -142,6 +149,13 @@ export const ui = {
 
     // Allergens
     'allergens.title': 'Allergen information',
+
+    // About us
+    'about.title': 'About us',
+    'about.experience': 'La cocina de Vero was born from a love of good home-cooked food. Vero, its founder, has been in the kitchen for over 15 years, perfecting traditional recipes and taking care of every detail as if she were cooking for her family.',
+    'about.contact': 'If you\'re looking for a delicious and practical alternative for your everyday meals, you\'ve come to the right place. Come visit us in Torrox Costa and discover our variety of dishes.',
+    'about.telephone': 'Telephone',
+    'about.address': 'Address',
   },
   de: {
     // Nav
@@ -211,5 +225,12 @@ export const ui = {
 
     // Allergens
     'allergens.title': 'Allergeninformationen',
+
+    // About us
+    'about.title': 'Über uns',
+    'about.experience': 'La cocina de Vero wurde von einem Liebling für gute, zu Hause gekochte Gerichte geboren. Vero, ihr Gründer, hat über 15 Jahre im Kochen gearbeitet, perfektionierend traditionelle Rezepte und sorgen für jedes Detail, als wäre sie bei ihrer Familie zum Kochen.',
+    'about.contact': 'Wenn du eine leckere und praktische Alternative für deine täglichen Mahlzeiten suchst, bist du hier richtig. Komm zu uns in Torrox Costa und entdecke unsere Vielfalt an Gerichten.',
+    'about.telephone': 'Telefon',
+    'about.address': 'Adresse',
   },
 } as const;
