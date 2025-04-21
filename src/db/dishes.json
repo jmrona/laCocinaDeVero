@@ -12,9 +12,9 @@
       "de": "Puchero mit Rindfleisch, Hähnchen und Schweinefleisch mit Kichererbsen und Gemüse."
     },
     "ingredients": {
-      "es": ["carne de ternera", "pollo", "cerdo", "garbanzos", "verduras"],
-      "en": ["beef", "chicken", "pork", "chickpeas", "vegetables"],
-      "de": ["Rindfleisch", "Hähnchen", "Schweinefleisch", "Kichererbsen", "Gemüse"]
+      "es": ["papas", "garganzos", "zanahorias", "pollo", "arroz", "hierbabuena (opcional)"],
+      "en": ["potatoes", "chickpeas", "carrot", "chicken", "rice", "peppermint (optional)"],
+      "de": ["Kartoffeln", "Gargenzos", "Karotten", "Hähnchen", "Reis", "Pfefferminz (optional)"]
     },
     "allergens": [],
     "price": 4,
@@ -35,9 +35,9 @@
       "de": "Pinto-Bohnen mit Chorizo und Gemüse."
     },
     "ingredients": {
-      "es": ["alubias pintas", "chorizo", "verduras"],
-      "en": ["pinto beans", "chorizo", "vegetables"],
-      "de": ["Pinto-Bohnen", "Chorizo", "Gemüse"]
+      "es": ["alubias pintas", "chorizo", "papas", "laurel", "ajo", "pimientos", "cebolla", "tomate", "morcilla", "azafrán"],
+      "en": ["pinto beans", "chorizo", "potatoes", "bay leaf", "garlic", "peppers", "onion", "tomato", "corn", "mayonnaise"],
+      "de": ["Pinto-Bohnen", "Chorizo", "Kartoffeln", "Lorbeer", "Knoblauch", "Paprika", "Zwiebel", "Tomate", "Mais", "Mais"]
     },
     "allergens": [],
     "price": 4,
@@ -58,11 +58,11 @@
       "de": "Gemüsesuppe mit einem Hauch von nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["calabaza", "zanahoria", "puerro", "aceite de oliva virgen extra"],
-      "en": ["pumpkin", "carrot", "leek", "extra virgin olive oil"],
-      "de": ["Kürbis", "Karotte", "Lauch", "natives Olivenöl extra"]
+      "es": ["calabaza", "zanahoria", "puerro", "apio", "aceite de oliva virgen extra", "sal", "habichuelas"],
+      "en": ["pumpkin", "carrot", "leek", "parsley", "extra virgin olive oil", "salt", "beans"],
+      "de": ["Kürbis", "Karotte", "Lauch", "Pfeffer", "natives Olivenöl extra", "Salz", "Bohnen"]
     },
-    "allergens": [],
+    "allergens": [9],
     "price": 3.5,
     "category": [1, 3, 5],
     "calories": 300,
@@ -76,14 +76,14 @@
       "de": "Linsen"
     },
     "description": {
-      "es": "Lentejas con chorizo, verduras, pimentón, comino y un toque de laurel.",
-      "en": "Lentils with chorizo, vegetables, paprika, cumin, and a touch of bay leaf.",
-      "de": "Linsen mit Chorizo, Gemüse, Paprika, Kreuzkümmel und einem Hauch von Lorbeer."
+      "es": "Lentejas.",
+      "en": "Lentils.",
+      "de": "Linsen."
     },
     "ingredients": {
-      "es": ["lentejas", "chorizo", "verduras", "pimentón", "comino", "laurel"],
-      "en": ["lentils", "chorizo", "vegetables", "paprika", "cumin", "bay leaf"],
-      "de": ["Linsen", "Chorizo", "Gemüse", "Paprika", "Kreuzkümmel", "Lorbeer"]
+      "es": ["lentejas", "sal", "pimientos", "tomate", "cebolla", "aceite de oliva virgen extra", "laurel", "pimentón", "papas", "azafrán"],
+      "en": ["lentils", "salt", "peppers", "tomato", "onion", "extra virgin olive oil", "bay leaf", "cumin", "potatoes", "mayonnaise"],
+      "de": ["Linsen", "Salz", "Paprika", "Tomate", "Zwiebel", "natives Olivenöl extra", "Lorbeer", "Kreuzkümmel", "Kartoffeln", "Mais"]
     },
     "allergens": [],
     "price": 4,
@@ -104,11 +104,11 @@
       "de": "Gazpachuelo mit Fisch und Mayonnaise."
     },
     "ingredients": {
-      "es": ["pescado", "mayonesa", "agua", "pan", "aceite de oliva virgen extra", "pepino", "tomate"],
-      "en": ["fish", "mayonnaise", "water", "bread", "extra virgin olive oil", "cucumber", "tomato"],
-      "de": ["Fisch", "Mayonnaise", "Wasser", "Brot", "natives Olivenöl extra", "Gurke", "Tomate"]
+      "es": ["papas", "mayonesa", "huevos", "sal"],
+      "en": ["potatoes", "mayonnaise", "eggs", "salt"],
+      "de": ["Kartoffeln", "Mayonnaise", "Eier", "Salz"]
     },
-    "allergens": [],
+    "allergens": [3],
     "price": 4,
     "category": [2],
     "calories": 400,
@@ -127,9 +127,9 @@
       "de": "Zucchini-Cremesuppe mit einem Hauch von nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["calabacín", "cebolla", "aceite de oliva virgen extra"],
-      "en": ["zucchini", "onion", "extra virgin olive oil"],
-      "de": ["Zucchini", "zwiebel", "natives Olivenöl extra"]
+      "es": ["calabacín", "cebolla", "aceite de oliva virgen extra", "sal", "queso", "puerro", "pimienta negra"],
+      "en": ["zucchini", "onion", "extra virgin olive oil", "salt", "cheese", "leek", "black pepper"],
+      "de": ["Zucchini", "zwiebel", "natives Olivenöl extra", "Salz", "Käse", "Lauch", "schwarzer Pfeffer"]
     },
     "allergens": [],
     "price": 3.5,
@@ -145,16 +145,16 @@
       "de": "Picadillo-Suppe"
     },
     "description": {
-      "es": "Sopa picadillo con carne de ternera, pollo y cerdo.",
-      "en": "Picadillo soup with beef, chicken, and pork.",
-      "de": "Picadillo-Suppe mit Rindfleisch, Hähnchen und Schweinefleisch."
+      "es": "Sopa picadillo.",
+      "en": "Picadillo soup.",
+      "de": "Picadillo-Suppe."
     },
     "ingredients": {
-      "es": ["carne de ternera", "pollo", "cerdo", "verduras"],
-      "en": ["beef", "chicken", "pork", "vegetables"],
-      "de": ["Rindfleisch", "Hähnchen", "Schweinefleisch", "Gemüse"]
+      "es": ["papas", "fideos", "garbanzos", "huevos", "jamón serrano"],
+      "en": ["potatoes", "noodles", "garlic", "eggs", "serrano ham"],
+      "de": ["Kartoffeln", "Nudeln", "Knoblauch", "Eier", "Serrano-Schinken"]
     },
-    "allergens": [],
+    "allergens": [3],
     "price": 4,
     "category": [3],
     "calories": 450,
@@ -173,9 +173,9 @@
       "de": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     "ingredients": {
-      "es": ["col", "aceite de oliva virgen extra", "sal"],
-      "en": ["cabbage", "extra virgin olive oil", "salt"],
-      "de": ["Kohl", "natives Olivenöl extra", "Salz"]
+      "es": ["col", "garbanzos", "pimentón", "papas", "ajo", "carne de cerdo", "morcilla", "azafrán"],
+      "en": ["cabbage", "chickpeas", "paprika", "potatoes", "garlic", "pork", "blood sausage", "saffron"],
+      "de": ["Kohl", "Kichererbsen", "Paprika", "Kartoffeln", "Knoblauch", "Schweinefleisch", "Blutwurst", "Safran"]
     },
     "allergens": [],
     "price": 4,
@@ -196,9 +196,9 @@
       "de": "Bohneneintopf mit Chorizo und Gemüse."
     },
     "ingredients": {
-      "es": ["habichuelas", "chorizo", "verduras"],
-      "en": ["beans", "chorizo", "vegetables"],
-      "de": ["Bohnen", "Chorizo", "Gemüse"]
+      "es": ["habichuelas", "chorizo", "papas", "carne de cerdo", "pimentón", "laurel", "sal", "aceite de oliva virgen extra", "morcilla", "azafrán"],
+      "en": ["beans", "chorizo", "potatoes", "pork", "paprika", "bay leaf", "salt", "extra virgin olive oil", "blood sausage", "saffron"],
+      "de": ["Grüne Bohnen", "Chorizo", "Kartoffeln", "Schweinefleisch", "Paprika", "Lorbeerblatt", "Salz", "Natives Olivenöl Extra", "Blutwurst", "Safran"]
     },
     "allergens": [],
     "price": 4,
@@ -219,13 +219,13 @@
       "de": "Kichererbsen- und Mangold-Eintopf mit einem Hauch von Paprika."
     },
     "ingredients": {
-      "es": ["garbanzos", "acelgas", "pimentón"],
-      "en": ["chickpeas", "chard", "paprika"],
-      "de": ["Kichererbsen", "Mangold", "Paprika"]
+      "es": ["garbanzos", "acelgas", "pimentón", "aceite de oliva virgen extra", "laurel", "pimientos", "ajo", "tomate", "zanahoria", "azafrán", "cebolla", "comino", "huevo (opcional)"],
+      "en": ["chickpeas", "chard", "paprika", "extra virgin olive oil", "bay leaf", "peppers", "garlic", "tomato", "carrot", "saffron", "onion", "boiled egg (optional)"],
+      "de": ["Kichererbsen", "Mangold", "Paprika", "natives Olivenöl extra", "Lorbeer", "Paprika", "Knoblauch", "Tomate", "Karotte", "Safran", "Zwiebel", "gebratene Ei (optional)"]
     },
     "allergens": [],
     "price": 4,
-    "category": [4],
+    "category": [4, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -242,9 +242,9 @@
       "de": "Rindfleisch-Eintopf mit Kartoffeln und Karotten."
     },
     "ingredients": {
-      "es": ["carne de ternera", "patatas", "zanahorias"],
-      "en": ["beef", "potatoes", "carrots"],
-      "de": ["Rindfleisch", "Kartoffeln", "Karotten"]
+      "es": ["carne de ternera", "papas", "zanahorias", "laurel", "cebolla", "ajo", "aceite de oliva virgen extra", "tomate", "sal", "chorizo (opcional)"],
+      "en": ["beef", "potatoes", "carrots", "bay leaf", "onion", "garlic", "extra virgin olive oil", "tomato", "salt", "chorizo (optional)"],
+      "de": ["Rindfleisch", "Kartoffeln", "Karotten", "Lorbeer", "Zwiebel", "Knoblauch", "natives Olivenöl extra", "Tomate", "Salz", "Chorizo (optional)"]
     },
     "allergens": [],
     "price": 4,
@@ -265,11 +265,11 @@
       "de": "Cazuela de fideos mit Rindfleisch und Gemüse."
     },
     "ingredients": {
-      "es": ["fideos", "carne de ternera", "verduras"],
-      "en": ["noodles", "beef", "vegetables"],
-      "de": ["Nudeln", "Rindfleisch", "Gemüse"]
+      "es": ["fideos", "papas", "gambas", "calamares", "mejillones", "sal", "pimienta negra", "laurel", "tomate", "pimientos", "cebolla", "ajo", "azafrán", "aceite de oliva virgen extra"],
+      "en": ["noodles", "potatoes", "prawns", "squid", "mussels", "salt", "black pepper", "bay leaf", "tomato", "peppers", "onion", "garlic", "saffron", "extra virgin olive oil"],
+      "de": ["Nudeln", "Kartoffeln", "Garnelen", "Tintenfisch", "Muscheln", "Salz", "Schwarzer Pfeffer", "Lorbeerblatt", "Tomate", "Paprika", "Zwiebel", "Knoblauch", "Safran", "Natives Olivenöl Extra"]
     },
-    "allergens": [],
+    "allergens": [2, 14],
     "price": 4,
     "category": [5],
     "calories": 350,
@@ -288,9 +288,9 @@
       "de": "Kutteln mit Kichererbsen und Chorizo."
     },
     "ingredients": {
-      "es": ["callos", "garbanzos", "chorizo"],
-      "en": ["tripe", "chickpeas", "chorizo"],
-      "de": ["Kutteln", "Kichererbsen", "Chorizo"]
+      "es": ["garbanzos", "laurel", "clavo", "pimienta negra", "aceite de oliva virgen extra", "azafrán", "carne de cerdo", "guindillas", "pimentón"],
+      "en": ["chickpeas", "bay leaf", "clove", "black pepper", "extra virgin olive oil", "saffron", "pork meat", "chili peppers", "paprika"],
+      "de": ["Kichererbsen", "Lorbeerblatt", "Gewürznelke", "Schwarzer Pfeffer", "Natives Olivenöl Extra", "Safran", "Schweinefleisch", "Chili-Schoten", "Paprika"]
     },
     "allergens": [],
     "price": 5,
@@ -467,18 +467,18 @@
       "de": "Makkaroni"
     },
     "description": {
-      "es": "Macarrones con tomate y queso.",
-      "en": "Macaroni with tomato and cheese.",
-      "de": "Makkaroni mit Tomate und Käse."
+      "es": "Macarrones con tomate.",
+      "en": "Macaroni with tomato.",
+      "de": "Makkaroni mit Tomate."
     },
     "ingredients": {
-      "es": ["macarrones", "tomate", "queso"],
-      "en": ["macaroni", "tomato", "cheese"],
-      "de": ["Makkaroni", "Tomate", "Käse"]
+      "es": ["macarrones", "tomate frito", "carne de ternera y cerdo", "cebolla", "sal"],
+      "en": ["macaroni", "tomato sauce", "beef", "pork", "onion", "salt"],
+      "de": ["Makkaroni", "passierte Tomaten", "Rind- und Schweinefleisch", "Zwiebel", "Salz"]
     },
     "allergens": [],
     "price": 4,
-    "category": [11, 17, 18],
+    "category": [12],
     "calories": 350,
     "image": "/img/placeholder-image.jpg"
   },
@@ -490,18 +490,18 @@
       "de": "Lasagne"
     },
     "description": {
-      "es": "Lasaña con carne de ternera y queso.",
-      "en": "Lasagna with beef and cheese.",
-      "de": "Lasagne mit Rindfleisch und Käse."
+      "es": "Lasaña.",
+      "en": "Lasagna.",
+      "de": "Lasagne."
     },
     "ingredients": {
-      "es": ["lasaña", "carne de ternera", "queso"],
-      "en": ["lasagna", "beef", "cheese"],
-      "de": ["Lasagne", "Rindfleisch", "Käse"]
+      "es": ["carne de ternera y cerdo", "apio", "puerro", "zanahoria", "rábano", "cebolla"],
+      "en": ["pork", "beef", "celery", "leek", "carrot", "radish", "onion"],
+      "de": ["Schweinefleisch", "Rindfleisch", "Lauch", "Karotte", "Radieschen", "Zwiebel"]
     },
-    "allergens": [],
+    "allergens": [9],
     "price": 5.5,
-    "category": [11],
+    "category": [12],
     "calories": 400,
     "image": "/img/placeholder-image.jpg"
   },
@@ -518,13 +518,13 @@
       "de": "Cannelloni mit Rindfleisch und Käse."
     },
     "ingredients": {
-      "es": ["canelones", "carne de ternera", "queso"],
-      "en": ["cannelloni", "beef", "cheese"],
-      "de": ["Cannelloni", "Rindfleisch", "Käse"]
+      "es": ["carne de ternera y cerdo", "apio", "puerro", "zanahoria", "rábano", "cebolla"],
+      "en": ["pork", "beef", "celery", "leek", "carrot", "radish", "onion"],
+      "de": ["Schweinefleisch", "Rindfleisch", "Lauch", "Karotte", "Radieschen", "Zwiebel"]
     },
-    "allergens": [],
+    "allergens": [9],
     "price": 5.5,
-    "category": [11],
+    "category": [12],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -536,18 +536,18 @@
       "de": "Kartoffelkuchen mit Fleisch"
     },
     "description": {
-      "es": "Pastel de papas con carne de ternera y queso.",
-      "en": "Potato pie with beef and cheese.",
-      "de": "Kartoffelkuchen mit Rindfleisch und Käse."
+      "es": "Pastel de papas con carne.",
+      "en": "Potato pie with meat.",
+      "de": "Kartoffelkuchen mit Fleisch."
     },
     "ingredients": {
-      "es": ["pastel de papas", "carne de ternera", "queso"],
-      "en": ["potato pie", "beef", "cheese"],
-      "de": ["Kartoffelkuchen", "Rindfleisch", "Käse"]
+      "es": ["carne de ternera y cerdo", "laurel", "cebolla", "sal", "pimienta negra", "papas", "sal", "leche"],
+      "en": ["beef and pork", "bay leaf", "onion", "salt", "black pepper", "potatoes", "salt", "milk"],
+      "de": ["Rind- und Schweinefleisch", "Lorbeer", "Zwiebel", "Salz", "schwarzer Pfeffer", "Kartoffeln", "Salz", "Milch"]
     },
-    "allergens": [],
+    "allergens": [7],
     "price": 5,
-    "category": [11],
+    "category": [12],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -570,7 +570,7 @@
     },
     "allergens": [],
     "price": 4,
-    "category": [11, 17, 18],
+    "category": [12, 18, 19],
     "calories": 400,
     "image": "/img/placeholder-image.jpg"
   },
@@ -587,13 +587,13 @@
       "de": "Spanische Tortilla mit Zwiebel und Paprika."
     },
     "ingredients": {
-      "es": ["tortilla", "patatas", "cebolla", "pimientos"],
-      "en": ["omelette", "potatoes", "onion", "peppers"],
-      "de": ["Omelette", "Kartoffeln", "Zwiebel", "Paprika"]
+      "es": ["papas", "cebolla molida", "sal", "huevos"],
+      "en": ["potatoes", "onion", "salt", "eggs"],
+      "de": ["Kartoffeln", "gemahlene Zwiebel", "Salz", "Eier"]
     },
-    "allergens": [],
+    "allergens": [3],
     "price": 5,
-    "category": [10, 18],
+    "category": [11, 19],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -610,13 +610,13 @@
       "de": "Fleischbällchen mit Mandelsoße und einem Hauch von Paprika."
     },
     "ingredients": {
-      "es": ["albóndigas", "salsa de almendras", "pimentón"],
-      "en": ["meetballs", "almond sauce", "paprika"],
-      "de": ["Fleischbällchen", "Mandelsoße", "Paprika"]
+      "es": ["albóndigas mixta (ternera y cerdo)", "salsa de almendras"],
+      "en": ["meetballs (beef and pork)", "almond sauce"],
+      "de": ["Fleischbällchen (Rind und Schwein)", "Mandelsoße"]
     },
-    "allergens": [],
+    "allergens": [1, 3, 8],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -633,13 +633,13 @@
       "de": "Knoblauch-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["pollo", "ajo", "pimentón", "aceite de oliva virgen extra"],
-      "en": ["chicken", "garlic", "paprika", "extra virgin olive oil"],
-      "de": ["Hähnchen", "Knoblauch", "Paprika", "natives Olivenöl extra"]
+      "es": ["pollo", "ajo", "aceite de oliva virgen extra", "sal", "laurel"],
+      "en": ["chicken", "garlic", "extra virgin olive oil", "salt", "bay leaf"],
+      "de": ["Hähnchen", "Knoblauch", "natives Olivenöl extra", "Salz", "Lorbeer"]
     },
     "allergens": [],
     "price": 4.5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -656,13 +656,13 @@
       "de": "Pfeffer-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["pollo", "pimienta", "pimentón", "aceite de oliva virgen extra"],
-      "en": ["chicken", "pepper", "paprika", "extra virgin olive oil"],
-      "de": ["Hähnchen", "Pfeffer", "Paprika", "natives Olivenöl extra"]
+      "es": ["pollo", "pimienta", "nata", "sal"],
+      "en": ["chicken", "pepper", "cream", "salt"],
+      "de": ["Hähnchen", "Pfeffer", "Sahne", "Salz"]
     },
     "allergens": [],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -679,36 +679,36 @@
       "de": "Curry-Hähnchen mit einem Hauch von Paprika und nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["pollo", "curry", "pimentón", "aceite de oliva virgen extra"],
-      "en": ["chicken", "curry", "paprika", "extra virgin olive oil"],
-      "de": ["Hähnchen", "Curry", "Paprika", "natives Olivenöl extra"]
+      "es": ["pollo", "curry", "puerro", "zanahoria", "cebolla", "apio", "rábano"],
+      "en": ["chicken", "curry", "leek", "carrot", "onion", "celery", "radish"],
+      "de": ["Hähnchen", "Curry", "Lauch", "Karotte", "Zwiebel", "Sellerie", "Radieschen"]
     },
-    "allergens": [],
+    "allergens": [3, 9],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
   {
     "id": 31,
     "name": {
-      "es": "Secreto en salsa con mostaza y miel",
-      "en": "Secret in sauce with mustard and honey",
-      "de": "Geheimnis in Sauce mit Senf und Honig"
+      "es": "Secreto en salsa con puré de patatas",
+      "en": "Secret in sauce with mashed potatoes",
+      "de": "Geheimnis in Sauce mit Kartoffelpüree"
     },
     "description": {
-      "es": "Carne de secreto en salsa con un toque de mostaza y miel.",
-      "en": "Secret meat in sauce with a touch of mustard and honey.",
-      "de": "Geheimnisfleisch in Sauce mit einem Hauch von Senf und Honig."
+      "es": "Carne de secreto en salsa con un toque de mostaza y miel acompañado de puré de patatas.",
+      "en": "Secret meat in sauce with a touch of mustard and honey served with mashed potatoes.",
+      "de": "Geheimnisfleisch in Sauce mit einem Hauch von Senf und Honig, serviert mit Kartoffelpüree."
     },
     "ingredients": {
-      "es": ["carne de secreto", "salsa", "mostaza", "miel"],
-      "en": ["iberian pork", "sauce", "mustard", "honey"],
-      "de": ["Iberisches Schweinefleisch", "Sauce", "Senf", "Honig"]
+      "es": ["carne de secreto", "patata", "mostaza", "miel", "pimienta", "leche"],
+      "en": ["iberian pork", "mustard", "honey", "potato", "pepper", "milk"],
+      "de": ["Iberisches Schweinefleisch", "Senf", "Honig", "Kartoffel", "Pfeffer", "Milch"]
     },
-    "allergens": [],
+    "allergens": [7, 10],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -720,18 +720,18 @@
       "de": "Fleisch mit Tomate"
     },
     "description": {
-      "es": "Carne de secreto en salsa con un toque de mostaza y miel.",
-      "en": "Secret meat in sauce with a touch of mustard and honey.",
-      "de": "Geheimnisfleisch in Sauce mit einem Hauch von Senf und Honig."
+      "es": "Carne de ternera en salsa de tomate.",
+      "en": "Beef in tomato sauce.",
+      "de": "Rindfleisch in Tomatensoße."
     },
     "ingredients": {
-      "es": ["carne de secreto", "salsa", "mostaza", "miel"],
-      "en": ["iberian pork", "sauce", "mustard", "honey"],
-      "de": ["Iberisches Schweinefleisch", "Sauce", "Senf", "Honig"]
+      "es": ["carne de ternera", "ajo", "pimientos", "cebolla", "laurel", "tomate frito"],
+      "en": ["beef", "garlic", "peppers", "onion", "bay leaf", "fried tomato"],
+      "de": ["Rindfleisch", "Knoblauch", "Paprika", "Zwiebel", "Lorbeer", "gebratene Tomate"]
     },
     "allergens": [],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -748,13 +748,13 @@
       "de": "Quesadilla mit Rindfleisch und Käse."
     },
     "ingredients": {
-      "es": ["quesadilla", "carne de ternera", "queso"],
-      "en": ["quesadilla", "beef", "cheese"],
-      "de": ["Quesadilla", "Rindfleisch", "Käse"]
+      "es": ["carne de ternera y cerdo", "cebolla", "hierbas provenzales", "laurel", "queso"],
+      "en": ["beef and pork", "onion", "provençal herbs", "bay leaf", "cheese"],
+      "de": ["Rind- und Schweinefleisch", "Zwiebel", "provenzalische Kräuter", "Lorbeer", "käse"]
     },
-    "allergens": [],
+    "allergens": [7],
     "price": 5,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -766,18 +766,18 @@
       "de": "Bohnen mit Schinken"
     },
     "description": {
-      "es": "Habas con jamón y un toque de pimentón.",
-      "en": "Beans with ham and a touch of paprika.",
-      "de": "Bohnen mit Schinken und einem Hauch von Paprika."
+      "es": "Habas con jamón serrano.",
+      "en": "Beans with spanish ham.",
+      "de": "Bohnen mit Spanish-Schinken."
     },
     "ingredients": {
-      "es": ["habas", "jamón", "pimentón"],
-      "en": ["beans", "ham", "paprika"],
-      "de": ["Bohnen", "Schinken", "Paprika"]
+      "es": ["habas", "jamón serrano", "cebolla", "sal"],
+      "en": ["beans", "spanish ham", "onion", "salt"],
+      "de": ["Bohnen", "spanish ham", "Zwiebel", "Salz"]
     },
     "allergens": [],
     "price": 4,
-    "category": [8],
+    "category": [9],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -789,18 +789,18 @@
       "de": "Rosada mit Gemüse"
     },
     "description": {
-      "es": "Rosada con verduras y un toque de pimentón.",
-      "en": "Rosada with vegetables and a touch of paprika.",
-      "de": "Rosada mit Gemüse und einem Hauch von Paprika."
+      "es": "Rosada con verduras y un toque de pimienta.",
+      "en": "Rosada with vegetables and a touch of black pepper.",
+      "de": "Rosada mit Gemüse und einem Hauch von schwarzem Pfeffer."
     },
     "ingredients": {
-      "es": ["rosada", "verduras", "pimentón"],
-      "en": ["rosada", "vegetables", "paprika"],
-      "de": ["Rosada", "Gemüse", "Paprika"]
+      "es": ["rosada", "tomate frito", "cebolla", "pimienta negra", "laurel", "sal", "pimientos", "zanahorias"],
+      "en": ["rosada", "fried tomato", "onion", "black pepper", "bay leaf", "salt", "peppers", "carrots"],
+      "de": ["Rosada", "gebratene Tomate", "Zwiebel", "schwarzer Pfeffer", "Lorbeer", "Salz", "Paprika", "Karotten"]
     },
-    "allergens": [],
+    "allergens": [4],
     "price": 5.5,
-    "category": [9],
+    "category": [10],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -817,13 +817,13 @@
       "de": "Fisch in Lauchsoße mit einem Hauch von Paprika."
     },
     "ingredients": {
-      "es": ["pescado", "salsa de puerro", "pimentón"],
-      "en": ["fish", "leek sauce", "paprika"],
-      "de": ["Fisch", "Lauchsoße", "Paprika"]
+      "es": ["pescado", "salsa de puerro", "pimienta negra"],
+      "en": ["fish", "leek sauce", "black pepper"],
+      "de": ["Fisch", "Lauchsoße", "schwarzer Pfeffer"]
     },
-    "allergens": [],
+    "allergens": [4, 7],
     "price": 5,
-    "category": [9],
+    "category": [10],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -840,13 +840,13 @@
       "de": "Tintenfisch in Sauce"
     },
     "ingredients": {
-      "es": ["jibia", "salsa"],
-      "en": ["cuttlefish", "sauce"],
-      "de": ["Tintenfisch", "Sauce"]
+      "es": ["jibia", "cebolla", "zanahoria", "apio", "vino blanco"],
+      "en": ["cuttlefish", "onion", "carrot", "celery", "white wine"],
+      "de": ["Tintenfisch", "Zwiebel", "Karotte", "Sellerie", "Weißwein"]
     },
-    "allergens": [],
+    "allergens": [4, 9],
     "price": 5,
-    "category": [9],
+    "category": [10],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -863,13 +863,13 @@
       "de": "Pisto mit Tintenfisch und Tomatensoße"
     },
     "ingredients": {
-      "es": ["pisto", "pulpo", "salsa de tomate"],
-      "en": ["pisto", "octopus", "tomato sauce"],
-      "de": ["Pisto", "Tintenfisch", "Tomatensoße"]
+      "es": ["cebolla", "berenjena", "tomate frito", "pimientos", "sal", "calabacín", "ajo", "pulpo"],
+      "en": ["onion", "aubergine", "fried tomato", "peppers", "salt", "zucchini", "garlic", "octopus"],
+      "de": ["Zwiebel", "Aubergine", "gebratene Tomate", "Paprika", "Salz", "Zucchini", "Knoblauch", "Oktopus"]
     },
-    "allergens": [],
+    "allergens": [14],
     "price": 5,
-    "category": [9],
+    "category": [10],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
@@ -886,36 +886,36 @@
       "de": "Kabeljau mit grüner Soße und einem Hauch von Paprika."
     },
     "ingredients": {
-      "es": ["bacalao", "salsa verde", "pimentón"],
-      "en": ["cod", "green sauce", "paprika"],
-      "de": ["Kabeljau", "grüne Soße", "Paprika"]
+      "es": ["bacalao", "puerro", "aceite de oliva virgen extra", "perejil", "espinacas", "eneldo", "cilantro", "nata", "harina de trigo", "sal", "pimienta"],
+      "en": ["cod", "leek", "extra virgin olive oil", "parsley", "spinach", "dill", "coriander", "cream", "wheat flour", "salt", "pepper"],
+      "de": ["Kabeljau", "Lauch", "natives Olivenöl extra", "Petersilie", "Spinat", "Dill", "Koriander", "Sahne", "Weizenmehl", "Salz", "Pfeffer"]
     },
-    "allergens": [],
+    "allergens": [1, 4, 7],
     "price": 5.5,
-    "category": [9],
+    "category": [10],
     "calories": 500,
     "image": "/img/placeholder-image.jpg"
   },
   {
     "id": 40,
     "name": {
-      "es": "Tortilla de verduras",
-      "en": "Vegetable omelette",
+      "es": "Tortilla de espinacas",
+      "en": "Spinach omelette",
       "de": "Gemüseomelette"
     },
     "description": {
-      "es": "Tortilla de verduras con cebolla y pimientos.",
-      "en": "Vegetable omelette with onion and peppers.",
-      "de": "Gemüseomelette mit Zwiebel und Paprika."
+      "es": "Tortilla de espinacas.",
+      "en": "Spinach omelette.",
+      "de": "Spinatomelette."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["espinacas", "huevos"],
+      "en": ["spinach", "eggs"],
+      "de": ["Spinat", "Eier"]
     },
-    "allergens": [],
+    "allergens": [4],
     "price": 5,
-    "category": [10, 18],
+    "category": [11, 19],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   },
@@ -932,13 +932,13 @@
       "de": "Russischer Salat mit Mayonnaise und Gemüse."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["papas", "mayonesa", "gisantes", "zanahorias", "maiz", "aceitunas", "huevo"],
+      "en": ["potatoes", "mayonnaise", "peas", "carrots", "corn", "olives", "egg"],
+      "de": ["Kartoffeln", "Mayonnaise", "Erbsen", "Karotten", "Mais", "Oliven", "Ei"]
     },
-    "allergens": [],
+    "allergens": [3],
     "price": 5,
-    "category": [13],
+    "category": [14, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -955,13 +955,13 @@
       "de": "Gemischter Salat mit Kopfsalat, Tomate und Zwiebel."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["lechuga", "tomate", "maiz", "huevos", "aceitunas", "atún"],
+      "en": ["lettuce", "tomato", "corn", "eggs", "olives", "tuna"],
+      "de": ["Lettuce", "Tomate", "Mais", "Eier", "Oliven", "Thunfisch"]
     },
-    "allergens": [],
+    "allergens": [3, 4],
     "price": 4,
-    "category": [13, 17, 18],
+    "category": [14, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -978,13 +978,13 @@
       "de": "Salat mit Hähnchen, Kopfsalat, Tomate und Zwiebel."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["lechuga", "tomates cherry", "queso", "salsa cesar", "pollo empanado"],
+      "en": ["lettuce", "cherry tomatoes", "cheese", "caesar sauce", "breaded chicken"],
+      "de": ["Lettuce", "Kirschtomaten", "Käse", "Caesar-Sauce", "panierte Hähnchenbrust"]
     },
-    "allergens": [],
+    "allergens": [1, 3, 4, 6, 7, 10],
     "price": 4.5,
-    "category": [13],
+    "category": [14],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1001,13 +1001,13 @@
       "de": "Tropischer Salat mit Hähnchen, Kopfsalat, Tomate und Zwiebel."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["lechuga", "salsa rosa", "piña", "manzana", "gambas", "bocas de mar"],
+      "en": ["lettuce", "pink sauce", "pineapple", "apple", "prawns", "seafood"],
+      "de": ["Lettuce", "rosa Sauce", "Ananas", "Apfel", "Garnelen", "Meeresfrüchte"]
     },
-    "allergens": [],
+    "allergens": [2, 3, 4, 14],
     "price": 5,
-    "category": [13, 17, 18],
+    "category": [14, 18, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1024,13 +1024,13 @@
       "de": "Tomaten-Mozzarella-Salat mit Basilikumsauce und nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["tortilla", "verduras", "cebolla", "pimientos"],
-      "en": ["omelette", "vegetables", "onion", "peppers"],
-      "de": ["Omelette", "Gemüse", "Zwiebel", "Paprika"]
+      "es": ["tomate", "mozzarella", "albahaca", "aceite de oliva virgen extra"],
+      "en": ["tomato", "mozzarella", "basil", "extra virgin olive oil"],
+      "de": ["Tomate", "Mozzarella", "Basilikum", "natives Olivenöl extra"]
     },
     "allergens": [],
     "price": 5,
-    "category": [13, 17, 18],
+    "category": [14, 18, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1060,23 +1060,23 @@
   {
     "id": 47,
     "name": {
-      "es": "Pipirana",
-      "en": "Pipirana",
-      "de": "Pipirana"
+      "es": "Pipirrana",
+      "en": "Pipirrana",
+      "de": "Pipirrana"
     },
     "description": {
-      "es": "Pipirana con bocas de mar.",
-      "en": "Pipirana with seafood.",
-      "de": "Pipirana mit Meeresfrüchten."
+      "es": "Pipirrana con bocas de mar.",
+      "en": "Pipirrana with seafood.",
+      "de": "Pipirrana mit Meeresfrüchten."
     },
     "ingredients": {
-      "es": ["pimiento", "cebolla", "pepino", "aceite de oliva virgen extra", "tomate", "bocas de mar"],
-      "en": ["pepper", "onion", "cucumber", "extra virgin olive oil", "tomato", "seafood"],
-      "de": ["Paprika", "Zwiebel", "Gurke", "natives Olivenöl extra", "Tomate", "Meeresfrüchte"]
+      "es": ["pimiento", "cebolla", "pepino", "tomate", "bocas de mar"],
+      "en": ["pepper", "onion", "cucumber", "tomato", "seafood"],
+      "de": ["Paprika", "Zwiebel", "Gurke", "Tomate", "Meeresfrüchte"]
     },
-    "allergens": [],
+    "allergens": [1, 2, 3, 4, 6, 7, 14],
     "price": 3.5,
-    "category": [14],
+    "category": [15],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1093,13 +1093,13 @@
       "de": "Andalusisches Gazpacho mit Brot."
     },
     "ingredients": {
-      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "pepino", "pimiento verde"],
-      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "cucumber", "green pepper"],
-      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Gurke", "grüne Paprika"]
+      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "pepino", "pimiento verde", "vinagre"],
+      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "cucumber", "green pepper", "vinegar"],
+      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Gurke", "grüne Paprika", "Essig"]
     },
-    "allergens": [],
+    "allergens": [1],
     "price": 5,
-    "category": [14, 18],
+    "category": [15, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1116,13 +1116,13 @@
       "de": "Couscous mit Gemüse, Aubergine, Paprika und Zucchini."
     },
     "ingredients": {
-      "es": ["cus cus", "verduras", "berenjena", "pimiento", "calabacín"],
-      "en": ["couscous", "vegetables", "eggplant", "pepper", "zucchini"],
-      "de": ["Couscous", "Gemüse", "Aubergine", "Paprika", "Zucchini"]
+      "es": ["harina de sémola", "sal", "canela", "curry", "berenjena", "zanahoria", "pimiento", "cebolla", "calabacín"],
+      "en": ["semolina flour", "salt", "cinnamon", "curry", "eggplant", "carrot", "pepper", "onion", "zucchini"],
+      "de": ["Semiweizenmehl", "Salz", "Zimt", "Curry", "Aubergine", "Karotte", "Paprika", "Zwiebel", "Zucchini"]
     },
-    "allergens": [],
+    "allergens": [1],
     "price": 3,
-    "category": [14, 17, 18],
+    "category": [15, 18, 19],
     "calories": 300,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1139,11 +1139,11 @@
       "de": "Pisto mit Ei."
     },
     "ingredients": {
-      "es": ["tomate", "ajo", "pan", "aceite de oliva virgen extra", "sal", "huevo", "jamón serrano"],
-      "en": ["tomato", "garlic", "bread", "extra virgin olive oil", "salt", "egg", "serrano ham"],
-      "de": ["Tomate", "Knoblauch", "Brot", "natives Olivenöl extra", "Salz", "Ei", "Serrano-Schinken"]
+      "es": ["berenjena", "pimiento", "cebolla", "calabacín", "ajo", "tomate frito", "huevo"],
+      "en": ["aubergine", "pepper", "onion", "zucchini", "garlic", "fried tomato", "egg"],
+      "de": ["Aubergine", "Paprika", "Zwiebel", "Zucchini", "Knoblauch", "gebratene Tomate", "Ei"]
     },
-    "allergens": [],
+    "allergens": [3],
     "price": 3.5,
     "category": [14, 18],
     "calories": 300,
@@ -1162,11 +1162,11 @@
       "de": "Gefüllte Eier mit Thunfisch und Mayonnaise."
     },
     "ingredients": {
-      "es": ["huevo", "atún", "mayonesa", "aceite de oliva virgen extra", "sal"],
-      "en": ["egg", "tuna", "mayonnaise", "extra virgin olive oil", "salt"],
-      "de": ["Ei", "Thunfisch", "Mayonnaise", "natives Olivenöl extra", "Salz"]
+      "es": ["huevo", "atún", "mayonesa", "aceite de oliva virgen extra", "sal", "aceitunas"],
+      "en": ["egg", "tuna", "mayonnaise", "extra virgin olive oil", "salt", "olives"],
+      "de": ["Ei", "Thunfisch", "Mayonnaise", "natives Olivenöl extra", "Salz", "Oliven"]
     },
-    "allergens": [],
+    "allergens": [3, 4],
     "price": 4,
     "category": [14, 18],
     "calories": 300,
@@ -1191,7 +1191,7 @@
     },
     "allergens": [],
     "price": 1.5,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1214,7 +1214,7 @@
     },
     "allergens": [],
     "price": 1.5,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1237,7 +1237,7 @@
     },
     "allergens": [],
     "price": 1,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1260,7 +1260,7 @@
     },
     "allergens": [],
     "price": 0.5,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1283,7 +1283,7 @@
     },
     "allergens": [],
     "price": 2.5,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1306,7 +1306,7 @@
     },
     "allergens": [],
     "price": 2.5,
-    "category": [16],
+    "category": [17],
     "calories": 0,
     "image": ""
   },
@@ -1354,6 +1354,29 @@
     "price": 12.5,
     "category": [15],
     "calories": 0,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 40,
+    "name": {
+      "es": "Tortilla de habichuelas",
+      "en": "Bean omelette",
+      "de": "Bohnenomelett"
+    },
+    "description": {
+      "es": "Tortilla de habichuelas.",
+      "en": "Bean omelette.",
+      "de": "Bohnenomelett."
+    },
+    "ingredients": {
+      "es": ["habichuelas", "huevos"],
+      "en": ["beans", "eggs"],
+      "de": ["Bohnen", "Eier"]
+    },
+    "allergens": [4],
+    "price": 5,
+    "category": [11, 19],
+    "calories": 450,
     "image": "/img/placeholder-image.jpg"
   }
 ]
