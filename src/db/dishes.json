@@ -455,7 +455,7 @@
     },
     "allergens": [],
     "price": 0.5,
-    "category": [15, 17, 18],
+    "category": [16, 18, 19],
     "calories": 100,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1329,7 +1329,7 @@
     },
     "allergens": [],
     "price": 9.5,
-    "category": [15],
+    "category": [16],
     "calories": 0,
     "image": "/img/placeholder-image.jpg"
   },
@@ -1352,7 +1352,7 @@
     },
     "allergens": [],
     "price": 12.5,
-    "category": [15],
+    "category": [16],
     "calories": 0,
     "image": "/img/placeholder-image.jpg"
   },
