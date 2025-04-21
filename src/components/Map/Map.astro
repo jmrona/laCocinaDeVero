@@ -1,0 +1,15 @@
+---
+const {height = "200px", width = "100%", borderRadius = "0"} = Astro.props;
+---
+<gmp-map center="36.7314492,-3.9733207" zoom="17" map-id="la-cocina-de-vero-map">
+  <gmp-advanced-marker position="36.7314492,-3.9733207" title="My location"></gmp-advanced-marker>
+</gmp-map>
+
+<style define:vars={{height, width, borderRadius}} >
+  gmp-map {
+    height: var(--height);
+    width: var(--width, 100%);
+    border-radius: var(--borderRadius);
+    overflow: hidden; 
+  }
+</style>
