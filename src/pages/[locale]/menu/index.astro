@@ -23,6 +23,5 @@ const allergens = await getAllergens(lang);
         <MenuOfTheDay server:defer categories={categories} dishes={dishes}/>
         <MenuList client:only lang={lang} dishes={dishes} categories={categories} allergens={allergens}/>
         <AllergensCard allergens={allergens}/>
-        <Footer />
     </Container>
 </Layout>
