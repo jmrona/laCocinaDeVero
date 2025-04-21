@@ -67,7 +67,7 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
     const categoryId = Object.values(DAY_CATEGORY).findIndex(category => category.some(cat => cat === day))
 
     if( categoryId === -1) return []
-    const category = categories.find(category => category.id === categoryId + 1)
+    const category = categories.find(category => category.id === categoryId)
 
     return dishes.filter(dish => dish.category.some(cat => cat === category?.id))
   }, [dishes])
@@ -119,9 +119,11 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
   }, [])
 
   const dishesByCategory = useMemo(() => {
-    return dishes.filter(food => food.category.some(cat => cat === selectedCategory))
-  }, [selectedCategory])
+    const drinkCategory = categories.find(category => category.name.toLowerCase() === "bebidas" || category.name.toLowerCase() === "drinks" || category.name.toLowerCase() === "getränke")
 
+    return dishes.filter(food => selectedCategory === 8 ? food.category.some(cat => cat !== drinkCategory?.id) : food.category.some(cat => cat === selectedCategory))
+  }, [selectedCategory])
+  
   return (
     <>
       {menuOfTheDay.length > 0 && (
