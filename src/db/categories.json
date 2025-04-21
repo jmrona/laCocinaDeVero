@@ -58,13 +58,21 @@
     {
         "id": 8,
         "name": {
+            "es": "Todo",
+            "en": "All",
+            "de": "Alles"
+        }
+    },
+    {
+        "id": 9,
+        "name": {
             "es": "Carnes",
             "en": "Meats",
             "de": "Fleisch"
         }
     },
     {
-        "id": 9,
+        "id": 10,
         "name": {
             "es": "Pescados",
             "en": "Fish",
@@ -72,7 +80,7 @@
         }
     },
     {
-        "id": 10,
+        "id": 11,
         "name": {
             "es": "Tortillas",
             "en": "Omelets",
@@ -80,7 +88,7 @@
         }
     },
     {
-        "id": 11,
+        "id": 12,
         "name": {
             "es": "Pastas",
             "en": "Pasta",
@@ -88,7 +96,7 @@
         }
     },
     {
-        "id": 12,
+        "id": 13,
         "name": {
             "es": "Postres",
             "en": "Desserts",
@@ -96,7 +104,7 @@
         }
     },
     {
-        "id": 13,
+        "id": 14,
         "name": {
             "es": "Ensaladas",
             "en": "Salads",
@@ -104,7 +112,7 @@
         }
     },
     {
-        "id": 14,
+        "id": 15,
         "name": {
             "es": "Platos fríos",
             "en": "Cold dishes",
@@ -112,7 +120,7 @@
         }
     },
     {
-        "id": 15,
+        "id": 16,
         "name": {
             "es": "Extra",
             "en": "Extras",
@@ -120,7 +128,7 @@
         }
     },
     {
-        "id": 16,
+        "id": 17,
         "name": {
             "es": "Bebidas",
             "en": "Drinks",
@@ -128,7 +136,7 @@
         }
     },
     {
-        "id": 17,
+        "id": 18,
         "name": {
             "es": "Vegano",
             "en": "Vegan",
@@ -136,7 +144,7 @@
         }
     },
     {
-        "id": 18,
+        "id": 19,
         "name": {
             "es": "Vegetariano",
             "en": "Vegetarian",
