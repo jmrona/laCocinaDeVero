@@ -9,22 +9,22 @@ const t = useTranslations(lang);
 ---
 
 <footer class="max-w-6xl mx-auto px-4 pt-20">
-    <div class="gap-8 lg:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[250px_100px_1fr_1fr]">
+    <div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[300px_150px_200px_1fr]">
         <div class="flex flex-row gap-3 md:gap-2 items-center">
             <a href={`/${lang}/`} class="href">
                 <Logo width={140} class="min-w-[140px]"/>
             </a>
-            <p class="md:text-pretty text-sm text-gray-600 text-start max-w-[50ch] text-balance">{t("footer.description")}</p>
+            <p class="md:text-pretty text-sm text-gray-600 text-start max-w-[50ch] text-pretty">{t("footer.description")}</p>
         </div>
         <div class="flex flex-col gap-2">
             <h3 class="text-pretty text-sm font-semibold">{t("footer.menu")}</h3>
             <a href={`/${lang}/menu`} class="text-pretty text-sm text-gray-600">{t("nav.menu")}</a>
             <a href={`/${lang}/about`} class="text-pretty text-sm text-gray-600">{t("nav.about")}</a>
-            <a href={`/${lang}/contact`} class="text-pretty text-sm text-gray-600">{t("nav.contact")}</a>
+            <!-- <a href={`/${lang}/contact`} class="text-pretty text-sm text-gray-600">{t("nav.contact")}</a> -->
         </div>
         <div class="flex flex-col gap-2">
             <h3 class="text-pretty text-sm font-semibold">{t("footer.contact")}</h3>
-            <span class="flex gap-2 text-sm text-gray-600"><MapPin size="20" class="text-primary"/>Pórtico n1, Urb. Laguna Beach (Torrox Costa)</span>
+            <span class="flex gap-2 text-sm text-gray-600"><MapPin size="20" class="text-primary"/><a href="https://maps.app.goo.gl/hFwAX95oncCDGKkJ7" target="_blank">Pórtico n1, <br/> Urb. Laguna Beach <br/>Torrox Costa, Málaga</a></span>
             <a href="tel:+34652640538" class="text-pretty text-sm text-gray-600 flex gap-2"><Phone size="20" class="text-primary"/> +34 652 64 05 38</a>
         </div>
         <div class="flex flex-col gap-2">
@@ -38,5 +38,6 @@ const t = useTranslations(lang);
         </div>
     </div>
     <hr class="border-gray-300 border-1 mt-8 w-full mx-auto" />
-    <p class="text-sm text-gray-600 text-center py-8">{new Date().getFullYear()} - La cocina de Vero.</p>
+    <p class="text-sm text-gray-600 text-center pt-8">{new Date().getFullYear()} - La cocina de Vero.</p>
+    <small class="text-[12px] text-gray-600 text-center block pb-8">Desarrollada por <a href="https://github.com/jmrona" target="_blank">JMRONA</a></small>
 </footer>
