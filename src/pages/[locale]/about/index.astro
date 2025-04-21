@@ -1,0 +1,26 @@
+---
+import Map from "@/components/Map/Map.astro";
+import Layout from "@/layouts/Layout.astro";
+import { useTranslations } from "@/lib/i18n/useTranslations";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t("about.title")} - La cocina de Vero`}>
+    <section class="max-w-6xl gap-8 mx-auto px-4 mt-10 flex flex-col md:flex-row mb-8">
+        <div class="flex-1/2">
+            <h1 class="text-2xl font-semibold text-balance mb-3">{t("about.title")}</h1>
+            <p class="text-pretty mb-3">{t("about.experience")}</p>
+            <p class="text-pretty mb-6">{t("about.contact")}</p>
+
+            <div class="bg-neutral/50 rounded-xl p-4 flex flex-col gap-2">
+                <p>{t("about.telephone")}: <a href="tel:+34652640538" class="text-blue-700 underline underline-offset-2">+34 652 64 05 38</a></p>
+                <p>{t("about.address")}: <a href="https://maps.app.goo.gl/hFwAX95oncCDGKkJ7" target="_blank" class="text-blue-700 underline underline-offset-2">Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga</a></p>
+            </div>
+        </div>
+        <div class="flex-1/2">
+            <Map height="400px" width="100%" borderRadius="12px"/>
+        </div>
+    </section>
+</Layout>
