@@ -4,6 +4,7 @@ import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 
 import "@/styles/global.css";
+import Footer from '@/components/sections/Footer/Footer.astro';
 
 const { title } = Astro.props;
 const lang = Astro.currentLocale;
@@ -24,6 +25,8 @@ const meta = {
     <meta name="description" content={meta.description} />
     <meta name="keywords" content={meta.keywords} />
     <meta name="author" content={meta.author} />
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hp4j0dK93rmrFNjJECRJghuod_7Hafk&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
     <title>{meta.title}</title>
     
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -40,7 +43,12 @@ const meta = {
     <Analytics />
   </head>
   <body>
-    <Header />
-    <slot />
+    <main class="flex flex-col min-h-screen">
+      <Header />
+      <div class="grow">
+        <slot />
+      </div>
+      <Footer />
+    </main>
   </body>
 </html>
