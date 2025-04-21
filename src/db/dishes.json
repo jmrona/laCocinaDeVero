@@ -58,9 +58,9 @@
       "de": "Gemüsesuppe mit einem Hauch von nativem Olivenöl extra."
     },
     "ingredients": {
-      "es": ["calabaza", "zanahoria", "puerro", "apio", "aceite de oliva virgen extra", "sal", "habichuelas"],
-      "en": ["pumpkin", "carrot", "leek", "parsley", "extra virgin olive oil", "salt", "beans"],
-      "de": ["Kürbis", "Karotte", "Lauch", "Pfeffer", "natives Olivenöl extra", "Salz", "Bohnen"]
+      "es": ["calabaza", "zanahoria", "puerro", "apio", "aceite de oliva virgen extra", "sal", "habichuelas", "coliflor", "brócoli"],
+      "en": ["pumpkin", "carrot", "leek", "parsley", "extra virgin olive oil", "salt", "beans", "kale", "broccoli"],
+      "de": ["Kürbis", "Karotte", "Lauch", "Pfeffer", "natives Olivenöl extra", "Salz", "Bohnen", "Kale", "Brokkoli"]
     },
     "allergens": [9],
     "price": 3.5,
@@ -1376,6 +1376,29 @@
     "allergens": [4],
     "price": 5,
     "category": [11, 19],
+    "calories": 450,
+    "image": "/img/placeholder-image.jpg"
+  },
+  {
+    "id": 41,
+    "name": {
+      "es": "Verduras salteadas",
+      "en": "Sautéed vegetables",
+      "de": "Sautiertes Gemüse"
+    },
+    "description": {
+      "es": "Verduras salteadas.",
+      "en": "Sautéed vegetables",
+      "de": "Sautiertes Gemüse"
+    },
+    "ingredients": {
+      "es": ["brócoli", "coliflor", "zanahoria", "puerro", "pimientos", "calabacín", "aceite de oliva virgen extra", "ajo"],
+      "en": ["broccoli", "kale", "carrot", "leek", "pepper", "zucchini", "extra virgin olive oil", "garlic"],
+      "de": ["Brokkoli", "Kale", "Karotte", "Lauch", "Pfeffer", "Zucchini", "natives Olivenöl extra", "Knoblauch"]
+    },
+    "allergens": [],
+    "price": 3.5,
+    "category": [15, 18, 19],
     "calories": 450,
     "image": "/img/placeholder-image.jpg"
   }
