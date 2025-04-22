@@ -59,21 +59,20 @@ categories.slice(0,7).forEach((category) => {
       </button>
       <span class="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
     </div>
-  </div>
-  <Swiper spaceBetween={10} slidesPerView={"auto"} autoHeight={false}>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-        {menuOfTheDay.slice(0, 4).map((food, index) => {
-            return (
-                <div class="swiper-slide !w-fit">
-                    <Card food={food} lang={lang}/>
-                </div>
-            )
-        })}
-        </div>
-    </div>
-  </Swiper>
 </div>
+
+<div class="swiper min-h-[390px]">
+    <div class="swiper-wrapper">
+    {menuOfTheDay.slice(0, 4).map((food, index) => {
+        return (
+            <div class="swiper-slide !w-fit">
+                <Card food={food} lang={lang}/>
+            </div>
+        )
+    })}
+    </div>
+</div>
+
 
 <dialog id="see-special-menu-dialog" class="max-w-screen md:max-w-[500px] md:my-auto p-5 h-fit w-full mx-auto" aria-labelledby="see-special-menu-title" role="dialog" aria-modal="true">
     <div class="flex justify-end">

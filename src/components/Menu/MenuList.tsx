@@ -11,10 +11,7 @@ import type { AllergensType } from '@/lib/getAllergens'
 
 export default function MenuList({lang, categories = [], dishes = [], allergens = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: DishesType[], allergens: AllergensType[]}) { 
   const firstCategory = [...categories].slice(7)?.at(0)
-  const queryParams = new URLSearchParams(window.location.search)
-  const categoryId = queryParams.get('category')
-  const categoryIdNumber = parseInt(categoryId || "0")
-  const [selectedCategory, setSelectedCategory] = React.useState<number>(queryParams.has("category") ? categoryIdNumber : firstCategory?.id || 0)
+  const [selectedCategory, setSelectedCategory] = React.useState<number>(0)
 
   const t = useTranslations(lang);
 
@@ -25,7 +22,9 @@ export default function MenuList({lang, categories = [], dishes = [], allergens 
     if(!category) {
       url.searchParams.set('category', selectedCategory.toString())
       window.history.replaceState({}, '', url.toString())
-    }
+    } 
+
+    setSelectedCategory(category ? parseInt(category || "0") : firstCategory?.id || 0)
   }, [])
 
   const handleSelectCategory = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
