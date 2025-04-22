@@ -13,9 +13,7 @@ import { useTranslations } from '@/lib/i18n/useTranslations';
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 
-const categories = await getCategories(lang);
-const dishes = await getDishes(lang);
-const allergens = await getAllergens(lang);
+const [categories, dishes, allergens] = await Promise.all([getCategories(lang), getDishes(lang), getAllergens(lang)]);
 
 export async function getStaticPaths() {
 	return [
