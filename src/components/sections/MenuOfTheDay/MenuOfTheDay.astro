@@ -4,6 +4,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 import { ArrowRight, X } from '@lucide/astro';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 import type { CategoriesType } from '@/lib/getCategories';
@@ -60,14 +61,16 @@ categories.slice(0,7).forEach((category) => {
     </div>
   </div>
   <Swiper spaceBetween={10} slidesPerView={"auto"} autoHeight={false}>
-    <div class='flex flex-row gap-4'>
-      {menuOfTheDay.slice(0, 4).map((food, index) => {
-        return (
-          <SwiperSlide className="!w-fit">
-            <Card food={food} lang={lang}/>
-          </SwiperSlide>
-        )
-      })}
+    <div class="swiper">
+        <div class="swiper-wrapper">
+        {menuOfTheDay.slice(0, 4).map((food, index) => {
+            return (
+                <div class="swiper-slide !w-fit">
+                    <Card food={food} lang={lang}/>
+                </div>
+            )
+        })}
+        </div>
     </div>
   </Swiper>
 </div>
@@ -115,6 +118,14 @@ categories.slice(0,7).forEach((category) => {
 </style>
 
 <script>
+
+    import Swiper from 'swiper';
+    const swiper = new Swiper('.swiper', {
+        spaceBetween: 10,
+        autoHeight: true,
+        slidesPerView: "auto",
+    });
+
     const seeSpecialMenuBtn = document.getElementById("see-special-menu");
     const seeSpecialMenuDialog = document.getElementById("see-special-menu-dialog") as HTMLDialogElement;
     const seeSpecialMenuCloseBtn = document.getElementById("see-special-menu-close");
