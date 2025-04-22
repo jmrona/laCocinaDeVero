@@ -16,6 +16,16 @@ const t = useTranslations(lang);
 const categories = await getCategories(lang);
 const dishes = await getDishes(lang);
 const allergens = await getAllergens(lang);
+
+export async function getStaticPaths() {
+	return [
+		{ params: { locale: "en" } },
+		{ params: { locale: "es" } },
+		{ params: { locale: "de" } },
+	];
+}
+
+export const prerender = true;
 ---
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
