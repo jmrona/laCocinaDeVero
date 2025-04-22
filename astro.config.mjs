@@ -29,10 +29,5 @@ export default defineConfig({
           de: 'de',
         },
       },
-      customPages: [
-        "https://lacocinadevero.es/es/menu",
-        "https://lacocinadevero.es/en/menu",
-        "https://lacocinadevero.es/de/menu",
-      ]
   })],
 });
