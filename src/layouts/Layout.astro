@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from "@vercel/speed-insights/astro"
 import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 
@@ -40,7 +41,8 @@ const meta = {
         $html.lang = lang;
       }
     </script>
-    <Analytics />
+    <Analytics server:defer={true}/>
+    <SpeedInsights server:defer={true}/>
   </head>
   <body>
     <main class="flex flex-col min-h-screen">
