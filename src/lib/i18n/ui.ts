@@ -14,6 +14,7 @@ export const ui = {
     // Home - Hero
     'hero.title': 'Comida deliciosa, para llevar',
     'hero.subtitle': 'Platos frescos y caseros preparados diariamente. Evite las esperas y disfrute de comida con calidad de restaurante en casa.',
+    'hero.openingDate': 'Fecha de apertura: ',
     
     // Home - Why choose us
     'whyChooseUs.title': '¿Por qué elegirnos?',
@@ -90,6 +91,7 @@ export const ui = {
     // Hero
     'hero.title': 'Delicious food, to take away',
     'hero.subtitle': 'Fresh, homemade dishes prepared daily. Avoid the wait and enjoy restaurant-quality food at home.',
+    'hero.openingDate': 'Opening date: ',
     
     // Home - Why choose us
     'whyChooseUs.title': 'Why choose us?',
@@ -166,6 +168,7 @@ export const ui = {
     // Hero
     'hero.title': 'Leckeres Essen, zum Mitnehmen',
     'hero.subtitle': 'Frische, hausgemachte Gerichte, täglich zubereitet.',
+    'hero.openingDate': 'Öffnungsdatum: ',
     
     // Home - Why choose us
     'whyChooseUs.title': 'Warum uns wählen?',
