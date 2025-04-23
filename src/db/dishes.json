@@ -660,7 +660,7 @@
       "en": ["chicken", "pepper", "cream", "salt"],
       "de": ["Hähnchen", "Pfeffer", "Sahne", "Salz"]
     },
-    "allergens": [],
+    "allergens": [7, 12],
     "price": 5,
     "category": [9],
     "calories": 500,
