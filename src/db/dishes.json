@@ -913,7 +913,7 @@
       "en": ["spinach", "eggs"],
       "de": ["Spinat", "Eier"]
     },
-    "allergens": [4],
+    "allergens": [3],
     "price": 5,
     "category": [11, 19],
     "calories": 450,
@@ -1373,7 +1373,7 @@
       "en": ["beans", "eggs"],
       "de": ["Bohnen", "Eier"]
     },
-    "allergens": [4],
+    "allergens": [3],
     "price": 5,
     "category": [11, 19],
     "calories": 450,
