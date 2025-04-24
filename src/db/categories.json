@@ -61,7 +61,8 @@
             "es": "Todo",
             "en": "All",
             "de": "Alles"
-        }
+        }, 
+        "icon": "🍽"
     },
     {
         "id": 9,
@@ -69,7 +70,8 @@
             "es": "Carnes",
             "en": "Meats",
             "de": "Fleisch"
-        }
+        },
+        "icon": "🍖"
     },
     {
         "id": 10,
@@ -77,7 +79,8 @@
             "es": "Pescados",
             "en": "Fish",
             "de": "Fisch"
-        }
+        }, 
+        "icon": "🐟"
     },
     {
         "id": 11,
@@ -85,7 +88,8 @@
             "es": "Tortillas",
             "en": "Omelets",
             "de": "Omeletts"
-        }
+        }, 
+        "icon": "🍳"
     },
     {
         "id": 12,
@@ -93,7 +97,8 @@
             "es": "Pastas",
             "en": "Pasta",
             "de": "Teigwaren"
-        }
+        }, 
+        "icon": "🍝"
     },
     {
         "id": 13,
@@ -101,7 +106,8 @@
             "es": "Postres",
             "en": "Desserts",
             "de": "Nachspeisen"
-        }
+        }, 
+        "icon": "🍰"
     },
     {
         "id": 14,
@@ -109,7 +115,8 @@
             "es": "Ensaladas",
             "en": "Salads",
             "de": "Salate"
-        }
+        }, 
+        "icon": "🥗"
     },
     {
         "id": 15,
@@ -117,7 +124,8 @@
             "es": "Platos fríos",
             "en": "Cold dishes",
             "de": "Kaltes Gericht"
-        }
+        },
+        "icon": "🥗"
     },
     {
         "id": 16,
@@ -125,7 +133,8 @@
             "es": "Extra",
             "en": "Extras",
             "de": "Extras"
-        }
+        }, 
+        "icon": "🍽️"
     },
     {
         "id": 17,
@@ -133,7 +142,8 @@
             "es": "Bebidas",
             "en": "Drinks",
             "de": "Getränke"
-        }
+        }, 
+        "icon": "🍹"
     },
     {
         "id": 18,
@@ -141,7 +151,8 @@
             "es": "Vegano",
             "en": "Vegan",
             "de": "Vegan"
-        }
+        }, 
+        "icon": "🥗"
     },
     {
         "id": 19,
@@ -149,6 +160,7 @@
             "es": "Vegetariano",
             "en": "Vegetarian",
             "de": "Vegetarisch"
-        }
+        }, 
+        "icon": "🥗"
     }
 ]

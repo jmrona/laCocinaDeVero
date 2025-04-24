@@ -1,0 +1,76 @@
+---
+import { useTranslations } from '@/lib/i18n/useTranslations';
+import type { CategoriesType } from '@/lib/getCategories';
+import styles from './FoodCategories.module.css'
+
+const {className = "", categories} = Astro.props as {className?: string | undefined, categories: CategoriesType[]};
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+---
+<h1 class='text-2xl md:h4 mt-7 mb-2 !font-bold font-accent'>{t("menu.categories")}</h1>
+<div id="food-categories" class:list={[`${styles.categoriesWrapper} flex gap-2`, className]}>
+    <div class="swiper-wrapper flex">
+        {categories.map((category) => (
+            <div class="swiper-slide !w-fit">
+                <label data-selected={false} class={`${styles.category} h-full bg-neutral/70 rounded-xl py-2 px-4 flex flex-row items-center gap-2 w-fit select-none cursor-pointer`}>
+                    <span class='text-2xl'>{category.icon}</span>
+                    <h3 class='text-xl font-semibold'>
+                        {category.name}
+                    </h3>
+                    <input type='radio' name='food-category' id={`category-${category.id}`} value={category.id} class='hidden' />
+                </label>
+            </div>
+        ))}
+    </div>
+</div>
+
+<script>
+    import Swiper from 'swiper';
+    const swiper = new Swiper('#food-categories', {
+        spaceBetween: 10,
+        slidesPerView: "auto",
+    });
+</script>
+
+<script type="module" is:inline define:vars={{ categories }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const firstCategory = [...categories]?.at(0)
+        const url = new URL(window.location.href)
+        const selectedCategory = url.searchParams.get('category') ?? firstCategory?.id ?? 0;
+
+        url.searchParams.set('category', selectedCategory.toString())
+        window.history.replaceState({}, '', url.toString())
+
+        const categoriesInput = document.querySelectorAll("#food-categories [name='food-category']");
+    
+        categoriesInput.forEach(category => {
+            if(category.value == selectedCategory) {
+                category.closest("label").setAttribute("data-selected", true);
+            } else {
+                category.closest("label").setAttribute("data-selected", false);
+            }
+
+            category.addEventListener("change", () => {
+                url.searchParams.set('category', category.value.toString())
+                window.history.replaceState({}, '', url.toString())
+                const event = new CustomEvent("category-change", {
+                    detail: category.value
+                })
+                document.dispatchEvent(event);
+            })
+        })
+
+        document.addEventListener("category-change", (event) => {
+            const categorySelected = event.detail;
+            const categoriesInput = document.querySelectorAll("#food-categories [name='food-category']");
+    
+            categoriesInput.forEach(category => {
+                if(category.value == categorySelected) {
+                    category.closest("label").setAttribute("data-selected", true);
+                } else {
+                    category.closest("label").setAttribute("data-selected", false);
+                }
+            })
+        })
+    });
+ </script>

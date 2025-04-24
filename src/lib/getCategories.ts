@@ -1,5 +1,11 @@
 type LangType = 'es' | 'en' | 'de';
 
+export interface CategoriesType {
+    id: number;
+    name: string;
+    icon: string | React.JSX.Element;
+}
+
 export const getCategories = async (lan: LangType) => {
     const res = await import('../db/categories.json')
 
@@ -10,7 +16,7 @@ export const getCategories = async (lan: LangType) => {
 
     const categories = res.default.reduce((
         acc: { id: number; name: string }[],
-        category: { id: number; name: { [key: string]: string } }
+        category: { id: number; name: { [key: string]: string }, icon?: string | React.JSX.Element }
     ) => {
         const categoryName = category.name[lan] || category.name['es'] || category.name['en'] || category.name['de'];
         if (categoryName) {
@@ -18,7 +24,8 @@ export const getCategories = async (lan: LangType) => {
                 ...acc,
                 {
                     id: category.id,
-                    name: categoryName
+                    name: categoryName,
+                    icon: "icon" in category ? category.icon : ""
                 }
             ];
         }
@@ -30,7 +37,3 @@ export const getCategories = async (lan: LangType) => {
     return categories;
 }
 
-export interface CategoriesType {
-    id: number;
-    name: string;
-}

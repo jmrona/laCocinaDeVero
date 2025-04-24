@@ -33,6 +33,20 @@ const meta = {
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preload" href={LogoImg.src} as="image" />
+    <link rel="preload" href={"/img/placeholder-image.webp"} as="image" />
+
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={LogoImg.src} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:site_name" content={meta.author} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={meta.author} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={LogoImg.src} />
 
     <script type="javascript">
       const $html = document.querySelector("html");

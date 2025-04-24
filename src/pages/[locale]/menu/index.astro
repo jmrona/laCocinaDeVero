@@ -1,12 +1,15 @@
 ---
 import AllergensCard from '@/components/AllergensCard/AllergensCard.astro';
 import Container from '@/components/Global/Container.astro';
+import FoodCategories from '@/components/Menu/FoodCategories/FoodCategories.astro';
 import MenuList from '@/components/Menu/MenuList';
+import MenuListAstro from '@/components/Menu/MenuList.astro';
 import MenuOfTheDay from '@/components/sections/MenuOfTheDay/MenuOfTheDay.astro';
 import Layout from '@/layouts/Layout.astro';
 import { getAllergens } from '@/lib/getAllergens';
 import { getCategories } from '@/lib/getCategories';
 import { getDishes } from '@/lib/getDishes';
+import { getDishesOfTheDay } from '@/lib/getDishesOfTheDay';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
@@ -17,7 +20,7 @@ const [categories, dishes] = await Promise.all([
   getDishes(lang),
 ]);
 
-const allergens = getAllergens(lang);
+const categoriesToShow = [...categories].slice(7)
 
 export async function getStaticPaths() {
 	return [
@@ -31,9 +34,10 @@ export const prerender = true;
 ---
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
-    <Container className="">
-        <MenuOfTheDay server:defer categories={categories} dishes={dishes}/>
-        <MenuList client:load lang={lang} dishes={dishes} categories={categories} allergens={await allergens}/>
-        <AllergensCard server:defer allergens={await allergens}/>
+    <Container>
+        <MenuOfTheDay server:defer/>
+        <FoodCategories server:defer categories={categoriesToShow} />
+        <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
+        <AllergensCard server:defer/>
     </Container>
 </Layout>

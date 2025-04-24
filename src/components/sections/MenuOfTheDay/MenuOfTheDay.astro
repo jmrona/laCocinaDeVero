@@ -1,5 +1,4 @@
 ---
-import {Swiper, SwiperSlide} from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -7,48 +6,16 @@ import 'swiper/css/pagination';
 
 import { ArrowRight, X } from '@lucide/astro';
 import { useTranslations } from '@/lib/i18n/useTranslations';
-import type { CategoriesType } from '@/lib/getCategories';
-import type { DishesType } from '@/lib/getDishes';
+
 import Card from '@/components/Menu/Card/Card';
+import { getDishesOfTheDay } from '@/lib/getDishesOfTheDay';
+import { getWeekMenu } from '@/lib/getWeekMenu';
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 
-const { categories, dishes } = Astro.props as {categories: CategoriesType[], dishes: DishesType[]};
-
-const DAY_CATEGORY = {
-  0: ["Domingo", "Sunday", "Sonntag"],
-  1: ["Lunes", "Monday", "Montag"],
-  2: ["Martes", "Tuesday", "Dienstag"],
-  3: ["Miércoles", "Wednesday", "Mittwoch"],
-  4: ["Jueves", "Thursday", "Donnerstag"],
-  5: ["Viernes", "Friday", "Freitag"],
-  6: ["Sábado", "Saturday", "Samstag"],
-} as const;
-
-const WEEK_DAYS = {
-  "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"], 
-  "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",], 
-  "de": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
-} as const;
-
-const today = new Date()
-const dayOfWeek = today.getDay()
-const day = WEEK_DAYS[lang][dayOfWeek]
-
-const categoryId = Object.values(DAY_CATEGORY).findIndex(category => category.some(cat => cat === day))
-
-if( categoryId === -1) return []
-const category = categories.find(category => category.id === categoryId)
-const menuOfTheDay = dishes.filter(dish => dish.category.some(cat => cat === category?.id))
-
-const menuGroupedByCategory = {} as Record<string, DishesType[]>
-categories.slice(0,7).forEach((category) => {
-    const foods = dishes.filter(dish => dish.category.some(cat => cat === Number(category.id)))
-    const key = category.name;
-    
-    return menuGroupedByCategory[key] = foods
-})
+const menuOfTheDay = await getDishesOfTheDay(lang)
+const menuGroupedByCategory = await getWeekMenu(lang)
 ---
 
 <div class="flex items-center justify-between mt-7">
@@ -61,9 +28,9 @@ categories.slice(0,7).forEach((category) => {
     </div>
 </div>
 
-<div class="swiper min-h-[390px]">
-    <div class="swiper-wrapper">
-    {menuOfTheDay.slice(0, 4).map((food, index) => {
+<div id="menu-of-the-day" class="swiper min-h-[390px]">
+    <div class="swiper-wrapper gap-4">
+    {menuOfTheDay.slice(0, 4).map((food) => {
         return (
             <div class="swiper-slide !w-fit">
                 <Card food={food} lang={lang}/>
@@ -119,9 +86,7 @@ categories.slice(0,7).forEach((category) => {
 <script>
 
     import Swiper from 'swiper';
-    const swiper = new Swiper('.swiper', {
-        spaceBetween: 10,
-        autoHeight: true,
+    const swiper = new Swiper('#menu-of-the-day', {
         slidesPerView: "auto",
     });
 

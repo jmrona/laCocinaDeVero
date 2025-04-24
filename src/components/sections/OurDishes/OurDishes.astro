@@ -4,12 +4,18 @@ import Dishes from "@/db/dishes.json";
 import {ALLERGENS} from "@/constants/allergens";
 import { twMerge } from "tailwind-merge";
 import AllergenIcon from "@/components/Menu/AllergenIcon";
+import Card from "@/components/Menu/Card/Card";
 
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 const maxDishes = 6;
-const dishes = Dishes.slice(0, maxDishes);
+const dishes = Dishes.slice(0, maxDishes).map(food => ({
+    ...food,
+    name: food.name[lang],
+    ingredients: food.ingredients[lang],
+    description: food.description[lang]
+}));
 ---
 
 <section
@@ -20,37 +26,7 @@ const dishes = Dishes.slice(0, maxDishes);
         <h3 class="text-pretty text-gray-600 text-center">{t("ourDishes.description")}</h3>
         <div class="grid grid-cols-1 w-full md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8">
             {dishes.map((food) => {
-                const hasImage = food.image && food.image !== "";
-
-                return (
-                <div class={`flex flex-row md:flex-col min-w-[200px] md:min-w-[200px] bg-white rounded-lg shadow-md ${hasImage ? "mb-3" : ""}`}>
-                    {hasImage 
-                        ? <img src={food.image ? food.image : "/img/placeholder-image.jpg"} alt={food.name[lang]} class={`aspect-[1/0.8] object-cover rounded-lg mb-2 ${"w-[40%] h-full md:h-auto object-cover md:w-full"}`} /> 
-                        : null}
-
-
-                    <div class={`flex flex-col gap-2 p-4 h-full ${hasImage ? "mb-3" : ""}`}>
-                        <h2 class='text-lg font-semibold text-balance leading-5'>{food.name[lang]}</h2>
-                        <div class='flex flex-row gap-2 items-center'>
-                            <span class='text-md text-primary font-semibold'>{food.price}€</span>  
-                            {food.calories != 0 && <span class='text-sm text-gray-700'>|</span>} 
-                            {food.calories != 0 && <span class='text-sm text-gray-700'>{food.calories} cal</span> } 
-                        </div>
-                        <p class='grow leading-5 text-sm text-gray-600 text-pretty'>{food.ingredients[lang].join(", ")}</p>
-
-                        {food.allergens.length > 0 && (
-                            <>
-                                <span class='text-sm text-gray-700 mt-1 leading-4 font-semibold'>{t("menu.allergens")}</span>
-                                <div class='flex flex-row gap-2 items-center'>
-                                    {food.allergens.map((allergen, index) => {
-                                        return <AllergenIcon icon={allergen} key={index} size="20" width="20" height="20" class="text-gray-700 w-[20px] h-[20px]"/>
-                                    })}
-                                </div>
-                            </>
-                        )}
-                    </div>
-                </div>
-                )
+                return <Card className="max-w-[unset]" food={food} lang={lang} useHorizontal={true}/>
             })}
         </div>
         <a href={`/${lang}/menu`} class="bg-primary text-black font-semibold rounded-full px-6 py-2 mt-8 text-center cursor-pointer hover:bg-primary-dark" id="ourdishes-loadmore">{t("ourDishes.loadMore")}</a>
