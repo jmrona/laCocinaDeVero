@@ -13,12 +13,12 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
       const hasCategory = url.searchParams.has('category')
       const categorySelected = hasCategory ? parseInt(url.searchParams.get('category') || "0") : 0;
 
-      setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.category.some(cat => cat !== drinkCategory?.id) : food.category.some(cat => cat === categorySelected)))
+      setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.categories.some(cat => cat !== drinkCategory?.id) : food.categories.some(cat => cat === categorySelected)))
     }
 
     document.addEventListener("category-change", (event: CustomEvent<string>) => {
       const categorySelected = parseInt(event.detail);
-      setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.category.some(cat => cat !== drinkCategory?.id) : food.category.some(cat => cat === categorySelected)))
+      setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.categories.some(cat => cat !== drinkCategory?.id) : food.categories.some(cat => cat === categorySelected)))
     })
   }, [])
 
