@@ -5,10 +5,8 @@ import FoodCategories from '@/components/Menu/FoodCategories/FoodCategories.astr
 import MenuList from '@/components/Menu/MenuList';
 import MenuOfTheDay from '@/components/sections/MenuOfTheDay/MenuOfTheDay.astro';
 import Layout from '@/layouts/Layout.astro';
-import { getAllergens } from '@/lib/getAllergens';
 import { getCategories } from '@/lib/getCategories';
 import { getDishes } from '@/lib/getDishes';
-import { getDishesOfTheDay } from '@/lib/getDishesOfTheDay';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
