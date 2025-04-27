@@ -33,7 +33,7 @@ const t = useTranslations(lang);
 </script>
 
 <script type="module" is:inline define:vars={{ categories }}>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("astro:page-load", () => {
         const firstCategory = [...categories]?.at(0)
         const url = new URL(window.location.href)
         const selectedCategory = url.searchParams.get('category') ?? firstCategory?.id ?? 0;
