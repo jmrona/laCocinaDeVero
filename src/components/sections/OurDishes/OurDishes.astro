@@ -5,6 +5,7 @@ import {ALLERGENS} from "@/constants/allergens";
 import { twMerge } from "tailwind-merge";
 import AllergenIcon from "@/components/Menu/AllergenIcon";
 import Card from "@/components/Menu/Card/Card";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
@@ -29,6 +30,6 @@ const dishes = Dishes.slice(0, maxDishes).map(food => ({
                 return <Card className="max-w-[unset]" food={food} lang={lang} useHorizontal={true}/>
             })}
         </div>
-        <a href={`/${lang}/menu`} class="bg-primary text-black font-semibold rounded-full px-6 py-2 mt-8 text-center cursor-pointer hover:bg-primary-dark" id="ourdishes-loadmore">{t("ourDishes.loadMore")}</a>
+        <a href={getRelativeLocaleUrl(lang, "menu")} class="bg-primary text-black font-semibold rounded-full px-6 py-2 mt-8 text-center cursor-pointer hover:bg-primary-dark" id="ourdishes-loadmore">{t("ourDishes.loadMore")}</a>
     </div>
 </section>
