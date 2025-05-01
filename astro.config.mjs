@@ -12,10 +12,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss(), svgr(), minify()],
   },
-
   i18n: {
     locales: ["es", "en", "de"],
-    defaultLocale: "es"
+    defaultLocale: "es",
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false
+    }
   },
   site: "https://lacocinadevero.es",
   output: "server",

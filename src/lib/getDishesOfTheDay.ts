@@ -1,60 +1,23 @@
-import { supabase } from "@/db/supabase";
-
-const WEEK_DAYS = {
-    "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"], 
-    "en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",], 
-    "de": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
-  } as const;
-
-const today = new Date()
-const dayOfWeek = today.getDay()
-
 export const getDishesOfTheDay = async (lang: "es" | "en" | "de") => { 
-    const today = WEEK_DAYS[lang][dayOfWeek]
+  if (!['es', 'en', 'de'].includes(lang)) {
+    console.error('Invalid language code:', lang);
+    return [];
+  }
 
-    const { data: category, error: categoriesError } = await supabase
-        .from('categories')
-        .select('category_id')
-        .in(`name->>${lang}`, [today]);
-    
-    if(categoriesError) return []
-    const categoryId: number | undefined = category?.[0]?.category_id
+  const baseUrl = new URL(import.meta.env.BASE_URL).origin;
 
-      
-    const { data, error } = await supabase
-      .from('dishes')
-      .select(`
-        dish_id,
-        name:name->>${lang},
-        price,
-        image,
-        dishes_categories!inner(
-          categories!inner(
-            name, category_id
-          )
-        ),
-        categories:dishes_categories( category_id, categories( name:name->>${lang} )),
-        allergens:dishes_allergens( allergen_id )
-      `)
-      .in('dishes_categories.category_id', [categoryId]);
+  try {
+    const response = await fetch(`${baseUrl}/api/${lang}/fetchMenuOfTheDay`, {method: 'GET'});
 
-    if (error) {
-      console.error('Error fetching dishes:', error.message);
-      return [];
+    if(!response.ok) {
+      const errorData = await response.json();
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorData?.error || 'Unknown error'}`);
     }
 
-    return data.map(dish => {
-        const categories = dish.categories.map(cat => cat.category_id)
-        const allergens = dish.allergens.map(allergen => allergen.allergen_id)
-
-        return {
-            id: dish.dish_id,
-            name: dish.name,
-            price: dish.price,
-            image: dish.image,
-            categories,
-            allergens
-        }
-    });
-
+    const data = await response.json();
+    return data.dishes;
+  } catch (error) {
+    console.error('Error fetching dishes: Something went wrong');
+    return [];
+  }
 }

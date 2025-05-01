@@ -5,15 +5,6 @@ import { useTranslations } from "@/lib/i18n/useTranslations";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
-
-export async function getStaticPaths() {
-	return [
-		{ params: { locale: "en" } },
-		{ params: { locale: "de" } },
-	];
-}
-
-export const prerender = true;
 ---
 
 <Layout title={`${t("about.title")} - La cocina de Vero`}>

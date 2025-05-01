@@ -18,15 +18,6 @@ const [categories, dishes] = await Promise.all([
 ]);
 
 const categoriesToShow = [...categories].slice(7)
-
-export async function getStaticPaths() {
-	return [
-		{ params: { locale: "en" } },
-		{ params: { locale: "de" } },
-	];
-}
-
-export const prerender = true;
 ---
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>

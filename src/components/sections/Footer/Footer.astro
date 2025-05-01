@@ -2,6 +2,7 @@
 import { useTranslations } from "@/lib/i18n/useTranslations";
 import {MapPin, Phone, Facebook, Instagram} from "@lucide/astro"
 import Logo from "@/components/Logo/Logo.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
@@ -18,8 +19,8 @@ const t = useTranslations(lang);
         </div>
         <div class="flex flex-col gap-2">
             <h3 class="text-pretty text-sm font-semibold">{t("footer.menu")}</h3>
-            <a href={`/${lang}/menu`} class="text-pretty text-sm text-gray-600 underline underline-offset-2">{t("nav.menu")}</a>
-            <a href={`/${lang}/about`} class="text-pretty text-sm text-gray-600 underline underline-offset-2">{t("nav.about")}</a>
+            <a href={getRelativeLocaleUrl(lang, "menu")} class="text-pretty text-sm text-gray-600 underline underline-offset-2">{t("nav.menu")}</a>
+            <a href={getRelativeLocaleUrl(lang, "about")} class="text-pretty text-sm text-gray-600 underline underline-offset-2">{t("nav.about")}</a>
             <!-- <a href={`/${lang}/contact`} class="text-pretty text-sm text-gray-600">{t("nav.contact")}</a> -->
         </div>
         <div class="flex flex-col gap-2">
