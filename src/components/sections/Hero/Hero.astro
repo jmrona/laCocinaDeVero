@@ -5,15 +5,6 @@ import { useTranslations } from "@/lib/i18n/useTranslations";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
-
-const timestamp = 1746103200;
-const date = new Date("05/01/2025 10:00:00").getTime();
-
-const formattedDate = new Intl.DateTimeFormat(lang, {
-  dateStyle: 'full',
-  timeStyle: 'short',
-  timeZone: 'Europe/Madrid'
-}).format(date);
 ---
 
 <section
@@ -28,7 +19,6 @@ const formattedDate = new Intl.DateTimeFormat(lang, {
     <p class="pt-2 max-w-[75ch] text-neutral-500 md:text-xl">
       {t("hero.subtitle")}
     </p>
-    <h3 class="text-lg md:text-xl font-bold my-4">{t("hero.openingDate")} <br/><span class="capitalize">{formattedDate}</span></h3>
   </div>
 
   <div class="place-content-start md:place-content-center">

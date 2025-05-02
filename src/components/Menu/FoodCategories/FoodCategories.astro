@@ -32,7 +32,7 @@ const t = useTranslations(lang);
     });
 </script>
 
-<script type="module" is:inline define:vars={{ categories }}>
+<script type="module" define:vars={{ categories }}>
     document.addEventListener("astro:page-load", () => {
         const firstCategory = [...categories]?.at(0)
         const url = new URL(window.location.href)
