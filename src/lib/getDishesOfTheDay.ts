@@ -1,10 +1,11 @@
+export const prerender = true
 export const getDishesOfTheDay = async (lang: "es" | "en" | "de") => { 
   if (!['es', 'en', 'de'].includes(lang)) {
     console.error('Invalid language code:', lang);
     return [];
   }
 
-  const baseUrl = new URL(import.meta.env.BASE_URL).origin;
+  const baseUrl = import.meta.env.API_URL;
 
   try {
     const response = await fetch(`${baseUrl}/api/${lang}/fetchMenuOfTheDay`, {method: 'GET'});
@@ -17,7 +18,7 @@ export const getDishesOfTheDay = async (lang: "es" | "en" | "de") => {
     const data = await response.json();
     return data.dishes;
   } catch (error) {
-    console.error('Error fetching dishes: Something went wrong');
+    console.error(`Error fetching dishes: ${error}`);
     return [];
   }
 }

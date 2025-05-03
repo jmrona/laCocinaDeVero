@@ -1,8 +1,9 @@
 ---
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+export const prerender = true;
 
 import { ArrowRight, X } from '@lucide/astro';
 import { useTranslations } from '@/lib/i18n/useTranslations';
@@ -16,6 +17,7 @@ const t = useTranslations(lang);
 
 const menuOfTheDay = await getDishesOfTheDay(lang)
 const menuGroupedByCategory = await getWeekMenu(lang)
+
 ---
 
 <div class="flex items-center justify-between mt-7">
