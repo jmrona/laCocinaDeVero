@@ -22,9 +22,9 @@ const categoriesToShow = [...categories].slice(7)
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container>
-        <MenuOfTheDay server:defer/>
+        <MenuOfTheDay/>
         <FoodCategories categories={categoriesToShow} />
         <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
-        <AllergensCard server:defer/>
+        <AllergensCard/>
     </Container>
 </Layout>

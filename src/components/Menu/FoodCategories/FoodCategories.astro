@@ -9,10 +9,10 @@ const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 ---
 <h1 class='text-2xl md:h4 mt-7 mb-2 !font-bold font-accent'>{t("menu.categories")}</h1>
-<div id="food-categories" class:list={[`${styles.categoriesWrapper} flex gap-2`, className]}>
+<div id="food-categories" class:list={[`${styles.categoriesWrapper} flex`, className]}>
     <div class="swiper-wrapper flex">
         {categories.map((category) => (
-            <div class="swiper-slide !w-fit">
+            <div class="swiper-slide !w-fit pe-1">
                 <label data-selected={false} class={`${styles.category} h-full bg-neutral/70 rounded-xl py-2 px-4 flex flex-row items-center gap-2 w-fit select-none cursor-pointer`}>
                     <span class='text-2xl'>{category.icon}</span>
                     <h3 class='text-xl font-semibold'>
@@ -34,7 +34,7 @@ const t = useTranslations(lang);
 </script>
 
 <script type="module" define:vars={{ categories }}>
-    document.addEventListener("DOMContentLoaded", () => {
+    async function init() {
         const firstCategory = [...categories]?.at(0)
         const url = new URL(window.location.href)
         const selectedCategory = url.searchParams.get('category') ?? firstCategory?.id ?? 0;
@@ -73,5 +73,26 @@ const t = useTranslations(lang);
                 }
             })
         })
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        init()
     });
+
+    let hasCategorySelected = false;
+    const categoriesInput = document.querySelectorAll("#food-categories [name='food-category']");
+    categoriesInput.forEach(category => {
+        const isSelected = category.closest("label").getAttribute("data-selected");
+        if(isSelected == "true") {
+            hasCategorySelected = true;
+        }
+    })
+
+    if(!hasCategorySelected) {
+        document.addEventListener("astro:page-load", () => {
+            init()
+        });
+    }
+
+
  </script>
