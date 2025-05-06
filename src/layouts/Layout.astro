@@ -1,6 +1,6 @@
 ---
-import Analytics from '@vercel/analytics/astro'
-import SpeedInsights from "@vercel/speed-insights/astro"
+// import Analytics from '@vercel/analytics/astro'
+// import SpeedInsights from "@vercel/speed-insights/astro"
 import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 import { ClientRouter } from "astro:transitions";
@@ -60,7 +60,7 @@ const meta = {
         $html.lang = lang;
       }
     </script>
-    <Analytics server:defer={true}/>
+    <!-- <Analytics server:defer={true}/> -->
     <ClientRouter />
   </head>
   <body>
@@ -71,6 +71,6 @@ const meta = {
       </div>
       <Footer />
     </main>
-    <SpeedInsights server:defer={true}/>
+    <!-- <SpeedInsights server:defer={true}/> -->
   </body>
 </html>
