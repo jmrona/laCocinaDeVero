@@ -24,7 +24,9 @@ const categoriesToShow = [...categories].slice(7)
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container>
-        <Image src={ChickenBanner} alt="Chicken Banner" width={1120} height={300} class="object-cover object-center mt-5" />
+        <a href="tel:+34652640538">
+          <Image src={ChickenBanner} alt="Chicken Banner" width={1120} height={300} class="object-cover object-center mt-5" />
+        </a>
         <MenuOfTheDay/>
         <FoodCategories categories={categoriesToShow} />
         <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
