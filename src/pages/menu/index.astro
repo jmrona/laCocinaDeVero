@@ -8,6 +8,8 @@ import Layout from '@/layouts/Layout.astro';
 import { getCategories } from '@/lib/getCategories';
 import { getDishes } from '@/lib/getDishes';
 import { useTranslations } from '@/lib/i18n/useTranslations';
+import { Image } from 'astro:assets';
+import ChickenBanner from '@/assets/images/chicken-banner.webp';
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
@@ -22,6 +24,7 @@ const categoriesToShow = [...categories].slice(7)
 
 <Layout title={`${t("nav.menu")} - La cocina de Vero`}>
     <Container>
+        <Image src={ChickenBanner} alt="Chicken Banner" width={1120} height={300} class="object-cover object-center mt-5" />
         <MenuOfTheDay/>
         <FoodCategories categories={categoriesToShow} />
         <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
