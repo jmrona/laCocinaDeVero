@@ -3,8 +3,9 @@ import { getCategories } from "./getCategories";
 
 type LangType = 'es' | 'en' | 'de';
 
-export const getDishes = async (lang: LangType) => {
-  const { data, error } = await supabase
+export const getDishes = async (lang: LangType, options?: { limit?: number, conditions?: string[] }) => {
+
+  const query = supabase
   .from('dishes')
   .select(`
     dish_id,
@@ -19,6 +20,17 @@ export const getDishes = async (lang: LangType) => {
     categories:dishes_categories( category_id, categories( name:name->>${lang} )),
     allergens:dishes_allergens( allergen_id )
   `);
+
+  if (options?.limit) {
+    query.limit(options.limit);
+  }
+
+  if (options?.conditions?.includes("image")) {
+      query.not("image", "is", null);
+      query.neq('image', '/img/placeholder-image.webp');
+  }
+
+  const { data, error } = await query;
   
   if (error) {
     console.error('Error fetching dishes:', error.message);
