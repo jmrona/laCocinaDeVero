@@ -57,3 +57,29 @@ body {
 @utility badge {
   @apply text-sm font-semibold bg-secondary px-4 py-1 rounded text-white;
 }
+
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Menu loading optimizations */
+.menu-loading-container {
+  min-height: 60vh;
+  contain: layout style paint;
+}
+
+.menu-skeleton-item {
+  contain: layout style;
+}
