@@ -18,6 +18,11 @@ const t = useTranslations(lang);
   id="mobile-menu"
   class="md:hidden flex flex-col gap-1 items-center justify-end cursor-pointer py-3 px-1"
   data-open="false"
+  role="button"
+  tabindex="0"
+  aria-expanded="false"
+  aria-controls="sidebar"
+  aria-label="Toggle mobile menu"
 >
   <span class="w-6 h-[2px] bg-black rounded-2xl pointer-events-none"></span>
   <span class="w-6 h-[2px] bg-black rounded-2xl pointer-events-none"></span>
@@ -87,22 +92,130 @@ const t = useTranslations(lang);
 </style>
 
 <script>
-  const mobileMenu = document.querySelector("#mobile-menu") as HTMLInputElement;
-  const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
-  const sidebarCloseBtn = document.querySelector(
-    "#sidebar-close-btn",
-  ) as HTMLDivElement;
+  function initializeMobileNav() {
+    try {
+      // Remove existing document listeners to prevent duplicates
+      if ((document as any)._mobileNavDelegateHandler) {
+        document.removeEventListener("click", (document as any)._mobileNavDelegateHandler);
+      }
+      if ((document as any)._mobileNavKeyHandler) {
+        document.removeEventListener("keydown", (document as any)._mobileNavKeyHandler);
+      }
 
-  mobileMenu?.addEventListener("click", (event) => {
-    event.stopPropagation();
-    sidebar.classList.toggle("hidden");
-    mobileMenu.dataset.open = sidebar.classList.contains("hidden")
-      ? "false"
-      : "true";
-  });
+    // Helper function to toggle menu
+    const toggleMenu = () => {
+      const mobileMenu = document.querySelector("#mobile-menu") as HTMLElement;
+      const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
+      
+      if (!mobileMenu || !sidebar) {
+        console.warn("Mobile navigation elements not found");
+        return;
+      }
+      
+      const isOpen = !sidebar.classList.contains("hidden");
+      
+      if (isOpen) {
+        sidebar.classList.add("hidden");
+        mobileMenu.dataset.open = "false";
+        mobileMenu.setAttribute("aria-expanded", "false");
+      } else {
+        sidebar.classList.remove("hidden");
+        mobileMenu.dataset.open = "true";
+        mobileMenu.setAttribute("aria-expanded", "true");
+      }
+    };
 
-  sidebarCloseBtn?.addEventListener("click", (event) => {
-    event.stopPropagation();
-    sidebar.classList.toggle("hidden");
-  });
+    // Create delegated click event handler
+    const delegateHandler = (event: Event) => {
+      const target = event.target as HTMLElement;
+      const mobileMenu = document.querySelector("#mobile-menu") as HTMLElement;
+      const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
+      
+      // Handle mobile menu button clicks (including child spans)
+      if (target.matches('#mobile-menu, #mobile-menu *')) {
+        event.stopPropagation();
+        toggleMenu();
+        return;
+      }
+      
+      // Handle close button clicks
+      if (target.matches('#sidebar-close-btn, #sidebar-close-btn *')) {
+        event.stopPropagation();
+        
+        if (mobileMenu && sidebar) {
+          sidebar.classList.add("hidden");
+          mobileMenu.dataset.open = "false";
+          mobileMenu.setAttribute("aria-expanded", "false");
+        }
+        return;
+      }
+
+      // Handle outside clicks to close menu
+      if (mobileMenu && sidebar && !sidebar.classList.contains("hidden")) {
+        // Check if click is outside both the sidebar and mobile menu button
+        if (!target.closest('#sidebar') && !target.closest('#mobile-menu')) {
+          sidebar.classList.add("hidden");
+          mobileMenu.dataset.open = "false";
+          mobileMenu.setAttribute("aria-expanded", "false");
+        }
+      }
+    };
+
+    // Create keyboard event handler
+    const keyHandler = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement;
+      const mobileMenu = document.querySelector("#mobile-menu") as HTMLElement;
+      const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
+
+      // Handle Enter and Space on mobile menu button
+      if (target.matches('#mobile-menu') && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        toggleMenu();
+        return;
+      }
+
+      // Handle Escape key to close menu
+      if (event.key === 'Escape' && mobileMenu && sidebar && !sidebar.classList.contains("hidden")) {
+        sidebar.classList.add("hidden");
+        mobileMenu.dataset.open = "false";
+        mobileMenu.setAttribute("aria-expanded", "false");
+        mobileMenu.focus(); // Return focus to menu button
+      }
+    };
+
+    // Store references for cleanup and attach to document
+    (document as any)._mobileNavDelegateHandler = delegateHandler;
+    (document as any)._mobileNavKeyHandler = keyHandler;
+    document.addEventListener("click", delegateHandler);
+    document.addEventListener("keydown", keyHandler);
+    
+    } catch (error) {
+      console.warn("Failed to initialize mobile navigation:", error);
+    }
+  }
+
+  function cleanupMobileNav() {
+    // Remove document-level delegated event listener
+    if ((document as any)._mobileNavDelegateHandler) {
+      document.removeEventListener("click", (document as any)._mobileNavDelegateHandler);
+      delete (document as any)._mobileNavDelegateHandler;
+    }
+    if ((document as any)._mobileNavKeyHandler) {
+      document.removeEventListener("keydown", (document as any)._mobileNavKeyHandler);
+      delete (document as any)._mobileNavKeyHandler;
+    }
+  }
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', initializeMobileNav);
+  
+  // Cleanup before page swap
+  document.addEventListener('astro:before-swap', cleanupMobileNav);
+
+  // Initialize immediately if DOM is already loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMobileNav);
+  } else {
+    initializeMobileNav();
+  }
 </script>
