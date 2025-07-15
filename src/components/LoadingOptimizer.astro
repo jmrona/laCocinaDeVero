@@ -1,0 +1,143 @@
+---
+// Loading optimizer component for faster page transitions
+---
+
+<script>
+  // Optimize page transitions with loading states
+  class LoadingOptimizer {
+    constructor() {
+      this.setupTransitionOptimization();
+    }
+
+    setupTransitionOptimization() {
+      // Show loading indicator for slow navigations
+      let loadingTimeout;
+      
+      document.addEventListener('astro:before-preparation', () => {
+        loadingTimeout = setTimeout(() => {
+          this.showLoadingIndicator();
+        }, 200); // Show loading after 200ms
+      });
+
+      document.addEventListener('astro:after-preparation', () => {
+        clearTimeout(loadingTimeout);
+        this.hideLoadingIndicator();
+      });
+
+      // Optimize for menu page specifically
+      document.addEventListener('astro:page-load', () => {
+        if (window.location.pathname.includes('/menu')) {
+          this.optimizeMenuPage();
+        }
+      });
+    }
+
+    showLoadingIndicator() {
+      const indicator = document.createElement('div');
+      indicator.id = 'page-loading-indicator';
+      indicator.innerHTML = `
+        <div style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #f59e0b, #d97706);
+          z-index: 9999;
+          animation: loading-bar 1s ease-in-out infinite;
+        "></div>
+      `;
+      
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes loading-bar {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
+        }
+      `;
+      
+      document.head.appendChild(style);
+      document.body.appendChild(indicator);
+    }
+
+    hideLoadingIndicator() {
+      const indicator = document.getElementById('page-loading-indicator');
+      if (indicator) {
+        indicator.remove();
+      }
+    }
+
+    optimizeMenuPage() {
+      // Preload critical menu resources
+      const criticalImages = [
+        '/img/placeholder-image.webp',
+        '/assets/images/chicken-banner.webp'
+      ];
+
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+
+      // Optimize component hydration
+      this.optimizeComponentHydration();
+    }
+
+    optimizeComponentHydration() {
+      // Prioritize critical components
+      const criticalComponents = document.querySelectorAll('[data-astro-cid]');
+      
+      criticalComponents.forEach(component => {
+        // Add intersection observer for lazy components
+        if (component.hasAttribute('client:idle') || component.hasAttribute('client:visible')) {
+          this.setupIntersectionObserver(component);
+        }
+      });
+    }
+
+    setupIntersectionObserver(element) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('component-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+
+      observer.observe(element);
+    }
+  }
+
+  // Initialize loading optimizer
+  new LoadingOptimizer();
+</script>
+
+<style>
+  /* Optimize component loading states */
+  [data-astro-cid]:not(.component-visible) {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  [data-astro-cid].component-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optimize menu page specific elements */
+  .menu-container {
+    contain: layout style paint;
+  }
+
+  .menu-item {
+    contain: layout style;
+  }
+</style>

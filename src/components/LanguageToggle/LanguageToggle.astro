@@ -15,8 +15,6 @@ import { getRelativeLocaleUrl } from "astro:i18n";
     const $select = document.querySelector(`#languages`) as HTMLSelectElement;;
   
     $select?.addEventListener("change", (e) => {
-      // localStorage.setItem("lang", langSelected);
-      // console.log('langSelected: ', langSelected);
   
       const url = new URL(window.location.href);
       const [_, ...rest] = url.pathname.split("/");

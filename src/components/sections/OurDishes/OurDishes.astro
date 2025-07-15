@@ -11,7 +11,6 @@ const t = useTranslations(lang);
 
 const maxDishes = 8;
 const dishes = await getDishes(lang, { limit: maxDishes, conditions: ["image"]});
-console.log('dishes: ', dishes);
 ---
 
 <section

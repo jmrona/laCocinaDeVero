@@ -5,20 +5,23 @@ import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 import { ClientRouter } from "astro:transitions";
 
-
 import "@/styles/global.css";
-import Footer from '@/components/sections/Footer/Footer.astro';
+import Footer from "@/components/sections/Footer/Footer.astro";
+import LoadingOptimizer from "@/components/LoadingOptimizer.astro";
 
 const { title } = Astro.props;
 const lang = Astro.currentLocale;
 
 const meta = {
   title: title ?? "La Cocina de Vero - Comida para llevar en Torrox, Málaga",
-  description: "Descubre los mejores platos caseros para llevar en Torrox, Málaga. Calidad, sabor y tradición en cada bocado.",
-  keywords: "comida para llevar, Torrox, Málaga, platos caseros, comida tradicional",
-  author: "La Cocina de Vero"
+  description:
+    "Descubre los mejores platos caseros para llevar en Torrox, Málaga. Calidad, sabor y tradición en cada bocado.",
+  keywords:
+    "comida para llevar, Torrox, Málaga, platos caseros, comida tradicional",
+  author: "La Cocina de Vero",
 };
 ---
+
 <!doctype html>
 <html lang={lang}>
   <head>
@@ -28,14 +31,19 @@ const meta = {
     <meta name="description" content={meta.description} />
     <meta name="keywords" content={meta.keywords} />
     <meta name="author" content={meta.author} />
-    <script async="true" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hp4j0dK93rmrFNjJECRJghuod_7Hafk&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hp4j0dK93rmrFNjJECRJghuod_7Hafk&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
     <title>{meta.title}</title>
-    
+
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preload" href={LogoImg.src} as="image" />
     <link rel="preload" href={"/img/placeholder-image.webp"} as="image" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="alternate" href="http://lacocinadevero.es/es/" hreflang="es" />
     <link rel="alternate" href="http://lacocinadevero.es/en/" hreflang="en" />
     <link rel="alternate" href="http://lacocinadevero.es/de/" hreflang="de" />
@@ -62,6 +70,17 @@ const meta = {
     </script>
     <!-- <Analytics server:defer={true}/> -->
     <ClientRouter />
+    <script>
+      // Navigation optimization
+      import('@/lib/navigationOptimizer').then(({ setupIntelligentPreloading }) => {
+        setupIntelligentPreloading();
+      });
+      
+      // Menu-specific preloading
+      import('@/lib/menuPreloader').then(() => {
+        console.log('🚀 Menu preloader initialized');
+      });
+    </script>
   </head>
   <body>
     <main class="flex flex-col min-h-screen">
@@ -71,6 +90,7 @@ const meta = {
       </div>
       <Footer />
     </main>
+    <LoadingOptimizer />
     <!-- <SpeedInsights server:defer={true}/> -->
   </body>
 </html>

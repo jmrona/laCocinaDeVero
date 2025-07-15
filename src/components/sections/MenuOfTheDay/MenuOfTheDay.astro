@@ -1,64 +1,93 @@
 ---
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export const prerender = true;
 
-import { ArrowRight, X } from '@lucide/astro';
-import { useTranslations } from '@/lib/i18n/useTranslations';
+import { ArrowRight, X } from "@lucide/astro";
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import Card from "@/components/Menu/Card/Card";
+import type { DishesType } from "@/types/menu";
 
-import Card from '@/components/Menu/Card/Card';
-import { getDishesOfTheDay } from '@/lib/getDishesOfTheDay';
-import { getWeekMenu } from '@/lib/getWeekMenu';
+interface Props {
+    menuOfTheDay: DishesType[];
+    weekMenu: Record<string, string[]>;
+    lang: "es" | "en" | "de";
+}
 
-const lang = Astro.currentLocale as "es" | "en" | "de";
+const { menuOfTheDay, weekMenu, lang } = Astro.props;
 const t = useTranslations(lang);
-
-const menuOfTheDay = await getDishesOfTheDay(lang)
-const menuGroupedByCategory = await getWeekMenu(lang)
-
 ---
 
 <div class="flex items-center justify-between mt-7">
-    <h1 class='text-2xl md:h4 mb-2 !font-bold font-accent'>{t("menu.specialMenu")}</h1>
+    <h1 class="text-2xl md:h4 mb-2 !font-bold font-accent">
+        {t("menu.specialMenu")}
+    </h1>
     <div>
-      <button id="see-special-menu" class='ml-auto text-primary font-semibold flex items-center gap-2 cursor-pointer peer'>
-        {t("menu.seeSpecialMenu")} <ArrowRight size={18}/>
-      </button>
-      <span class="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"></span>
+        <button
+            id="see-special-menu"
+            class="ml-auto text-primary font-semibold flex items-center gap-2 cursor-pointer peer"
+        >
+            {t("menu.seeSpecialMenu")}
+            <ArrowRight size={18} />
+        </button>
+        <span
+            class="w-0 block peer-hover:w-full bg-primary h-[1px] transition-all duration-300 mx-auto"
+        ></span>
     </div>
 </div>
 
 <div id="menu-of-the-day" class="swiper min-h-[390px]">
     <div class="swiper-wrapper gap-4">
-    {menuOfTheDay.slice(0, 4).map((food) => {
-        return (
-            <div class="swiper-slide !w-fit">
-                <Card food={food} lang={lang}/>
-            </div>
-        )
-    })}
+        {
+            menuOfTheDay.slice(0, 4).map((food) => {
+                return (
+                    <div class="swiper-slide !w-fit">
+                        <Card food={food} lang={lang} />
+                    </div>
+                );
+            })
+        }
     </div>
 </div>
 
-
-<dialog id="see-special-menu-dialog" class="max-w-screen md:max-w-[500px] md:my-auto p-5 h-fit w-full mx-auto" aria-labelledby="see-special-menu-title" role="dialog" aria-modal="true">
+<dialog
+    id="see-special-menu-dialog"
+    class="max-w-screen md:max-w-[500px] md:my-auto p-5 h-fit w-full mx-auto"
+    aria-labelledby="see-special-menu-title"
+    role="dialog"
+    aria-modal="true"
+>
     <div class="flex justify-end">
-        <button id="see-special-menu-close" class="text-dark font-semibold flex items-center gap-2 cursor-pointer w-auto">
-            <span class="sr-only">{t("modal.close")}</span> <X class='text-gray-500' size={25}/>
+        <button
+            id="see-special-menu-close"
+            class="text-dark font-semibold flex items-center gap-2 cursor-pointer w-auto"
+        >
+            <span class="sr-only">{t("modal.close")}</span>
+            <X class="text-gray-500" size={25} />
         </button>
     </div>
-    <h2 class="text-xl font-semibold text-balance leading-5 border-b-primary border-b-2 pb-2 inline-block mb-4">{t("menu.specialMenu")}</h2>
+    <h2
+        class="text-xl font-semibold text-balance leading-5 border-b-primary border-b-2 pb-2 inline-block mb-4"
+    >
+        {t("menu.specialMenu")}
+    </h2>
     <div class="flex flex-col gap-2">
-        {Object.entries(menuGroupedByCategory).map(([day, foodArray], index) => {
-            return (
-                <div class="flex flex-col gap-2 p-4 h-full">
-                    <h2 class="text-lg font-semibold text-balance leading-3">{day}</h2>
-                    <p class="text-gray-700 text-md">{foodArray.join(', ')}</p>
-                </div>
-            )
-        })}
+        {
+            Object.entries(weekMenu).map(([day, foodArray]) => {
+                return (
+                    <div class="flex flex-col gap-2 p-4 h-full">
+                        <h2 class="text-lg font-semibold text-balance leading-3">
+                            {day}
+                        </h2>
+                        <p class="text-gray-700 text-md">
+                            {foodArray.join(", ")}
+                        </p>
+                    </div>
+                );
+            })
+        }
     </div>
 </dialog>
 
@@ -86,26 +115,29 @@ const menuGroupedByCategory = await getWeekMenu(lang)
 </style>
 
 <script>
-
-    import Swiper from 'swiper';
-    const swiper = new Swiper('#menu-of-the-day', {
+    import Swiper from "swiper";
+    const swiper = new Swiper("#menu-of-the-day", {
         slidesPerView: "auto",
     });
 
     const seeSpecialMenuBtn = document.getElementById("see-special-menu");
-    const seeSpecialMenuDialog = document.getElementById("see-special-menu-dialog") as HTMLDialogElement;
-    const seeSpecialMenuCloseBtn = document.getElementById("see-special-menu-close");
+    const seeSpecialMenuDialog = document.getElementById(
+        "see-special-menu-dialog",
+    ) as HTMLDialogElement;
+    const seeSpecialMenuCloseBtn = document.getElementById(
+        "see-special-menu-close",
+    );
 
     seeSpecialMenuBtn?.addEventListener("click", () => {
-        if(seeSpecialMenuDialog.open) {
+        if (seeSpecialMenuDialog.open) {
             seeSpecialMenuDialog.close();
             return;
         }
 
-        seeSpecialMenuDialog.showModal()
+        seeSpecialMenuDialog.showModal();
     });
 
-    seeSpecialMenuDialog.addEventListener("click", event => {
+    seeSpecialMenuDialog.addEventListener("click", (event) => {
         const rect = seeSpecialMenuDialog.getBoundingClientRect();
 
         const isInDialog =
@@ -114,11 +146,10 @@ const menuGroupedByCategory = await getWeekMenu(lang)
             event.clientY >= rect.top &&
             event.clientY <= rect.bottom;
 
-
         if (!isInDialog) {
             seeSpecialMenuDialog.close();
         }
-    })
+    });
 
     seeSpecialMenuCloseBtn?.addEventListener("click", () => {
         seeSpecialMenuDialog.close();

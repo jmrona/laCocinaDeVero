@@ -1,0 +1,199 @@
+---
+// Menu page specific optimizations
+const lang = Astro.currentLocale as "es" | "en" | "de";
+---
+
+<script define:vars={{ lang }}>
+  // Menu page optimization
+  class MenuPageOptimizer {
+    constructor(language) {
+      this.lang = language;
+      this.setupOptimizations();
+    }
+
+    setupOptimizations() {
+      // Optimize initial render
+      this.optimizeInitialRender();
+      
+      // Setup progressive loading
+      this.setupProgressiveLoading();
+      
+      // Optimize component hydration
+      this.optimizeComponentHydration();
+    }
+
+    optimizeInitialRender() {
+      // Add critical CSS for menu page
+      const criticalCSS = `
+        .menu-container { contain: layout style paint; }
+        .menu-item { contain: layout; }
+        .menu-grid { will-change: transform; }
+        .lazy-component { opacity: 0; transition: opacity 0.3s ease; }
+        .lazy-component.loaded { opacity: 1; }
+      `;
+      
+      const style = document.createElement('style');
+      style.textContent = criticalCSS;
+      document.head.appendChild(style);
+    }
+
+    setupProgressiveLoading() {
+      // Load components in order of importance
+      const loadingOrder = [
+        { selector: '[data-component="menu-categories"]', priority: 1 },
+        { selector: '[data-component="menu-list"]', priority: 2 },
+        { selector: '[data-component="menu-of-the-day"]', priority: 3 },
+        { selector: '[data-component="allergens-card"]', priority: 4 }
+      ];
+
+      loadingOrder.forEach(({ selector, priority }) => {
+        setTimeout(() => {
+          this.loadComponent(selector);
+        }, priority * 50); // Stagger loading by 50ms
+      });
+    }
+
+    loadComponent(selector) {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(element => {
+        element.classList.add('loaded');
+        
+        // Trigger any lazy loading
+        if (element.hasAttribute('data-lazy')) {
+          this.triggerLazyLoad(element);
+        }
+      });
+    }
+
+    triggerLazyLoad(element) {
+      // Create intersection observer for lazy loading
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      observer.observe(element);
+    }
+
+    optimizeComponentHydration() {
+      // Prioritize above-the-fold components
+      const aboveFoldComponents = document.querySelectorAll('[client\\:load], [client\\:idle]');
+      
+      aboveFoldComponents.forEach(component => {
+        // Add loading state
+        component.classList.add('component-loading');
+        
+        // Remove loading state when hydrated
+        const observer = new MutationObserver(() => {
+          if (component.querySelector('[data-hydrated]')) {
+            component.classList.remove('component-loading');
+            component.classList.add('component-hydrated');
+            observer.disconnect();
+          }
+        });
+        
+        observer.observe(component, { childList: true, subtree: true });
+      });
+    }
+
+    // Performance monitoring
+    measurePagePerformance() {
+      if ('performance' in window) {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const navigation = performance.getEntriesByType('navigation')[0];
+            const loadTime = navigation.loadEventEnd - navigation.fetchStart;
+            
+            console.log(`📊 Menu page loaded in ${loadTime.toFixed(2)}ms`);
+            
+            // Report slow loads
+            if (loadTime > 2000) {
+              console.warn(`⚠️ Slow menu page load: ${loadTime.toFixed(2)}ms`);
+            }
+          }, 0);
+        });
+      }
+    }
+  }
+
+  // Initialize optimizer
+  document.addEventListener('DOMContentLoaded', () => {
+    const optimizer = new MenuPageOptimizer(lang);
+    optimizer.measurePagePerformance();
+  });
+
+  // Also initialize on Astro page load (for SPA navigation)
+  document.addEventListener('astro:page-load', () => {
+    const optimizer = new MenuPageOptimizer(lang);
+    optimizer.measurePagePerformance();
+  });
+</script>
+
+<style>
+  /* Critical styles for menu page */
+  .component-loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .component-hydrated {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-container {
+    contain: layout style paint;
+  }
+
+  .menu-item {
+    contain: layout;
+  }
+
+  .lazy-component {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .lazy-component.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lazy-component.in-view {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Optimize menu grid performance */
+  .menu-grid {
+    will-change: transform;
+    contain: layout style paint;
+  }
+
+  .menu-grid-item {
+    contain: layout style;
+  }
+
+  /* Reduce layout shifts */
+  .menu-image-placeholder {
+    aspect-ratio: 1 / 0.8;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+  }
+</style>

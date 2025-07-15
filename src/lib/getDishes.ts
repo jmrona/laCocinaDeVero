@@ -1,7 +1,9 @@
 import { supabase } from "@/db/supabase";
 import { getCategories } from "./getCategories";
+import type { LangType, DishesType } from '@/types/menu';
 
-type LangType = 'es' | 'en' | 'de';
+// Re-export types for backward compatibility
+export type { DishesType };
 
 export const getDishes = async (lang: LangType, options?: { limit?: number, conditions?: string[] }) => {
 
@@ -59,14 +61,3 @@ export const getDishes = async (lang: LangType, options?: { limit?: number, cond
     });
 }
 
-export interface DishesType {
-  id: number;
-  name: string;
-  description: string;
-  ingredients: string;
-  allergens: number[];
-  price: number;
-  category: number[];
-  calories: number;
-  image: string;
-}

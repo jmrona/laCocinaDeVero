@@ -1,13 +1,9 @@
 
 import { supabase } from '@/db/supabase';
+import type { LangType, CategoriesType } from '@/types/menu';
 
-type LangType = 'es' | 'en' | 'de';
-
-export interface CategoriesType {
-    id: number;
-    name: string;
-    icon: string | React.JSX.Element;
-}
+// Re-export types for backward compatibility
+export type { CategoriesType };
 
 export const getCategories = async (lang: LangType) => {
     const { data, error } = await supabase

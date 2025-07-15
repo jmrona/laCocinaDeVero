@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react'
 
 import Card from './Card/Card'
+import type { CategoriesType, DishesType } from '@/types/menu'
 
 export default function MenuList({lang, categories = [], dishes = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: DishesType[]}) { 
   const [dishesByCategory, setDishesByCategory] = React.useState<DishesType[]>(dishes)
