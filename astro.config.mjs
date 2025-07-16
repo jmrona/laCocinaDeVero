@@ -22,7 +22,11 @@ export default defineConfig({
   },
   site: "https://lacocinadevero.es",
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),
   integrations: [react(), sitemap({
     i18n: {
         defaultLocale: 'es',
