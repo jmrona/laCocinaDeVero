@@ -363,9 +363,8 @@ export const validateMenuPerformance = async (): Promise<PerformanceReport> => {
 };
 
 // CLI usage
-if (import.meta.env.NODE_ENV === 'development') {
-  // This can be called directly for manual validation
-  export const runPerformanceValidation = async () => {
+export const runPerformanceValidation = async () => {
+  if (import.meta.env.NODE_ENV === 'development') {
     try {
       const report = await validateMenuPerformance();
       process.exit(report.passed ? 0 : 1);

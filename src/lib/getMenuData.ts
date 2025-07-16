@@ -45,69 +45,53 @@ export const getMenuData = async (lang: LangType): Promise<MenuData> => {
           queryPerformanceMonitor.measureQuery('dishes', () => getDishesOptimized(lang))
         ]);
 
-        return { categories, allDishes };
+        // Get day category IDs for filtering
+        const dayCategories = categories.filter(cat =>
+          DAYS_ORDER[lang].includes(cat.name)
+        );
+        const dayCategoryIds = dayCategories.map(cat => cat.id);
+
+        // Filter regular dishes (exclude daily menu items)
+        const dishes = allDishes.filter(dish =>
+          !dish.categories.some((catId: any) => dayCategoryIds.includes(catId))
+        );
+
+        // Get today's menu items
+        const now = new Date();
+        const dayOfWeek = now.getDay();
+        const today = WEEK_DAYS[lang][dayOfWeek];
+        const todayCategory = categories.find(cat => cat.name === today);
+
+        const menuOfTheDay = todayCategory
+          ? allDishes.filter(dish => dish.categories.includes(todayCategory.id))
+          : [];
+          
+        // Build week menu
+        const weekMenu: Record<string, string[]> = {};
+        DAYS_ORDER[lang].forEach(day => {
+          const dayCategory = categories.find(cat => cat.name === day);
+          if (dayCategory) {
+            weekMenu[day] = allDishes
+              .filter(dish => dish.categories.includes(dayCategory.id))
+              .map(dish => dish.name);
+          } else {
+            weekMenu[day] = [];
+          }
+        });
+
+        return { categories, dishes, menuOfTheDay, weekMenu };
       },
       { language: lang, operation: 'getMenuData' }
     );
 
-    if (cachedData && 'categories' in cachedData && 'dishes' in cachedData) {
-      console.log(`Cache hit for menu data (${lang})`);
-      menuPerformanceHelpers.endMeasure(performanceId);
-      return cachedData as MenuData;
-    }
-
-    // If we get here, we have fresh data from database
-    const { categories, allDishes } = cachedData as { categories: any[], allDishes: any[] };
-
-    // Get day category IDs for filtering
-    const dayCategories = categories.filter(cat =>
-      DAYS_ORDER[lang].includes(cat.name)
-    );
-    const dayCategoryIds = dayCategories.map(cat => cat.id);
-
-    // Filter regular dishes (exclude daily menu items)
-    const dishes = allDishes.filter(dish =>
-      !dish.categories.some(catId => dayCategoryIds.includes(catId))
-    );
-
-    // Get today's menu items
-    const now = new Date();
-    const dayOfWeek = now.getDay();
-    const today = WEEK_DAYS[lang][dayOfWeek];
-    const todayCategory = categories.find(cat => cat.name === today);
-
-    const menuOfTheDay = todayCategory
-      ? allDishes.filter(dish => dish.categories.includes(todayCategory.id))
-      : [];
-      
-    // Build week menu
-    const weekMenu: Record<string, string[]> = {};
-    DAYS_ORDER[lang].forEach(day => {
-      const dayCategory = categories.find(cat => cat.name === day);
-      if (dayCategory) {
-        weekMenu[day] = allDishes
-          .filter(dish => dish.categories.includes(dayCategory.id))
-          .map(dish => dish.name);
-      } else {
-        weekMenu[day] = [];
-      }
-    });
-
-    const menuData: MenuData = {
-      categories,
-      dishes,
-      menuOfTheDay,
-      weekMenu
-    };
-
     // Cache the result for future requests
-    menuCache.set(cacheKey, menuData, CACHE_CONFIG.MENU_DATA_TTL);
+    menuCache.set(cacheKey, cachedData, CACHE_CONFIG.MENU_DATA_TTL);
     console.log(`Menu data cached for ${lang} with TTL: ${CACHE_CONFIG.MENU_DATA_TTL}ms`);
 
     // End performance monitoring
     menuPerformanceHelpers.endMeasure(performanceId);
 
-    return menuData;
+    return cachedData;
 
   } catch (error) {
     // Record error with performance monitoring

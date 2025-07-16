@@ -32,7 +32,7 @@ export const getWeekMenu = async (lang: "es" | "en" | "de") => {
 
       
     const dishesPerDay = data.reduce<Record<string, string[]>>((acc, item) => {
-        const categoriesName: string[] = item.categories.map(cat => cat.categories.name)
+        const categoriesName: string[] = item.categories.map(cat => cat.name)
 
         categoriesName.forEach(category => {
             if(Object.keys(acc).includes(category)){

@@ -151,14 +151,14 @@ class PerformanceMonitor {
 
       // Try to get web-vitals library metrics
       try {
-        import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+        import('web-vitals').then(({ onCLS, onFCP, onLCP, onTTFB, onINP }) => {
           const vitals: any = {};
 
-          getCLS((metric) => vitals.cls = metric);
-          getFID((metric) => vitals.fid = metric);
-          getFCP((metric) => vitals.fcp = metric);
-          getLCP((metric) => vitals.lcp = metric);
-          getTTFB((metric) => vitals.ttfb = metric);
+          onCLS((metric: any) => vitals.cls = metric);
+          onINP((metric: any) => vitals.inp = metric);
+          onFCP((metric: any) => vitals.fcp = metric);
+          onLCP((metric: any) => vitals.lcp = metric);
+          onTTFB((metric: any) => vitals.ttfb = metric);
 
           setTimeout(() => resolve(vitals), 100);
         }).catch(() => resolve(null));

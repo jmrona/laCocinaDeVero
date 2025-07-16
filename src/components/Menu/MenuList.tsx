@@ -17,10 +17,10 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
       setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.categories.some(cat => cat !== drinkCategory?.id) : food.categories.some(cat => cat === categorySelected)))
     }
 
-    document.addEventListener("category-change", (event: CustomEvent<string>) => {
+    document.addEventListener("category-change", ((event: CustomEvent<string>) => {
       const categorySelected = parseInt(event.detail);
       setDishesByCategory(dishes.filter(food => categorySelected === 8 ? food.categories.some(cat => cat !== drinkCategory?.id) : food.categories.some(cat => cat === categorySelected)))
-    })
+    }) as EventListener)
   }, [])
 
   
