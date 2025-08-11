@@ -4,7 +4,7 @@
 import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 import { ClientRouter } from "astro:transitions";
-
+import Loading from "@/components/Loading.astro";
 
 import "@/styles/global.css";
 import Footer from '@/components/sections/Footer/Footer.astro';
@@ -71,6 +71,7 @@ const meta = {
       </div>
       <Footer />
     </main>
+    <Loading />
     <!-- <SpeedInsights server:defer={true}/> -->
   </body>
 </html>
