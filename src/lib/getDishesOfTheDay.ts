@@ -14,7 +14,7 @@ export const getDishesOfTheDay = async (lang: "es" | "en" | "de"): Promise<DishA
     return [];
   }
 
-  const baseUrl = import.meta.env.PUBLIC_API_URL;
+  const baseUrl = import.meta.env.API_URL;
 
   try {
     const response = await fetch(`${baseUrl}/api/${lang}/fetchMenuOfTheDay`, {method: 'GET'});
