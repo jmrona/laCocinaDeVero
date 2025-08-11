@@ -10,6 +10,7 @@ import { getDishes } from '@/lib/getDishes';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 import { Image } from 'astro:assets';
 import ChickenBanner from '@/assets/images/chicken-banner.webp';
+import LogoImg from "@/assets/images/logo.webp";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
@@ -22,10 +23,21 @@ const [categories, dishes] = await Promise.all([
 const categoriesToShow = [...categories].slice(7)
 ---
 
-<Layout title={`${t("nav.menu")} - La cocina de Vero`}>
+<Layout
+  title={`${t('nav.menu')} - La cocina de Vero`}
+  description={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  keywords="menú, comida casera, Torrox, Málaga, categorías, platos, restaurante"
+  ogTitle={`${t('nav.menu')} - La cocina de Vero`}
+  ogDescription={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  ogUrl="https://lacocinadevero.es/menu"
+  ogImage={LogoImg.src}
+  twitterTitle={`${t('nav.menu')} - La cocina de Vero`}
+  twitterDescription={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  twitterImage={LogoImg.src}
+>
     <Container>
         <a href="tel:+34652640538">
-          <Image src={ChickenBanner} alt="Banner de pollo asado del menú de La cocina de Vero" width={1120} height={300} class="object-cover object-center mt-5" />
+          <Image src={ChickenBanner} alt={`Imagen de pollo asado, menú diario de La cocina de Vero en Torrox, Málaga`} width={1120} height={300} class="object-cover object-center mt-5" loading="lazy" />
         </a>
         <MenuOfTheDay/>
         <FoodCategories categories={categoriesToShow} />

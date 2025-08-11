@@ -9,15 +9,40 @@ import Loading from "@/components/Loading.astro";
 import "@/styles/global.css";
 import Footer from '@/components/sections/Footer/Footer.astro';
 
-const { title } = Astro.props;
+const {
+  title = "La cocina de Vero",
+  description = "Descubre los mejores platos caseros para llevar en Torrox, Málaga. Calidad, sabor y tradición en cada bocado.",
+  keywords = "comida para llevar, Torrox, Málaga, platos caseros, comida tradicional, restaurantes, restaurantes en Torrox costa, comida urbana",
+  author = "La Cocina de Vero",
+  ogTitle,
+  ogDescription,
+  ogUrl,
+  ogImage,
+  twitterTitle,
+  twitterDescription,
+  twitterImage
+} = Astro.props;
 const lang = Astro.currentLocale;
 
-const meta = {
-  title: title ?? "La Cocina de Vero - Comida para llevar en Torrox, Málaga",
-  description: "Descubre los mejores platos caseros para llevar en Torrox, Málaga. Calidad, sabor y tradición en cada bocado.",
-  keywords: "comida para llevar, Torrox, Málaga, platos caseros, comida tradicional",
-  author: "La Cocina de Vero"
-};
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La cocina de Vero",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga",
+    "addressLocality": "Torrox",
+    "addressRegion": "Málaga",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34 652 64 05 38",
+  "url": "https://lacocinadevero.es/",
+  "servesCuisine": ["Comida casera", "Platos tradicionales", "Comida para llevar", "Comida urbana"],
+  "priceRange": "€",
+  "openingHours": "Mo-Su 12:00-16:30"
+});
+
 ---
 <!doctype html>
 <html lang={lang}>
@@ -25,33 +50,33 @@ const meta = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={meta.description} />
-    <meta name="keywords" content={meta.keywords} />
-    <meta name="author" content={meta.author} />
-    <script async="true" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hp4j0dK93rmrFNjJECRJghuod_7Hafk&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
-    <title>{meta.title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content={author} />
+  <script async="true" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0hp4j0dK93rmrFNjJECRJghuod_7Hafk&callback=console.debug&libraries=maps,marker&v=beta">
+  </script>
+  <title>{title}</title>
     
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preload" href={LogoImg.src} as="image" />
-    <link rel="preload" href={"/img/placeholder-image.webp"} as="image" />
-    <link rel="alternate" href="http://lacocinadevero.es/es/" hreflang="es" />
-    <link rel="alternate" href="http://lacocinadevero.es/en/" hreflang="en" />
-    <link rel="alternate" href="http://lacocinadevero.es/de/" hreflang="de" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="preload" href={LogoImg.src} as="image" />
+  <link rel="preload" href={"/img/placeholder-image.webp"} as="image" />
+  <link rel="alternate" href="http://lacocinadevero.es/es/" hreflang="es" />
+  <link rel="alternate" href="http://lacocinadevero.es/en/" hreflang="en" />
+  <link rel="alternate" href="http://lacocinadevero.es/de/" hreflang="de" />
 
-    <meta property="og:title" content={meta.title} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content={LogoImg.src} />
-    <meta property="og:description" content={meta.description} />
-    <meta property="og:site_name" content={meta.author} />
+  <meta property="og:title" content={ogTitle ?? title} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={ogUrl ?? Astro.url} />
+  <meta property="og:image" content={ogImage ?? LogoImg.src} />
+  <meta property="og:description" content={ogDescription ?? description} />
+  <meta property="og:site_name" content={author} />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={meta.author} />
-    <meta name="twitter:title" content={meta.title} />
-    <meta name="twitter:description" content={meta.description} />
-    <meta name="twitter:image" content={LogoImg.src} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content={author} />
+  <meta name="twitter:title" content={twitterTitle ?? title} />
+  <meta name="twitter:description" content={twitterDescription ?? description} />
+  <meta name="twitter:image" content={twitterImage ?? LogoImg.src} />
 
     <script type="javascript">
       const $html = document.querySelector("html");
@@ -62,6 +87,32 @@ const meta = {
     </script>
     <!-- <Analytics server:defer={true}/> -->
     <ClientRouter />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "type": "Restaurant",
+        "address": {
+          "type": "PostalAddress",
+          "addressCountry": "ES",
+          "addressLocality": "Torrox",
+          "addressRegion": "Málaga",
+          "streetAddress": "Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga"
+        },
+        "name": "La cocina de Vero",
+        "openingHours": "Mo-Su 12:00-16:30",
+        "priceRange": "€",
+        "servesCuisine": [
+          "Comida casera",
+          "Platos tradicionales",
+          "Comida para llevar",
+          "Comida urbana"
+        ],
+        "telephone": "+34 652 64 05 38",
+        "url": "https://lacocinadevero.es/"
+      }
+    </script>
+    
   </head>
   <body>
     <main class="flex flex-col min-h-screen">

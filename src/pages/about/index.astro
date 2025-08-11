@@ -7,7 +7,18 @@ const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
 ---
 
-<Layout title={`${t("about.title")} - La cocina de Vero`}>
+<Layout
+    title={`${t('about.title')} - La cocina de Vero`}
+    description={`${t('about.experience')} ${t('about.contact')} ${t('about.address')}`}
+    keywords="restaurante, comida casera, Torrox, Málaga, contacto, dirección, teléfono"
+    ogTitle={`${t('about.title')} - La cocina de Vero`}
+    ogDescription={`${t('about.experience')} ${t('about.contact')} ${t('about.address')}`}
+    ogUrl="https://lacocinadevero.es/about"
+    ogImage="/logo.webp"
+    twitterTitle={`${t('about.title')} - La cocina de Vero`}
+    twitterDescription={`${t('about.experience')} ${t('about.contact')} ${t('about.address')}`}
+    twitterImage="/logo.webp"
+>
     <section class="max-w-6xl gap-8 mx-auto px-4 mt-10 flex flex-col md:flex-row mb-8">
         <div class="flex-1/2">
             <h1 class="text-2xl font-semibold text-balance mb-3">{t("about.title")}</h1>
