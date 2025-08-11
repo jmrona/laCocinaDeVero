@@ -5,58 +5,47 @@ type LangType = 'es' | 'en' | 'de';
 
 export const getDishes = async (lang: LangType, options?: { limit?: number, conditions?: string[] }) => {
 
-  const query = supabase
-  .from('dishes')
-  .select(`
-    dish_id,
-    name:name->>${lang},
-    price,
-    image,
-    dishes_categories!inner(
-      categories!inner(
-        name, category_id
-      )
-    ),
-    categories:dishes_categories( category_id, categories( name:name->>${lang} )),
-    allergens:dishes_allergens( allergen_id )
-  `);
+  let query = supabase
+    .from('dishes')
+    .select(`
+      dish_id,
+      name:name->>${lang},
+      price,
+      image,
+      categories:dishes_categories(category_id, categories(name:name->>${lang})),
+      allergens:dishes_allergens(allergen_id)
+    `);
 
-  if (options?.limit) {
-    query.limit(options.limit);
-  }
-
+  if (options?.limit) query = query.limit(options.limit);
   if (options?.conditions?.includes("image")) {
-      query.not("image", "is", null);
-      query.neq('image', '/img/placeholder-image.webp');
+    query = query.not("image", "is", null).neq('image', '/img/placeholder-image.webp');
   }
 
   const { data, error } = await query;
-  
-  if (error) {
-    console.error('Error fetching dishes:', error.message);
+  if (error || !data) {
+    console.error('Error fetching dishes:', error?.message);
     return [];
   }
 
-  const categories = await getCategories("es")
-  const categoriesIds: number[] = categories
-  .filter(cat => ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].includes(cat.name))
-  .map(cat => cat.id)
+  // Solo llamamos a getCategories si hay data
+  let excludeCategoryIds: number[] = [];
+  if (data.length) {
+    const categories = await getCategories("es");
+    excludeCategoryIds = categories
+      .filter(cat => ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].includes(cat.name))
+      .map(cat => cat.id);
+  }
 
   return data
-    .filter(dish => !dish.categories.some(cat => categoriesIds.includes(cat.category_id)))
-    .map(dish => {
-      const categories = dish.categories.map(cat => cat.category_id)
-      const allergens = dish.allergens.map(allergen => allergen.allergen_id)
-
-      return {
-          id: dish.dish_id,
-          name: dish.name,
-          price: dish.price,
-          image: dish.image,
-          categories,
-          allergens
-      }
-    });
+    .filter(dish => !dish.categories?.some?.(cat => excludeCategoryIds.includes(cat.category_id)))
+    .map(dish => ({
+      id: dish.dish_id,
+      name: dish.name,
+      price: dish.price,
+      image: dish.image,
+      categories: dish.categories?.map?.(cat => cat.category_id) ?? [],
+      allergens: dish.allergens?.map?.(allergen => allergen.allergen_id) ?? []
+    }));
 }
 
 export interface DishesType {

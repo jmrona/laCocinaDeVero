@@ -1,14 +1,24 @@
 export const prerender = true
-export const getDishesOfTheDay = async (lang: "es" | "en" | "de") => { 
+type DishApiType = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  categories: number[];
+  allergens: number[];
+};
+
+export const getDishesOfTheDay = async (lang: "es" | "en" | "de"): Promise<DishApiType[]> => { 
   if (!['es', 'en', 'de'].includes(lang)) {
     console.error('Invalid language code:', lang);
     return [];
   }
 
-  const baseUrl = import.meta.env.API_URL;
+  const baseUrl = import.meta.env.PUBLIC_API_URL;
 
   try {
     const response = await fetch(`${baseUrl}/api/${lang}/fetchMenuOfTheDay`, {method: 'GET'});
+    console.log('Response:', response);
 
     if(!response.ok) {
       const errorData = await response.json();
