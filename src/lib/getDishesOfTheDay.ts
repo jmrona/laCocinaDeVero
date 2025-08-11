@@ -18,7 +18,6 @@ export const getDishesOfTheDay = async (lang: "es" | "en" | "de"): Promise<DishA
 
   try {
     const response = await fetch(`${baseUrl}/api/${lang}/fetchMenuOfTheDay`, {method: 'GET'});
-    console.log('Response:', response);
 
     if(!response.ok) {
       const errorData = await response.json();
