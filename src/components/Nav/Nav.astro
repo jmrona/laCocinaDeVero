@@ -11,7 +11,7 @@ const t = useTranslations(lang);
   <a href={getRelativeLocaleUrl(lang, "menu")} data-astro-prefetch="hover">{t("nav.menu")}</a>
   <a href={getRelativeLocaleUrl(lang, "about")} data-astro-prefetch="hover">{t("nav.about")}</a>
   <!-- <a href={`/${lang}/contact`}>{t("nav.contact")}</a> -->
-  <LanguageToggle />
+  <LanguageToggle/>
 </nav>
 
 <div
@@ -33,8 +33,7 @@ const t = useTranslations(lang);
   >
     <a href={getRelativeLocaleUrl(lang, "menu")}>{t("nav.menu")}</a>
     <a href={getRelativeLocaleUrl(lang, "about")}>{t("nav.about")}</a>
-    <!-- <a href={`/${lang}/contact`}>{t("nav.contact")}</a> -->
-    <LanguageToggle id="lang-toogle-mobile" />
+    <LanguageToggle />
   </nav>
 </div>
 

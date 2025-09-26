@@ -1,8 +1,9 @@
 ---
 const langSelected = Astro.currentLocale;
+const {id = "languages"} = Astro.props;
 ---
 
-<select name="language" id={"languages"} class="font-emoji" value={langSelected}>
+<select name="language" id={id} class="font-emoji" value={langSelected}>
   <option value="es" selected={langSelected === "es"}>ES</option>
   <option value="en" selected={langSelected === "en"}>EN</option>
   <option value="de" selected={langSelected === "de"}>DE </option>
@@ -10,12 +11,14 @@ const langSelected = Astro.currentLocale;
 
 <script>
 import { getRelativeLocaleUrl } from "astro:i18n";
-
+import type { ChangeEvent } from "react";
   document.addEventListener("astro:page-load", () => {
-    const $select = document.querySelector(`#languages`) as HTMLSelectElement;;
+    const $select = document.querySelectorAll(`#languages`) as NodeListOf<HTMLSelectElement>;
+
+    if(!$select) return;
   
-    $select?.addEventListener("change", (e) => {
-  
+    $select?.forEach(el => el.addEventListener("change", (e) => {
+      const target = e.target as HTMLSelectElement;
       const url = new URL(window.location.href);
       const [_, ...rest] = url.pathname.split("/");
 
@@ -23,7 +26,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
         rest.shift();
       }
 
-      window.location.href = getRelativeLocaleUrl(e.target.value, rest.join("/"))
-    });
+      window.location.href = getRelativeLocaleUrl(target.value, rest.join("/"))
+    }));
   })
 </script>
