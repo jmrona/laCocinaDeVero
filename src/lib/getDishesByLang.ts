@@ -40,7 +40,7 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
   }
 
   const { data, error } = await query;
-  console.log('error: ', error);
+
   if (error || !data) {
     console.error('Error fetching dishes:', error?.message);
     return { es: [], en: [], de: [] };
