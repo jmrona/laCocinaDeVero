@@ -87,22 +87,24 @@ const t = useTranslations(lang);
 </style>
 
 <script>
-  const mobileMenu = document.querySelector("#mobile-menu") as HTMLInputElement;
-  const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
-  const sidebarCloseBtn = document.querySelector(
-    "#sidebar-close-btn",
-  ) as HTMLDivElement;
-
-  mobileMenu?.addEventListener("click", (event) => {
-    event.stopPropagation();
-    sidebar.classList.toggle("hidden");
-    mobileMenu.dataset.open = sidebar.classList.contains("hidden")
-      ? "false"
-      : "true";
-  });
-
-  sidebarCloseBtn?.addEventListener("click", (event) => {
-    event.stopPropagation();
-    sidebar.classList.toggle("hidden");
+  document.addEventListener("astro:page-load", () => {
+    const mobileMenu = document.querySelector("#mobile-menu") as HTMLInputElement;
+    const sidebar = document.querySelector("#sidebar") as HTMLDivElement;
+    const sidebarCloseBtn = document.querySelector(
+      "#sidebar-close-btn",
+    ) as HTMLDivElement;
+  
+    mobileMenu?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      sidebar.classList.toggle("hidden");
+      mobileMenu.dataset.open = sidebar.classList.contains("hidden")
+        ? "false"
+        : "true";
+    });
+  
+    sidebarCloseBtn?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      sidebar.classList.toggle("hidden");
+    });
   });
 </script>
