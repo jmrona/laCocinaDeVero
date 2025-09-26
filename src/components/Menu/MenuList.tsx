@@ -60,7 +60,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
     return acc;
   }, {} as Record<number, Dishes[]>)
 
-  const alldishes = dishes.filter(dish => {
+  const allDishes = dishes.filter(dish => {
     const categoryIds = dish.categories.map(cat => cat.id);
     
     return !categoryIds.some(id => MENU_OF_DAY_IDS.includes(id));
@@ -112,8 +112,8 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-4 mt-4'>
-        {alldishes.filter(food => {
-          if(categorySelected === 8) return true
+        {allDishes.filter(food => {
+          if(categorySelected === 8) return food.categories.some(cat => cat.id !== DRINK_CATEGORY_ID)
           return food.categories.some(cat => cat.id === categorySelected)
         }).map((food, index) => {
           if (food.categories.some(cat => cat.id === DRINK_CATEGORY_ID)){
