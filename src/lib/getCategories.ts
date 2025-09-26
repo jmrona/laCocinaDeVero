@@ -9,12 +9,26 @@ export interface CategoriesType {
     icon: string | React.JSX.Element;
 }
 
-export const getCategories = async (lang: LangType) => {
+export const getCategories = async (): Promise<Record<LangType, CategoriesType[]>> => {
     const { data, error } = await supabase
     .from('categories')
-    .select(`id:category_id, name:name->>${lang}, icon`)
+    .select(`id:category_id, name, icon`)
 
-    if (error) return []
+    if (error) return { es: [], en: [], de: [] }
+
+    const langs: LangType[] = ['es', 'en', 'de'];
+    const result = { es: [], en: [], de: [] } as Record<LangType, any[]>;
+
+
+    data.forEach(category => {
+        langs.forEach(lang => {
+            result[lang].push({
+                id: category.id,
+                name: category.name?.[lang] ?? "",
+                icon: category.icon
+            })
+        })
+    })
     
-    return data
+    return result
 }

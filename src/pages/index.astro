@@ -10,6 +10,17 @@ import Footer from "@/components/sections/Footer/Footer.astro";
 import { Image } from "astro:assets";
 import ChickenBanner from '@/assets/images/chicken-banner.webp';
 import LogoImg from "@/assets/images/logo.webp";
+import { getDishesByLang } from "@/lib/getDishesByLang";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+
+const allDishes = await getDishesByLang({limit: 8, conditions: ["image"]});
+const popularDishes = {
+	es: allDishes.es.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
+	en: allDishes.en.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
+	de: allDishes.de.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
+}
+
 ---
 
 <Layout
@@ -24,7 +35,7 @@ import LogoImg from "@/assets/images/logo.webp";
 >
 	<Hero />
 	<WhyChooseUs />
-	<OurDishes />
+	<OurDishes dishes={popularDishes[lang] ?? popularDishes.es} />
 	<a href="tel:+34652640538" class="bg-[#282828] w-full block">
 		<Image src={ChickenBanner} alt="Chicken Banner" width={1120} height={300} class="object-cover object-center mt-5" loading={"lazy"} />
 	</a>

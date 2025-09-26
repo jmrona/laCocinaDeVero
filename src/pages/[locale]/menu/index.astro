@@ -1,39 +1,36 @@
 ---
 import AllergensCard from '@/components/AllergensCard/AllergensCard.astro';
 import Container from '@/components/Global/Container.astro';
-import FoodCategories from '@/components/Menu/FoodCategories/FoodCategories.astro';
 import MenuList from '@/components/Menu/MenuList';
-import MenuOfTheDay from '@/components/sections/MenuOfTheDay/MenuOfTheDay.astro';
 import Layout from '@/layouts/Layout.astro';
 import { getCategories } from '@/lib/getCategories';
-import { getDishes } from '@/lib/getDishes';
 import { useTranslations } from '@/lib/i18n/useTranslations';
+import LogoImg from "@/assets/images/logo.webp";
+import { getDishesByLang } from '@/lib/getDishesByLang';
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
+
+const allDishes = await getDishesByLang();
+const allCategories = await getCategories()
+
 const t = useTranslations(lang);
-
-const [categories, dishes] = await Promise.all([
-  getCategories(lang),
-  getDishes(lang),
-]);
-
-const categoriesToShow = [...categories].slice(7)
-
-export async function getStaticPaths() {
-	return [
-		{ params: { locale: "en" } },
-		{ params: { locale: "de" } },
-	];
-}
-
-export const prerender = true;
+export const prerender = false;
 ---
 
-<Layout title={`${t("nav.menu")} - La cocina de Vero`}>
+<Layout
+  title={`${t('nav.menu')} - La cocina de Vero`}
+  description={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  keywords="menú, comida casera, Torrox, Málaga, categorías, platos, restaurante"
+  ogTitle={`${t('nav.menu')} - La cocina de Vero`}
+  ogDescription={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  ogUrl="https://lacocinadevero.es/menu"
+  ogImage={LogoImg.src}
+  twitterTitle={`${t('nav.menu')} - La cocina de Vero`}
+  twitterDescription={`${t('nav.menu')} - Menú diario, categorías y platos caseros en Torrox, Málaga.`}
+  twitterImage={LogoImg.src}
+>
     <Container>
-        <MenuOfTheDay server:defer/>
-        <FoodCategories server:defer categories={categoriesToShow} />
-        <MenuList client:only lang={lang} dishes={dishes} categories={categories}/>
-        <AllergensCard server:defer/>
+        <MenuList client:load lang={lang} dishes={allDishes[lang]} categories={allCategories[lang]} />
+        <AllergensCard/>
     </Container>
 </Layout>

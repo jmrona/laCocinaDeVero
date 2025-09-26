@@ -1,3 +1,4 @@
+export const prerender = false;
 
 import { supabase } from "@/db/supabase";
 
