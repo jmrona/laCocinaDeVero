@@ -135,7 +135,6 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
         <h2 className="text-xl font-semibold text-balance leading-5 border-b-primary border-b-2 pb-2 inline-block mb-4">{t("menu.specialMenu")}</h2>
         <div className="flex flex-col gap-2">
             {Object.entries(menuOfWeekGroupedByCategoryId).map(([day, foodArray], index) => {
-              console.log('foodArray: ', foodArray);
                 const category = categories.find(cat => cat.id === parseInt(day));
                 const listOfFoods = foodArray.map(food => food.name).join(', ');
                 if (!category || !listOfFoods) return;

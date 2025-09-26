@@ -31,7 +31,7 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
       price,
       image,
       categories:dishes_categories(category_id, categories(name)),
-      allergens:dishes_allergens(allergen_id, allergens(name))
+      allergens:dishes_allergens(allergen_id, allergens(name, icon))
     `);
 
   if (options?.limit) query = query.limit(options.limit);
@@ -40,6 +40,7 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
   }
 
   const { data, error } = await query;
+  console.log('error: ', error);
   if (error || !data) {
     console.error('Error fetching dishes:', error?.message);
     return { es: [], en: [], de: [] };
@@ -72,7 +73,8 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
           })) ?? [],
           allergens: dish.allergens?.map?.(allergen => ({ 
               id: allergen.allergen_id, 
-              name: allergen.allergens.name?.[lang] ?? "" 
+              name: allergen.allergens.name?.[lang] ?? "",
+              icon: allergen.allergens.icon ?? ""
           })) ?? []
         });
       });
