@@ -15,8 +15,17 @@ type MenuOfTheDayResponse =
   | { dishes: DishApiType[] }
   | { error: string };
 
-export async function GET({params, request}: { params: { lang: "es" | "en" | "de" }, request: Request }): Promise<Response> {
-  const lang = params.lang ?? "es";
+const SUPPORTED_LANGS = ["es", "en", "de"] as const;
+type SupportedLang = typeof SUPPORTED_LANGS[number];
+
+export async function GET({params, request}: { params: { lang: string }, request: Request }): Promise<Response> {
+  if (!SUPPORTED_LANGS.includes(params.lang as SupportedLang)) {
+    return new Response(JSON.stringify({ error: "Unsupported language" }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+  const lang = params.lang as SupportedLang;
   const WEEK_DAYS = {
     es: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
     en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -54,7 +63,8 @@ export async function GET({params, request}: { params: { lang: "es" | "en" | "de
     .eq('dishes_categories.category_id', categoryId);
 
   if (error || !data) {
-    return new Response(JSON.stringify({ error: error?.message ?? "No data" }), {
+    console.error('Error fetching dishes of the day:', error?.message);
+    return new Response(JSON.stringify({ error: "Could not fetch today's menu" }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
