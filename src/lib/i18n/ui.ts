@@ -53,6 +53,10 @@ export const ui = {
     'testimonials.third.description': 'Es como comer en casa pero sin tener que cocinar. Ideal para los días que voy con prisa y quiero algo rico y saludable.',
 
     // Home - Call to action
+    'cta.title': '¿Se te ha abierto el apetito?',
+    'cta.subtitle': 'Descubre nuestro menú completo o ven a visitarnos a Torrox Costa.',
+    'cta.viewMenu': 'Ver el menú',
+    'cta.getDirections': 'Cómo llegar',
 
     // Footer
     'footer.description': 'Platos frescos y caseros preparados diariamente en Torrox, Málaga.',
@@ -130,6 +134,10 @@ export const ui = {
     'testimonials.third.description': 'It\'s like eating at home but without having to cook. Ideal for the days when I\'m sick and want something tasty and healthy.',
 
     // Home - Call to action
+    'cta.title': 'Feeling hungry already?',
+    'cta.subtitle': 'Check out our full menu or come visit us in Torrox Costa.',
+    'cta.viewMenu': 'View the menu',
+    'cta.getDirections': 'Get directions',
 
     // Footer
     'footer.description': 'Fresh, homemade dishes prepared daily at Torrox, Málaga.',
@@ -207,6 +215,10 @@ export const ui = {
     'testimonials.third.description': 'Es ist wie zu Hause zu essen, aber ohne dass man kocht. Ideal für die Tage, wenn ich krank bin und etwas leckeres und gesundes habe.',
 
     // Home - Call to action
+    'cta.title': 'Hast du schon Hunger bekommen?',
+    'cta.subtitle': 'Entdecke unser komplettes Menü oder besuche uns in Torrox Costa.',
+    'cta.viewMenu': 'Menü ansehen',
+    'cta.getDirections': 'Route anzeigen',
 
     // Footer
     'footer.description': 'Frische, hausgemachte Gerichte, täglich zubereitet in Torrox, Málaga.',

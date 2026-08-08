@@ -1,0 +1,33 @@
+---
+import { useTranslations } from "@/lib/i18n/useTranslations";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { UtensilsCrossed, MapPin } from "@lucide/astro";
+
+const lang = Astro.currentLocale as "es" | "en" | "de";
+const t = useTranslations(lang);
+---
+
+<section class="bg-secondary">
+    <div class="max-w-6xl gap-2 mx-auto flex flex-col items-center px-4 py-30 text-center">
+        <h3 class="text-2xl font-semibold text-balance max-w-[60ch] text-white">{t("cta.title")}</h3>
+        <p class="text-pretty text-neutral max-w-[60ch]">{t("cta.subtitle")}</p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+            <a
+                href={getRelativeLocaleUrl(lang, "menu")}
+                class="bg-primary text-black font-semibold rounded-full px-6 py-2 text-center cursor-pointer hover:bg-primary-dark flex items-center justify-center gap-2"
+            >
+                <UtensilsCrossed size={20} />
+                {t("cta.viewMenu")}
+            </a>
+            <a
+                href="https://maps.app.goo.gl/hFwAX95oncCDGKkJ7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-transparent text-white font-semibold rounded-full px-6 py-2 text-center cursor-pointer border border-neutral hover:bg-white/10 flex items-center justify-center gap-2"
+            >
+                <MapPin size={20} />
+                {t("cta.getDirections")}
+            </a>
+        </div>
+    </div>
+</section>
