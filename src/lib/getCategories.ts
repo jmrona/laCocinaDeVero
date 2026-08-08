@@ -24,7 +24,8 @@ export const getCategories = async (): Promise<Record<LangType, CategoriesType[]
         langs.forEach(lang => {
             result[lang].push({
                 id: category.id,
-                name: category.name?.[lang] ?? "",
+                // Translations are optional in the CMS: fall back to Spanish.
+                name: category.name?.[lang] || category.name?.es || "",
                 icon: category.icon
             })
         })

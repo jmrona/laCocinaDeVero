@@ -54,7 +54,7 @@ export async function GET({params, request}: { params: { lang: string }, request
     .from('cms_dishes')
     .select(`
       dish_id,
-      name:name->>${lang},
+      name,
       price,
       image,
       categories:cms_dishes_categories_lnk(cms_categories(category_id)),
@@ -73,7 +73,8 @@ export async function GET({params, request}: { params: { lang: string }, request
   // Evita mapeos innecesarios y usa tipado opcional
   const dishes = data.map(dish => ({
     id: dish.dish_id,
-    name: dish.name,
+    // Translations are optional in the CMS: fall back to Spanish.
+    name: (dish.name as any)?.[lang] || (dish.name as any)?.es || "",
     price: dish.price,
     image: dish.image,
     categories: dish.categories?.map?.(cat => cat.cms_categories?.category_id) ?? [],

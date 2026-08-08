@@ -5,11 +5,16 @@ type LangType = 'es' | 'en' | 'de';
 export const getAllergens = async (lang: LangType) => {
   const { data, error } = await supabase
   .from('cms_allergens')
-  .select(`id:allergen_id, name:name->>${lang}, icon`)
+  .select(`id:allergen_id, name, icon`)
 
   if (error) return []
-  
-  return data
+
+  // Translations are optional in the CMS: fall back to Spanish.
+  return data.map(allergen => ({
+    id: allergen.id,
+    name: (allergen.name as any)?.[lang] || (allergen.name as any)?.es || "",
+    icon: allergen.icon,
+  }))
 }
 
 export interface AllergensType {

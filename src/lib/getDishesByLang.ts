@@ -65,16 +65,17 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
       langs.forEach(lang => {
         result[lang].push({
           id: dish.dish_id,
-          name: dish.name?.[lang] ?? "",
+          // Translations are optional in the CMS: fall back to Spanish.
+          name: dish.name?.[lang] || dish.name?.es || "",
           price: dish.price,
           image: dish.image,
           categories: dish.categories?.map?.(cat => ({
             id: cat.cms_categories?.category_id,
-            name: cat.cms_categories?.name?.[lang] ?? ""
+            name: cat.cms_categories?.name?.[lang] || cat.cms_categories?.name?.es || ""
           })) ?? [],
           allergens: dish.allergens?.map?.(allergen => ({
               id: allergen.cms_allergens.allergen_id,
-              name: allergen.cms_allergens.name?.[lang] ?? "",
+              name: allergen.cms_allergens.name?.[lang] || allergen.cms_allergens.name?.es || "",
               icon: allergen.cms_allergens.icon ?? ""
           })) ?? []
         });
