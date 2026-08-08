@@ -25,5 +25,3 @@ package-lock.json
 
 # jetbrains setting folder
 .idea/
-
-pnpm-lock.yaml
