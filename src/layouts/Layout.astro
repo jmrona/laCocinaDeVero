@@ -1,6 +1,6 @@
 ---
-// import Analytics from '@vercel/analytics/astro'
-// import SpeedInsights from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from "@vercel/speed-insights/astro"
 import Header from "@/components/sections/Header/Header.astro";
 import LogoImg from "@/assets/images/logo.webp";
 import { ClientRouter } from "astro:transitions";
@@ -100,5 +100,7 @@ const jsonLd = JSON.stringify({
       <Footer />
     </main>
     <Loading />
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
