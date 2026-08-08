@@ -37,7 +37,7 @@ export default function Card({food, className = "", lang = "es", useHorizontal =
             <span className='text-sm text-gray-700 mt-1 leading-4 font-semibold'>{t("menu.allergens")}</span>
             <div className='flex flex-row gap-2 items-center'>
                 {food.allergens.map((allergen, index) => {
-                  return <AllergenIcon icon={allergen} key={index} size="20" className="text-gray-700 w-[20px] h-[20px]"/>
+                  return <AllergenIcon icon={allergen.id} key={index} size="20" className="text-gray-700 w-[20px] h-[20px]"/>
                 })}
             </div>
           </>

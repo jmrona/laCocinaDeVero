@@ -21,7 +21,7 @@ export default defineConfig({
     }
   },
   site: "https://lacocinadevero.es",
-  output: "server",
+  output: "static",
   adapter: vercel(),
   integrations: [react(), sitemap({
     i18n: {

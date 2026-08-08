@@ -36,6 +36,7 @@ export const getDishes = async (lang: LangType, options?: { limit?: number, cond
       .map(cat => cat.id);
   }
 
+
   return data
     .filter(dish => !dish.categories?.some?.(cat => excludeCategoryIds.includes(cat.category_id)))
     .map(dish => ({
@@ -46,6 +47,7 @@ export const getDishes = async (lang: LangType, options?: { limit?: number, cond
       categories: dish.categories?.map?.(cat => cat.category_id) ?? [],
       allergens: dish.allergens?.map?.(allergen => allergen.allergen_id) ?? []
     }));
+    
 }
 
 export interface DishesType {
