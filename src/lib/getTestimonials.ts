@@ -14,10 +14,11 @@ export interface Testimonial {
  * rather than breaking the page.
  */
 export const getTestimonials = async (lang: LangType): Promise<Testimonial[]> => {
+  // No draft/publish on this content type, so every row is live. Filtering on
+  // published_at here would silently hide testimonials if it were ever null.
   const { data, error } = await supabase
     .from('cms_testimonials')
     .select('id, author, quote, sort_order')
-    .not('published_at', 'is', null)
     .order('sort_order', { ascending: true });
 
   if (error || !data) {
