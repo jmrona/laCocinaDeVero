@@ -8,6 +8,7 @@ import Loading from "@/components/Loading.astro";
 
 import "@/styles/global.css";
 import Footer from '@/components/sections/Footer/Footer.astro';
+import { getBusinessInfo } from '@/lib/getBusinessInfo';
 
 const {
   title = "La cocina de Vero",
@@ -25,22 +26,26 @@ const {
 const lang = Astro.currentLocale;
 
 
+// Business details come from the CMS so the structured data can't drift out
+// of sync with what the footer and about page show.
+const business = await getBusinessInfo((lang ?? 'es') as "es" | "en" | "de");
+
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "La cocina de Vero",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga",
+    "streetAddress": business.address,
     "addressLocality": "Torrox",
     "addressRegion": "Málaga",
     "addressCountry": "ES"
   },
-  "telephone": "+34 652 64 05 38",
+  "telephone": business.phone,
   "url": "https://lacocinadevero.es/",
   "servesCuisine": ["Comida casera", "Platos tradicionales", "Comida para llevar", "Comida urbana"],
   "priceRange": "€",
-  "openingHours": ["Mo 12:00-16:30", "We-Su 12:00-16:30"]
+  "openingHours": business.openingHoursSchema
 });
 
 ---

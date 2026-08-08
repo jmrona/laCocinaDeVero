@@ -1,10 +1,15 @@
 ---
+// On demand + ISR: this page shows the phone/address, which come from the CMS.
+export const prerender = false;
+
 import Map from "@/components/Map/Map.astro";
 import Layout from "@/layouts/Layout.astro";
 import { useTranslations } from "@/lib/i18n/useTranslations";
+import { getBusinessInfo } from "@/lib/getBusinessInfo";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
 const t = useTranslations(lang);
+const business = await getBusinessInfo(lang);
 ---
 
 <Layout
@@ -26,8 +31,8 @@ const t = useTranslations(lang);
             <p class="text-pretty mb-6">{t("about.contact")}</p>
 
             <div class="bg-neutral/50 rounded-xl p-4 flex flex-col gap-2">
-                <p>{t("about.telephone")}: <a href="tel:+34652640538" class="text-blue-700 underline underline-offset-2">+34 652 64 05 38</a></p>
-                <p>{t("about.address")}: <a href="https://maps.app.goo.gl/hFwAX95oncCDGKkJ7" target="_blank" class="text-blue-700 underline underline-offset-2">Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga</a></p>
+                <p>{t("about.telephone")}: <a href={`tel:${business.phoneLink}`} class="text-blue-700 underline underline-offset-2">{business.phone}</a></p>
+                <p>{t("about.address")}: <a href={business.mapsUrl} target="_blank" class="text-blue-700 underline underline-offset-2">{business.address}</a></p>
             </div>
         </div>
         <div class="flex-1/2">
