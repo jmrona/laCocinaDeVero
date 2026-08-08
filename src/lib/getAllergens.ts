@@ -4,7 +4,7 @@ type LangType = 'es' | 'en' | 'de';
 
 export const getAllergens = async (lang: LangType) => {
   const { data, error } = await supabase
-  .from('allergens')
+  .from('cms_allergens')
   .select(`id:allergen_id, name:name->>${lang}, icon`)
 
   if (error) return []

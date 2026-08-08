@@ -6,14 +6,14 @@ type LangType = 'es' | 'en' | 'de';
 export const getDishes = async (lang: LangType, options?: { limit?: number, conditions?: string[] }) => {
 
   let query = supabase
-    .from('dishes')
+    .from('cms_dishes')
     .select(`
       dish_id,
       name:name->>${lang},
       price,
       image,
-      categories:dishes_categories(category_id, categories(name:name->>${lang})),
-      allergens:dishes_allergens(allergen_id)
+      categories:cms_dishes_categories_lnk(cms_categories(category_id, name:name->>${lang})),
+      allergens:cms_dishes_allergens_lnk(cms_allergens(allergen_id))
     `);
 
   if (options?.limit) query = query.limit(options.limit);
@@ -38,14 +38,14 @@ export const getDishes = async (lang: LangType, options?: { limit?: number, cond
 
 
   return data
-    .filter(dish => !dish.categories?.some?.(cat => excludeCategoryIds.includes(cat.category_id)))
+    .filter(dish => !dish.categories?.some?.(cat => excludeCategoryIds.includes(cat.cms_categories?.category_id)))
     .map(dish => ({
       id: dish.dish_id,
       name: dish.name,
       price: dish.price,
       image: dish.image,
-      categories: dish.categories?.map?.(cat => cat.category_id) ?? [],
-      allergens: dish.allergens?.map?.(allergen => allergen.allergen_id) ?? []
+      categories: dish.categories?.map?.(cat => cat.cms_categories?.category_id) ?? [],
+      allergens: dish.allergens?.map?.(allergen => allergen.cms_allergens?.allergen_id) ?? []
     }));
     
 }

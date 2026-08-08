@@ -21,19 +21,20 @@ export interface Dishes {
   image: string;
 }
 
-export const getDishesByLang = async (options?: { limit?: number, conditions?: string[] }): Promise<Record<LangType, Dishes[]>> => {
+export const getDishesByLang = async (options?: { limit?: number, conditions?: string[], featuredOnly?: boolean }): Promise<Record<LangType, Dishes[]>> => {
 
   let query = supabase
-    .from('dishes')
+    .from('cms_dishes')
     .select(`
       dish_id,
       name,
       price,
       image,
-      categories:dishes_categories(category_id, categories(name)),
-      allergens:dishes_allergens(allergen_id, allergens(name, icon))
+      categories:cms_dishes_categories_lnk(cms_categories(category_id, name)),
+      allergens:cms_dishes_allergens_lnk(cms_allergens(allergen_id, name, icon))
     `);
 
+  if (options?.featuredOnly) query = query.eq('featured', true);
   if (options?.limit) query = query.limit(options.limit);
   if (options?.conditions?.includes("image")) {
     query = query.not("image", "is", null).neq('image', '/img/placeholder-image.webp');
@@ -68,13 +69,13 @@ export const getDishesByLang = async (options?: { limit?: number, conditions?: s
           price: dish.price,
           image: dish.image,
           categories: dish.categories?.map?.(cat => ({
-            id: cat.category_id,
-            name: cat.categories?.name?.[lang] ?? ""
+            id: cat.cms_categories?.category_id,
+            name: cat.cms_categories?.name?.[lang] ?? ""
           })) ?? [],
-          allergens: dish.allergens?.map?.(allergen => ({ 
-              id: allergen.allergen_id, 
-              name: allergen.allergens.name?.[lang] ?? "",
-              icon: allergen.allergens.icon ?? ""
+          allergens: dish.allergens?.map?.(allergen => ({
+              id: allergen.cms_allergens.allergen_id,
+              name: allergen.cms_allergens.name?.[lang] ?? "",
+              icon: allergen.cms_allergens.icon ?? ""
           })) ?? []
         });
       });

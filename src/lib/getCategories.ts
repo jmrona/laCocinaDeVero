@@ -11,7 +11,7 @@ export interface CategoriesType {
 
 export const getCategories = async (): Promise<Record<LangType, CategoriesType[]>> => {
     const { data, error } = await supabase
-    .from('categories')
+    .from('cms_categories')
     .select(`id:category_id, name, icon`)
 
     if (error) return { es: [], en: [], de: [] }

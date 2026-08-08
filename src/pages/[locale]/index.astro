@@ -19,12 +19,7 @@ export async function getStaticPaths() {
 }
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
-const allDishes = await getDishesByLang({limit: 8, conditions: ["image"]});
-const popularDishes = {
-	es: allDishes.es.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
-	en: allDishes.en.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
-	de: allDishes.de.filter(dish => !(dish?.image || "").includes("placeholder")).slice(0, 6),
-} as const
+const popularDishes = await getDishesByLang({ featuredOnly: true });
 ---
 
 <Layout title="La cocina de Vero">

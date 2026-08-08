@@ -9,21 +9,21 @@ const DAYS_ORDER = {
 
 export const getWeekMenu = async (lang: "es" | "en" | "de") => { 
     const { data, error } = await supabase
-      .from('dishes')
+      .from('cms_dishes')
       .select(`
         dish_id,
         name:name->>${lang},
         price,
         image,
-        dishes_categories!inner(
-          categories!inner(
-            name, category_id
+        cms_dishes_categories_lnk!inner(
+          cms_categories!inner(
+            name, id
           )
         ),
-        categories:dishes_categories( category_id, categories( name:name->>${lang} )),
-        allergens:dishes_allergens( allergen_id )
+        categories:cms_dishes_categories_lnk( cms_categories( category_id, name:name->>${lang} )),
+        allergens:cms_dishes_allergens_lnk( cms_allergens( allergen_id ) )
       `)
-      .in('dishes_categories.categories.name->>es', ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]);
+      .in('cms_dishes_categories_lnk.cms_categories.name->>es', ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]);
 
     if (error) {
       console.error('Error fetching dishes:', error.message);
@@ -32,7 +32,7 @@ export const getWeekMenu = async (lang: "es" | "en" | "de") => {
 
       
     const dishesPerDay = data.reduce<Record<string, string[]>>((acc, item) => {
-        const categoriesName: string[] = item.categories.map(cat => cat.categories.name)
+        const categoriesName: string[] = item.categories.map(cat => cat.cms_categories.name)
 
         categoriesName.forEach(category => {
             if(Object.keys(acc).includes(category)){

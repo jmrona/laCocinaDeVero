@@ -36,8 +36,8 @@ export async function GET({params, request}: { params: { lang: string }, request
 
   // Obtén el categoryId directamente
   const { data: category, error: catError } = await supabase
-    .from('categories')
-    .select('category_id')
+    .from('cms_categories')
+    .select('id')
     .eq(`name->>${lang}`, today)
     .single();
 
@@ -47,20 +47,20 @@ export async function GET({params, request}: { params: { lang: string }, request
       headers: { 'Content-Type': 'application/json' },
     });
   }
-  const categoryId = category.category_id;
+  const categoryId = category.id;
 
   // Consulta optimizada de platos
   const { data, error } = await supabase
-    .from('dishes')
+    .from('cms_dishes')
     .select(`
       dish_id,
       name:name->>${lang},
       price,
       image,
-      categories:dishes_categories(category_id),
-      allergens:dishes_allergens(allergen_id)
+      categories:cms_dishes_categories_lnk(cms_categories(category_id)),
+      allergens:cms_dishes_allergens_lnk(cms_allergens(allergen_id))
     `)
-    .eq('dishes_categories.category_id', categoryId);
+    .eq('cms_dishes_categories_lnk.category_id', categoryId);
 
   if (error || !data) {
     console.error('Error fetching dishes of the day:', error?.message);
@@ -76,8 +76,8 @@ export async function GET({params, request}: { params: { lang: string }, request
     name: dish.name,
     price: dish.price,
     image: dish.image,
-    categories: dish.categories?.map?.(cat => cat.category_id) ?? [],
-    allergens: dish.allergens?.map?.(allergen => allergen.allergen_id) ?? []
+    categories: dish.categories?.map?.(cat => cat.cms_categories?.category_id) ?? [],
+    allergens: dish.allergens?.map?.(allergen => allergen.cms_allergens?.allergen_id) ?? []
   }));
 
   return new Response(JSON.stringify({ dishes }), {
