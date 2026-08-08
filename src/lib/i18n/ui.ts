@@ -61,6 +61,7 @@ export const ui = {
     'footer.hours': 'Horario',
     'footer.weekdays': 'Lunes a viernes',
     'footer.weekends': 'Sábados y domingos',
+    'footer.tuesdayClosed': 'Martes <span>Cerrado</span>',
 
     // Menu
     'menu.specialMenu': 'Menú del día',
@@ -137,6 +138,7 @@ export const ui = {
     'footer.hours': 'Hours',
     'footer.weekdays': 'Monday to Friday',
     'footer.weekends': 'Saturday and Sunday',
+    'footer.tuesdayClosed': 'Tuesday <span>Closed</span>',
 
     // Menu
     'menu.specialMenu': 'Today\'s menu',
@@ -213,6 +215,7 @@ export const ui = {
     'footer.hours': 'Zeitplan',
     'footer.weekdays': 'Montag bis Freitag',
     'footer.weekends': 'Samstag und Sonntag',
+    'footer.tuesdayClosed': 'Dienstag <span>Geschlossen</span>',
 
     // Menu
     'menu.specialMenu': 'Tagesmenü',
