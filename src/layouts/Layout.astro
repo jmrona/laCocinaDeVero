@@ -40,7 +40,7 @@ const jsonLd = JSON.stringify({
   "url": "https://lacocinadevero.es/",
   "servesCuisine": ["Comida casera", "Platos tradicionales", "Comida para llevar", "Comida urbana"],
   "priceRange": "€",
-  "openingHours": "Mo-Su 12:00-16:30"
+  "openingHours": ["Mo 12:00-16:30", "We-Su 12:00-16:30"]
 });
 
 ---
@@ -61,9 +61,10 @@ const jsonLd = JSON.stringify({
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="preload" href={LogoImg.src} as="image" />
   <link rel="preload" href={"/img/placeholder-image.webp"} as="image" />
-  <link rel="alternate" href="http://lacocinadevero.es/es/" hreflang="es" />
-  <link rel="alternate" href="http://lacocinadevero.es/en/" hreflang="en" />
-  <link rel="alternate" href="http://lacocinadevero.es/de/" hreflang="de" />
+  <link rel="alternate" href="https://lacocinadevero.es/es/" hreflang="es" />
+  <link rel="alternate" href="https://lacocinadevero.es/en/" hreflang="en" />
+  <link rel="alternate" href="https://lacocinadevero.es/de/" hreflang="de" />
+  <link rel="alternate" href="https://lacocinadevero.es/es/" hreflang="x-default" />
 
   <meta property="og:title" content={ogTitle ?? title} />
   <meta property="og:type" content="website" />
@@ -87,31 +88,8 @@ const jsonLd = JSON.stringify({
     </script>
     <ClientRouter />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "type": "Restaurant",
-        "address": {
-          "type": "PostalAddress",
-          "addressCountry": "ES",
-          "addressLocality": "Torrox",
-          "addressRegion": "Málaga",
-          "streetAddress": "Pórtico n1, Urb. Laguna Beach, Torrox Costa, Málaga"
-        },
-        "name": "La cocina de Vero",
-        "openingHours": "Mo-Su 12:00-16:30",
-        "priceRange": "€",
-        "servesCuisine": [
-          "Comida casera",
-          "Platos tradicionales",
-          "Comida para llevar",
-          "Comida urbana"
-        ],
-        "telephone": "+34 652 64 05 38",
-        "url": "https://lacocinadevero.es/"
-      }
-    </script>
-    
+    <script type="application/ld+json" set:html={jsonLd} />
+
   </head>
   <body>
     <main class="flex flex-col min-h-screen">
