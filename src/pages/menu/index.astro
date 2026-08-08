@@ -1,4 +1,8 @@
 ---
+// Rendered on demand + cached via ISR (see astro.config.mjs) so CMS edits
+// appear without a redeploy.
+export const prerender = false;
+
 import AllergensCard from '@/components/AllergensCard/AllergensCard.astro';
 import Container from '@/components/Global/Container.astro';
 import MenuList from '@/components/Menu/MenuList';

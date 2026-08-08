@@ -22,7 +22,16 @@ export default defineConfig({
   },
   site: "https://lacocinadevero.es",
   output: "static",
-  adapter: vercel(),
+  adapter: vercel({
+    // Pages that read the menu from Supabase are rendered on demand and then
+    // cached, so edits made in the CMS show up without redeploying the site.
+    // Kept short because the "menú del día" depends on the current weekday.
+    isr: {
+      expiration: 60 * 5,
+      // The daily-menu endpoint is cheap and date-sensitive: always fresh.
+      exclude: [/^\/api\/.+/],
+    },
+  }),
   integrations: [react(), sitemap({
     i18n: {
         defaultLocale: 'es',

@@ -1,4 +1,8 @@
 ---
+// Rendered on demand + cached via ISR (see astro.config.mjs) so CMS edits
+// appear without a redeploy.
+export const prerender = false;
+
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/sections/Hero/Hero.astro";
 import WhyChooseUs from "@/components/sections/WhyChooseUs/WhyChooseUs.astro";
