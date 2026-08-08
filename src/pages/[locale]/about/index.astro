@@ -1,11 +1,11 @@
 ---
 import Map from "@/components/Map/Map.astro";
 import Layout from "@/layouts/Layout.astro";
-import { useTranslations } from "@/lib/i18n/useTranslations";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 import { getBusinessInfo } from "@/lib/getBusinessInfo";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
 const business = await getBusinessInfo(lang);
 
 export async function getStaticPaths() {

@@ -1,12 +1,12 @@
 ---
-import { useTranslations } from "@/lib/i18n/useTranslations";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 import {MapPin, Phone, Facebook, Instagram} from "@lucide/astro"
 import Logo from "@/components/Logo/Logo.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getBusinessInfo } from "@/lib/getBusinessInfo";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
 const business = await getBusinessInfo(lang);
 const addressLines = business.address.split(',').map(s => s.trim());
 ---

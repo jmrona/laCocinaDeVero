@@ -23,11 +23,14 @@ const MENU_OF_DAY_IDS = Object.keys(DAYS_CATEGORIES).map(key => parseInt(key));
 const todayId = new Date().getDay();
 
 
-export default function MenuList({lang, categories = [], dishes = []}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: Dishes[]}) { 
+export default function MenuList({lang, categories = [], dishes = [], labels}: {lang: "es" | "en" | "de", categories: CategoriesType[], dishes: Dishes[], labels?: Record<string, string>}) {
   const modalRef = React.useRef<HTMLDialogElement>(null);
   const [categorySelected, setCategorySelected] = useState(8);
 
-  const t = useTranslations(lang);
+  // Labels come from the CMS via props (this is a client component, so it
+  // can't await). Falls back to the bundled strings when not provided.
+  const fallback = useTranslations(lang);
+  const t = (key: string) => labels?.[key] ?? fallback(key as any);
 
   const handleSelectCategory = (event: React.ChangeEvent<HTMLInputElement>) => {
     const categorySelected = parseInt(event.target.value);
@@ -92,7 +95,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-4">
           {menuOfTheDay.map((food) => {
               return (
-                <Card food={food} className={"!max-w-none"} lang={lang} useHorizontal={true}/>
+                <Card food={food} className={"!max-w-none"} lang={lang} useHorizontal={true} labels={labels}/>
               )
           })}
           </div>
@@ -121,7 +124,7 @@ export default function MenuList({lang, categories = [], dishes = []}: {lang: "e
           }
 
           return (
-            <Card key={index} className={"!max-w-none"} food={food} lang={lang} useHorizontal={true}/>
+            <Card key={index} className={"!max-w-none"} food={food} lang={lang} useHorizontal={true} labels={labels}/>
           )
         }).sort((a, b) => a.props.food.name.localeCompare(b.props.food.name))}
       </div>

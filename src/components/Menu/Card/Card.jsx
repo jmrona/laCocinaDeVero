@@ -3,8 +3,11 @@ import AllergenIcon from '../AllergenIcon';
 import { twMerge } from 'tailwind-merge';
 import { useTranslations } from '@/lib/i18n/useTranslations';
 
-export default function Card({food, className = "", lang = "es", useHorizontal = false}) {
+export default function Card({food, className = "", lang = "es", useHorizontal = false, labels}) {
+  // Labels come from the CMS via props (this is a client component, so it
+  // can't await). Falls back to the bundled strings when not provided.
   const t = useTranslations(lang);
+  const allergensLabel = labels?.allergens ?? t("menu.allergens");
   const hasImage = food.image && food.image !== "";
 
   return (
@@ -34,7 +37,7 @@ export default function Card({food, className = "", lang = "es", useHorizontal =
 
         {food.allergens.length > 0 && (
           <>
-            <span className='text-sm text-gray-700 mt-1 leading-4 font-semibold'>{t("menu.allergens")}</span>
+            <span className='text-sm text-gray-700 mt-1 leading-4 font-semibold'>{allergensLabel}</span>
             <div className='flex flex-row gap-2 items-center'>
                 {food.allergens.map((allergen, index) => {
                   return <AllergenIcon icon={allergen.id} key={index} size="20" className="text-gray-700 w-[20px] h-[20px]"/>

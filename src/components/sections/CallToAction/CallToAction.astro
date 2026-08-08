@@ -1,11 +1,11 @@
 ---
-import { useTranslations } from "@/lib/i18n/useTranslations";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { UtensilsCrossed, MapPin } from "@lucide/astro";
 import { getBusinessInfo } from "@/lib/getBusinessInfo";
 
 const lang = Astro.currentLocale as "es" | "en" | "de";
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
 const business = await getBusinessInfo(lang);
 ---
 

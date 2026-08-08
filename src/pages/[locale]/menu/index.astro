@@ -4,7 +4,7 @@ import Container from '@/components/Global/Container.astro';
 import MenuList from '@/components/Menu/MenuList';
 import Layout from '@/layouts/Layout.astro';
 import { getCategories } from '@/lib/getCategories';
-import { useTranslations } from '@/lib/i18n/useTranslations';
+import { getTranslations } from '@/lib/i18n/getTranslations';
 import LogoImg from "@/assets/images/logo.webp";
 import { getDishesByLang } from '@/lib/getDishesByLang';
 
@@ -15,7 +15,14 @@ const [allDishes, allCategories] = await Promise.all([
   getCategories(),
 ]);
 
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
+const menuLabels = {
+  "menu.specialMenu": t("menu.specialMenu"),
+  "menu.seeSpecialMenu": t("menu.seeSpecialMenu"),
+  "menu.categories": t("menu.categories"),
+  "modal.close": t("modal.close"),
+  allergens: t("menu.allergens"),
+};
 export const prerender = false;
 ---
 
@@ -32,7 +39,7 @@ export const prerender = false;
   twitterImage={LogoImg.src}
 >
     <Container>
-        <MenuList client:load lang={lang} dishes={allDishes[lang]} categories={allCategories[lang]} />
+        <MenuList client:load lang={lang} dishes={allDishes[lang]} categories={allCategories[lang]} labels={menuLabels} />
         <AllergensCard/>
     </Container>
 </Layout>

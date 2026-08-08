@@ -8,7 +8,7 @@ import Container from '@/components/Global/Container.astro';
 import MenuList from '@/components/Menu/MenuList';
 import Layout from '@/layouts/Layout.astro';
 import { getCategories } from '@/lib/getCategories';
-import { useTranslations } from '@/lib/i18n/useTranslations';
+import { getTranslations } from '@/lib/i18n/getTranslations';
 import { Image } from 'astro:assets';
 import ChickenBanner from '@/assets/images/chicken-banner.webp';
 import LogoImg from "@/assets/images/logo.webp";
@@ -21,7 +21,14 @@ const [allDishes, allCategories] = await Promise.all([
   getCategories(),
 ]);
 
-const t = useTranslations(lang);
+const t = await getTranslations(lang);
+const menuLabels = {
+  "menu.specialMenu": t("menu.specialMenu"),
+  "menu.seeSpecialMenu": t("menu.seeSpecialMenu"),
+  "menu.categories": t("menu.categories"),
+  "modal.close": t("modal.close"),
+  allergens: t("menu.allergens"),
+};
 ---
 
 <Layout
@@ -40,7 +47,7 @@ const t = useTranslations(lang);
         <a href="tel:+34652640538">
           <Image src={ChickenBanner} alt={`Imagen de pollo asado, menú diario de La cocina de Vero en Torrox, Málaga`} width={1120} height={300} class="object-cover object-center mt-5" loading="lazy" />
         </a>
-        <MenuList client:load lang={lang} dishes={allDishes[lang]} categories={allCategories[lang]} />
+        <MenuList client:load lang={lang} dishes={allDishes[lang]} categories={allCategories[lang]} labels={menuLabels} />
         <AllergensCard/>
     </Container>
 </Layout>
